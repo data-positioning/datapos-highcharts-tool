@@ -2,15 +2,17 @@
  * Highcharts tool class.
  */
 
+import Highcharts from 'highcharts';
+
 // Core Highcharts
-import Chart from 'highcharts/es-modules/Core/Chart/Chart.js';
+// import Chart from 'highcharts/es-modules/Core/Chart/Chart.js';
 
-import ColumnSeries from 'highcharts/es-modules/Series/Column/ColumnSeries.js';
+// import ColumnSeries from 'highcharts/es-modules/Series/Column/ColumnSeries.js';
 
-import ColumnDataLabel from 'highcharts/es-modules/Series/Column/ColumnDataLabel.js';
-ColumnDataLabel.compose(ColumnSeries);
+// import ColumnDataLabel from 'highcharts/es-modules/Series/Column/ColumnDataLabel.js';
+// ColumnDataLabel.compose(ColumnSeries);
 
-import LineSeries from 'highcharts/es-modules/Series/Line/LineSeries.js';
+// import LineSeries from 'highcharts/es-modules/Series/Line/LineSeries.js';
 
 // Classes - Highcharts tool.
 export default class HighchartsTool {
@@ -19,7 +21,7 @@ export default class HighchartsTool {
     // Operations - Render.
     render = (renderTo: HTMLElement): unknown => {
         try {
-            const chart = new Chart(renderTo, {
+            const chart = Highcharts.chart(renderTo, {
                 chart: { type: 'column', reflow: false },
                 title: { text: 'Fruit Consumption' },
                 xAxis: { categories: ['Apples', 'Bananas', 'Oranges'] },
