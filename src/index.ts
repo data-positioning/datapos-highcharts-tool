@@ -20,6 +20,7 @@ export default class HighchartsTool {
     // Operations - Render.
     render = (renderTo: HTMLElement): unknown => {
         try {
+            console.log('0000', Chart);
             const chart = new Chart(renderTo, {
                 chart: { type: 'column', reflow: false },
                 title: { text: 'Fruit Consumption' },

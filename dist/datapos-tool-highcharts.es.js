@@ -17059,7 +17059,7 @@ class La {
     }), t;
   }
 }
-const { defaultOptions: Pa } = Ct, { charts: Ea, deg2rad: qs, doc: Et, isFirefox: Zs, isMS: _s, isWebKit: Ia, noop: $a, SVG_NS: Da, symbolSizes: fi, win: pi } = N, { addEvent: be, attr: ve, createElement: Ba, crisp: Js, css: ke, defined: mt, destroyObjectProperties: Na, extend: vt, isArray: za, isNumber: xt, isObject: Vt, isString: Ra, merge: ui, pick: gi, pInt: Wa, replaceNested: Ha, uniqueKey: Fa } = R;
+const { defaultOptions: Pa } = Ct, { charts: Ea, deg2rad: qs, doc: Et, isFirefox: Zs, isMS: _s, isWebKit: Ia, noop: $a, SVG_NS: Da, symbolSizes: fi, win: pi } = N, { addEvent: be, attr: ve, createElement: Ba, crisp: Js, css: ke, defined: xt, destroyObjectProperties: Na, extend: kt, isArray: za, isNumber: yt, isObject: Vt, isString: Ra, merge: ui, pick: gi, pInt: Wa, replaceNested: Ha, uniqueKey: Fa } = R;
 let mi;
 class Vi {
   /**
@@ -17186,7 +17186,7 @@ class Vi {
    */
   getReferenceURL() {
     if ((Zs || Ia) && Et.getElementsByTagName("base").length) {
-      if (!mt(mi)) {
+      if (!xt(mi)) {
         const t = Fa(), i = new G([{
           tagName: "svg",
           attributes: {
@@ -17253,7 +17253,7 @@ class Vi {
    * The style settings mixed with defaults.
    */
   getStyle(t) {
-    return this.style = vt({
+    return this.style = kt({
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
       fontSize: "1rem"
     }, t), this.style;
@@ -17414,7 +17414,7 @@ class Vi {
     if (t === "transparent")
       return "#000000";
     const e = V.parse(t).rgba, i = " clamp(0,calc(9e9*(0.5 - (0.2126*r + 0.7152*g + 0.0722*b))),1)";
-    if (xt(e[0]) || !V.useColorMix) {
+    if (yt(e[0]) || !V.useColorMix) {
       const s = e.map((n) => {
         const o = n / 255;
         return o <= 0.04 ? o / 12.92 : Math.pow((o + 0.055) / 1.055, 2.4);
@@ -17484,7 +17484,7 @@ class Vi {
         const v = b[y];
         Vt(v) && d.css(v);
       }
-    }, d.attr(m[0]), f || (d.css(vt({ cursor: "default" }, x)), h && d.text.css({ pointerEvents: "none" })), d.on("touchstart", (y) => y.stopPropagation()).on("click", function(y) {
+    }, d.attr(m[0]), f || (d.css(kt({ cursor: "default" }, x)), h && d.text.css({ pointerEvents: "none" })), d.on("touchstart", (y) => y.stopPropagation()).on("click", function(y) {
       u !== 3 && s?.call(d, y);
     });
   }
@@ -17504,7 +17504,7 @@ class Vi {
    */
   crispLine(t, e) {
     const [i, s] = t;
-    return mt(i[1]) && i[1] === s[1] && (i[1] = s[1] = Js(i[1], e)), mt(i[2]) && i[2] === s[2] && (i[2] = s[2] = Js(i[2], e)), t;
+    return xt(i[1]) && i[1] === s[1] && (i[1] = s[1] = Js(i[1], e)), xt(i[2]) && i[2] === s[2] && (i[2] = s[2] = Js(i[2], e)), t;
   }
   /**
    * Draw a path, wraps the SVG `path` element.
@@ -17543,7 +17543,7 @@ class Vi {
     const e = this.styledMode ? {} : {
       fill: "none"
     };
-    return za(t) ? e.d = t : Vt(t) && vt(e, t), this.createElement("path").attr(e);
+    return za(t) ? e.d = t : Vt(t) && kt(e, t), this.createElement("path").attr(e);
   }
   /**
    * Draw a circle, wraps the SVG `circle` element.
@@ -17680,7 +17680,7 @@ class Vi {
       width: Math.max(i || 0, 0),
       height: Math.max(s || 0, 0)
     }, a = this.createElement("rect");
-    return this.styledMode || (typeof n < "u" && (o["stroke-width"] = n, vt(o, a.crisp(o))), o.fill = "none"), a.rSetter = function(l, h, d) {
+    return this.styledMode || (typeof n < "u" && (o["stroke-width"] = n, kt(o, a.crisp(o))), o.fill = "none"), a.rSetter = function(l, h, d) {
       a.r = l, ve(d, {
         rx: l,
         ry: l
@@ -17786,7 +17786,7 @@ class Vi {
    */
   image(t, e, i, s, r, n) {
     const o = { preserveAspectRatio: "none" };
-    xt(e) && (o.x = e), xt(i) && (o.y = i), xt(s) && (o.width = s), xt(r) && (o.height = r);
+    yt(e) && (o.x = e), yt(i) && (o.y = i), yt(s) && (o.width = s), yt(r) && (o.height = r);
     const a = this.createElement("image").attr(o), l = function(h) {
       a.attr({ href: t }), n.call(a, h);
     };
@@ -17834,13 +17834,13 @@ class Vi {
     const o = this, a = /^url\((.*?)\)$/, l = a.test(t), h = !l && (this.symbols[t] ? t : "circle"), d = h && this.symbols[h];
     let f, p, u, g;
     if (d)
-      typeof e == "number" && (p = d.call(this.symbols, e || 0, i || 0, s || 0, r || 0, n)), f = this.path(p), o.styledMode || f.attr("fill", "none"), vt(f, {
+      typeof e == "number" && (p = d.call(this.symbols, e || 0, i || 0, s || 0, r || 0, n)), f = this.path(p), o.styledMode || f.attr("fill", "none"), kt(f, {
         symbolName: h || void 0,
         x: e,
         y: i,
         width: s,
         height: r
-      }), n && vt(f, n);
+      }), n && kt(f, n);
     else if (l) {
       u = t.match(a)[1];
       const x = f = this.image(u);
@@ -17857,10 +17857,10 @@ class Vi {
             height: Math.round(C * O)
           })) : S && A && S.setAttribute(y, A), !v && M && C && this.translate(((k || 0) - M * O) / 2, ((w || 0) - C * O) / 2);
         };
-      }), mt(e) && x.attr({
+      }), xt(e) && x.attr({
         x: e,
         y: i
-      }), x.isImg = !0, x.symbolUrl = t, mt(x.imgwidth) && mt(x.imgheight) ? g(x) : (x.attr({ width: 0, height: 0 }), Ba("img", {
+      }), x.isImg = !0, x.symbolUrl = t, xt(x.imgwidth) && xt(x.imgheight) ? g(x) : (x.attr({ width: 0, height: 0 }), Ba("img", {
         onload: function() {
           const m = Ea[o.chartIndex];
           this.width === 0 && (ke(this, {
@@ -17945,7 +17945,7 @@ class Vi {
     const r = this, n = {};
     if (s && (r.allowHTML || !r.forExport))
       return r.html(t, e, i);
-    n.x = Math.round(e || 0), i && (n.y = Math.round(i)), mt(t) && (n.text = t);
+    n.x = Math.round(e || 0), i && (n.y = Math.round(i)), xt(t) && (n.text = t);
     const o = r.createElement("text").attr(n);
     return (!s || r.forExport && !r.allowHTML) && (o.xSetter = function(a, l, h) {
       const d = h.getElementsByTagName("tspan"), f = h.getAttribute(l);
@@ -17968,7 +17968,7 @@ class Vi {
    * The font metrics.
    */
   fontMetrics(t) {
-    const e = xt(t) ? t : Wa(j.prototype.getStyle.call(t, "font-size") || 0), i = e < 24 ? e + 3 : Math.round(e * 1.2), s = Math.round(i * 0.8);
+    const e = yt(t) ? t : Wa(j.prototype.getStyle.call(t, "font-size") || 0), i = e < 24 ? e + 3 : Math.round(e * 1.2), s = Math.round(i * 0.8);
     return {
       // Line height
       h: i,
@@ -18014,7 +18014,7 @@ class Vi {
       V: 2
     };
     for (let r = 0; r < t.length; r++)
-      Ra(i[0]) && xt(t[r]) && i.length === s[i[0].toUpperCase()] && t.splice(r, 0, i[0].replace("M", "L").replace("m", "l")), typeof t[r] == "string" && (i.length && e.push(i.slice(0)), i.length = 0), i.push(t[r]);
+      Ra(i[0]) && yt(t[r]) && i.length === s[i[0].toUpperCase()] && t.splice(r, 0, i[0].replace("M", "L").replace("m", "l")), typeof t[r] == "string" && (i.length && e.push(i.slice(0)), i.length = 0), i.push(t[r]);
     return e.push(i.slice(0)), e;
   }
   /**
@@ -18080,7 +18080,7 @@ class Vi {
     this.alignedObjects.forEach((t) => t.align());
   }
 }
-vt(Vi.prototype, {
+kt(Vi.prototype, {
   /**
    * A pointer to the renderer's associated Element class.
    *
@@ -18127,8 +18127,8 @@ vt(Vi.prototype, {
   draw: $a
 });
 Or.registerRendererType("svg", Vi, !0);
-const { animate: xi, animObject: Xa, setAnimation: yi } = At, { defaultOptions: bi } = Ct, { numberFormat: ja } = ee, { registerEventOptions: Qs } = ze, { charts: yt, doc: Ut, marginNames: tr, svg: Ga, win: er } = N, { seriesTypes: vi } = ct, { addEvent: ki, attr: ir, createElement: Si, css: it, defined: ut, diffObjects: sr, discardElement: Ya, erase: Va, error: Mi, extend: gt, find: wi, fireEvent: $, getAlignFactor: Ua, getStyle: Ci, isArray: Ka, isNumber: It, isObject: qa, isString: Se, merge: ot, objectEach: Ai, pick: _, pInt: Za, relativeLength: rr, removeEvent: nr, splat: Me, syncTimeout: _a, uniqueKey: Ja } = R;
-class kt {
+const { animate: xi, animObject: Xa, setAnimation: yi } = At, { defaultOptions: bi } = Ct, { numberFormat: ja } = ee, { registerEventOptions: Qs } = ze, { charts: bt, doc: Ut, marginNames: tr, svg: Ga, win: er } = N, { seriesTypes: vi } = ct, { addEvent: ki, attr: ir, createElement: Si, css: it, defined: ut, diffObjects: sr, discardElement: Ya, erase: Va, error: Mi, extend: gt, find: wi, fireEvent: $, getAlignFactor: Ua, getStyle: Ci, isArray: Ka, isNumber: It, isObject: qa, isString: Se, merge: ot, objectEach: Ai, pick: _, pInt: Za, relativeLength: rr, removeEvent: nr, splat: Me, syncTimeout: _a, uniqueKey: Ja } = R;
+class mt {
   /**
    * Factory function for basic charts.
    *
@@ -18161,7 +18161,7 @@ class kt {
    * Returns the Chart object.
    */
   static chart(t, e, i) {
-    return new kt(t, e, i);
+    return new mt(t, e, i);
   }
   // Implementation
   constructor(t, e, i) {
@@ -18219,7 +18219,7 @@ class kt {
         locale: this.locale
       }), i.lang), i.time = this.time.options, this.numberFormatter = (s.numberFormatter || ja).bind(this), this.styledMode = s.styledMode, this.hasCartesianSeries = s.showAxes;
       const n = this;
-      n.index = yt.length, yt.push(n), N.chartCount++, Qs(this, s), n.xAxis = [], n.yAxis = [], n.pointCount = n.colorCounter = n.symbolCounter = 0, this.setZoomOptions(), $(n, "afterInit"), n.firstRender();
+      n.index = bt.length, bt.push(n), N.chartCount++, Qs(this, s), n.xAxis = [], n.yAxis = [], n.pointCount = n.colorCounter = n.symbolCounter = 0, this.setZoomOptions(), $(n, "afterInit"), n.firstRender();
     });
   }
   /**
@@ -18666,7 +18666,7 @@ class kt {
     const t = this, e = t.options, i = e.chart, s = "data-highcharts-chart", r = Ja(), n = t.renderTo;
     let o;
     const a = Za(ir(n, s));
-    It(a) && yt[a] && yt[a].hasRendered && yt[a].destroy(), ir(n, s, t.index), n.innerHTML = G.emptyHTML, !i.skipClone && !n.offsetWidth && t.temporaryDisplay(), t.getChartSize();
+    It(a) && bt[a] && bt[a].hasRendered && bt[a].destroy(), ir(n, s, t.index), n.innerHTML = G.emptyHTML, !i.skipClone && !n.offsetWidth && t.temporaryDisplay(), t.getChartSize();
     const l = t.chartHeight;
     let h = t.chartWidth;
     it(n, { overflow: "hidden" }), t.styledMode || (o = gt({
@@ -19052,7 +19052,7 @@ class kt {
   destroy() {
     const t = this, e = t.axes, i = t.series, s = t.container, r = s?.parentNode;
     let n;
-    for ($(t, "destroy"), t.renderer.forExport ? Va(yt, t) : yt[t.index] = void 0, N.chartCount--, t.renderTo.removeAttribute("data-highcharts-chart"), nr(t), n = e.length; n--; )
+    for ($(t, "destroy"), t.renderer.forExport ? Va(bt, t) : bt[t.index] = void 0, N.chartCount--, t.renderTo.removeAttribute("data-highcharts-chart"), nr(t), n = e.length; n--; )
       e[n] = e[n].destroy();
     for (this.scroller?.destroy?.(), n = i.length; n--; )
       i[n] = i[n].destroy();
@@ -19561,7 +19561,7 @@ class kt {
     ) : (f && !p && !this.resetZoomButton ? this.showResetZoom() : !f && this.resetZoomButton && (this.resetZoomButton = this.resetZoomButton.destroy()), this.redraw(a === "zoom" && (this.options.chart.animation ?? this.pointCount < 100)))), d;
   }
 }
-gt(kt.prototype, {
+gt(mt.prototype, {
   // Hook for adding callbacks in modules
   callbacks: [],
   /**
@@ -19576,9 +19576,9 @@ gt(kt.prototype, {
    */
   collectionsWithInit: {
     // CollectionName: [ initializingMethod, [extraArguments] ]
-    xAxis: [kt.prototype.addAxis, [!0]],
-    yAxis: [kt.prototype.addAxis, [!1]],
-    series: [kt.prototype.addSeries]
+    xAxis: [mt.prototype.addAxis, [!0]],
+    yAxis: [mt.prototype.addAxis, [!1]],
+    series: [mt.prototype.addSeries]
   },
   /**
    * These collections (arrays) implement update() methods with support for
@@ -20637,7 +20637,7 @@ var Xi;
   }
   c.distribute = t;
 })(Xi || (Xi = {}));
-const pl = Xi, { animObject: ul, setAnimation: gl } = At, { registerEventOptions: hr } = ze, { composed: ml, marginNames: cr } = N, { distribute: xl } = pl, { format: yl } = ee, { addEvent: Ee, createElement: bl, css: vl, defined: Oi, discardElement: kl, find: Sl, fireEvent: ht, isNumber: dr, merge: bt, pick: st, pushUnique: Ml, relativeLength: wl, stableSort: Cl, syncTimeout: Al } = R;
+const pl = Xi, { animObject: ul, setAnimation: gl } = At, { registerEventOptions: hr } = ze, { composed: ml, marginNames: cr } = N, { distribute: xl } = pl, { format: yl } = ee, { addEvent: Ee, createElement: bl, css: vl, defined: Oi, discardElement: kl, find: Sl, fireEvent: ht, isNumber: dr, merge: vt, pick: st, pushUnique: Ml, relativeLength: wl, stableSort: Cl, syncTimeout: Al } = R;
 class fr {
   /* *
    *
@@ -20670,7 +20670,7 @@ class fr {
    */
   setOptions(t) {
     const e = st(t.padding, 8);
-    this.options = t, this.chart.styledMode || (this.itemStyle = t.itemStyle, this.itemHiddenStyle = bt(this.itemStyle, t.itemHiddenStyle)), this.itemMarginTop = t.itemMarginTop, this.itemMarginBottom = t.itemMarginBottom, this.padding = e, this.initialItemY = e - 5, this.symbolWidth = st(t.symbolWidth, 16), this.pages = [], this.proximate = t.layout === "proximate" && !this.chart.inverted, this.baseline = void 0;
+    this.options = t, this.chart.styledMode || (this.itemStyle = t.itemStyle, this.itemHiddenStyle = vt(this.itemStyle, t.itemHiddenStyle)), this.itemMarginTop = t.itemMarginTop, this.itemMarginBottom = t.itemMarginBottom, this.padding = e, this.initialItemY = e - 5, this.symbolWidth = st(t.symbolWidth, 16), this.pages = [], this.proximate = t.layout === "proximate" && !this.chart.inverted, this.baseline = void 0;
   }
   /**
    * Update the legend with new options. Equivalent to running `chart.update`
@@ -20693,7 +20693,7 @@ class fr {
    */
   update(t, e) {
     const i = this.chart;
-    this.setOptions(bt(!0, this.options, t)), "events" in this.options && hr(this, this.options), this.destroy(), i.isDirtyLegend = i.isDirtyBox = !0, st(e, !0) && i.redraw(), ht(this, "afterUpdate", { redraw: e });
+    this.setOptions(vt(!0, this.options, t)), "events" in this.options && hr(this, this.options), this.destroy(), i.isDirtyLegend = i.isDirtyBox = !0, st(e, !0) && i.redraw(), ht(this, "afterUpdate", { redraw: e });
   }
   /**
    * Set the colors for the legend item.
@@ -20712,7 +20712,7 @@ class fr {
     const i = t.color, { area: s, group: r, label: n, line: o, symbol: a } = t.legendItem || {};
     if ((t instanceof K || t instanceof at) && (t.color = t.options?.legendSymbolColor || i), r?.[e ? "removeClass" : "addClass"]("highcharts-legend-item-hidden"), !this.chart.styledMode) {
       const { itemHiddenStyle: l = {} } = this, h = l.color, { fillColor: d, fillOpacity: f, lineColor: p, marker: u } = t.options, g = (x) => (e || (x.fill && (x.fill = h), x.stroke && (x.stroke = h)), x);
-      n?.css(bt(e ? this.itemStyle : l)), o?.attr(g({ stroke: p || t.color })), a && a.attr(g(u && a.isMarker ? (
+      n?.css(vt(e ? this.itemStyle : l)), o?.attr(g({ stroke: p || t.color })), a && a.attr(g(u && a.isMarker ? (
         // #585
         t.pointAttribs()
       ) : { fill: t.color })), s?.attr(g({
@@ -20845,7 +20845,7 @@ class fr {
   renderItem(t) {
     const e = this, i = t.legendItem = t.legendItem || {}, s = e.chart, r = s.renderer, n = e.options, o = n.layout === "horizontal", a = e.symbolWidth, l = n.symbolPadding || 0, h = e.itemStyle, d = e.itemHiddenStyle, f = o ? st(n.itemDistance, 20) : 0, p = !n.rtl, u = !t.series, g = !u && t.series.drawLegendSymbol ? t.series : t, x = g.options, m = !!e.createCheckboxForItem && x && x.showCheckbox, b = n.useHTML, y = t.options.className;
     let v = i.label, S = a + l + f + (m ? 20 : 0);
-    v || (i.group = r.g("legend-item").addClass("highcharts-" + g.type + "-series highcharts-color-" + t.colorIndex + (y ? " " + y : "") + (u ? " highcharts-series-" + t.index : "")).attr({ zIndex: 1 }).add(e.scrollGroup), i.label = v = r.text("", p ? a + l : -l, e.baseline || 0, b), s.styledMode || v.css(bt(t.visible ? h : d)), v.attr({
+    v || (i.group = r.g("legend-item").addClass("highcharts-" + g.type + "-series highcharts-color-" + t.colorIndex + (y ? " " + y : "") + (u ? " highcharts-series-" + t.index : "")).attr({ zIndex: 1 }).add(e.scrollGroup), i.label = v = r.text("", p ? a + l : -l, e.baseline || 0, b), s.styledMode || v.css(vt(t.visible ? h : d)), v.attr({
       align: p ? "left" : "right",
       zIndex: 2
     }).add(i.group), e.baseline || (e.fontMetrics = r.fontMetrics(v), e.baseline = e.fontMetrics.f + 3 + e.itemMarginTop, v.attr("y", e.baseline), e.symbolHeight = st(n.symbolHeight, e.fontMetrics.f), n.squareSymbol && (e.symbolWidth = st(n.symbolWidth, Math.max(e.symbolHeight, 16)), S = e.symbolWidth + l + f + (m ? 20 : 0), p && v.attr("x", e.symbolWidth + l))), g.drawLegendSymbol(e, t), e.setItemEvents && e.setItemEvents(t, v, b)), m && !t.checkbox && e.createCheckboxForItem && e.createCheckboxForItem(t), e.colorizeItem(t, t.visible), (s.styledMode || !h.width) && v.css({
@@ -20980,7 +20980,7 @@ class fr {
   align(t = this.chart.spacingBox) {
     const e = this.chart, i = this.options;
     let s = t.y;
-    /(lth|ct|rth)/.test(this.getAlignment()) && e.titleOffset[0] > 0 ? s += e.titleOffset[0] : /(lbh|cb|rbh)/.test(this.getAlignment()) && e.titleOffset[2] > 0 && (s -= e.titleOffset[2]), s !== t.y && (t = bt(t, { y: s })), e.hasRendered || (this.group.placed = !1), this.group.align(bt(i, {
+    /(lth|ct|rth)/.test(this.getAlignment()) && e.titleOffset[0] > 0 ? s += e.titleOffset[0] : /(lbh|cb|rbh)/.test(this.getAlignment()) && e.titleOffset[2] > 0 && (s -= e.titleOffset[2]), s !== t.y && (t = vt(t, { y: s })), e.hasRendered || (this.group.placed = !1), this.group.align(vt(i, {
       width: this.legendWidth,
       height: this.legendHeight,
       verticalAlign: this.proximate ? "top" : i.verticalAlign
@@ -21087,7 +21087,7 @@ class fr {
       p && p.on("mouseover", function() {
         t.visible && f("inactive"), t.setState("hover"), t.visible && n.addClass(l), h || e.css(s.options.itemHoverStyle);
       }).on("mouseout", function() {
-        s.chart.styledMode || e.css(bt(t.visible ? s.itemStyle : s.itemHiddenStyle)), f(""), n.removeClass(l), t.setState();
+        s.chart.styledMode || e.css(vt(t.visible ? s.itemStyle : s.itemHiddenStyle)), f(""), n.removeClass(l), t.setState();
       }).on("click", function(u) {
         const g = function() {
           t.setVisible && t.setVisible(), f(t.visible ? "inactive" : "");
@@ -21142,7 +21142,8 @@ class Tl {
   // Operations - Render.
   render = (t) => {
     try {
-      const e = new kt(t, {
+      console.log("0000", mt);
+      const e = new mt(t, {
         chart: { type: "column", reflow: !1 },
         title: { text: "Fruit Consumption" },
         xAxis: { categories: ["Apples", "Bananas", "Oranges"] },
