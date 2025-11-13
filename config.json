@@ -1,0 +1,12 @@
+{
+    "id": "datapos-tool-highcharts",
+    "label": {
+        "en-gb": "Highcharts Tool"
+    },
+    "description": {
+        "en-gb": "..."
+    },
+    "statusId": "alpha",
+    "typeId": "tool",
+    "version": "0.1.885"
+}
