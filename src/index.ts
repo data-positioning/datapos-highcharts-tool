@@ -4,8 +4,10 @@
 
 // Core Highcharts
 import Chart from 'highcharts/es-modules/Core/Chart/Chart.js';
+console.log('Chart', Chart);
 
-console.log('zzzz', Chart);
+import LineSeries from 'highcharts/es-modules/Series/Line/LineSeries.js';
+console.log('LineSeries', LineSeries);
 
 // Classes - Highcharts tool.
 export default class HighchartsTool {
