@@ -20,7 +20,7 @@ var Mi;
     return t;
   })(), c.charts = [], c.composed = [], c.dateFormats = {}, c.seriesTypes = {}, c.symbolSizes = {}, c.chartCount = 0;
 })(Mi || (Mi = {}));
-const I = Mi, { charts: br, doc: Ce, win: bt } = I;
+const I = Mi, { charts: br, doc: Ae, win: bt } = I;
 function Kt(c, t, e, i) {
   const s = t ? "Highcharts error" : "Highcharts warning";
   c === 32 && (c = `${s}: Deprecated member`);
@@ -112,7 +112,7 @@ function wr(c, t) {
       break;
     }
 }
-function Ar(c, t) {
+function Cr(c, t) {
   const e = c.options.index, i = t.length;
   let s;
   for (
@@ -134,7 +134,7 @@ function Ar(c, t) {
     }
   return s;
 }
-function Cr(c, t) {
+function Ar(c, t) {
   return c.indexOf(t) < 0 && !!c.push(t);
 }
 function Pt(c) {
@@ -176,7 +176,7 @@ function ki(c, t) {
   Et(c.style, t);
 }
 function Lr(c, t, e, i, s) {
-  const r = Ce.createElement(c);
+  const r = Ae.createElement(c);
   return t && Et(r, t), s && ki(r, { padding: "0", border: "none", margin: "0" }), e && ki(r, e), i && i.appendChild(r), r;
 }
 function Pr(c, t) {
@@ -341,7 +341,7 @@ const Yr = Array.prototype.find ? function(c, t) {
   }
 );
 function Vr(c) {
-  const t = Ce.documentElement, e = c.parentElement || c.parentNode ? c.getBoundingClientRect() : { top: 0, left: 0, width: 0, height: 0 };
+  const t = Ae.documentElement, e = c.parentElement || c.parentNode ? c.getBoundingClientRect() : { top: 0, left: 0, width: 0, height: 0 };
   return {
     top: e.top + (bt.pageYOffset || t.scrollTop) - (t.clientTop || 0),
     left: e.left + (bt.pageXOffset || t.scrollLeft) - (t.clientLeft || 0),
@@ -398,9 +398,9 @@ function or(c, t, e) {
   }
 }
 function ar(c, t, e, i) {
-  if (e = e || {}, Ce?.createEvent && (c.dispatchEvent || c.fireEvent && // Enable firing events on Highcharts instance.
+  if (e = e || {}, Ae?.createEvent && (c.dispatchEvent || c.fireEvent && // Enable firing events on Highcharts instance.
   c !== I)) {
-    const s = Ce.createEvent("Events");
+    const s = Ae.createEvent("Events");
     s.initEvent(t, !0, !0), e = Et(s, e), c.dispatchEvent ? c.dispatchEvent(e) : c.fireEvent(t, e);
   } else if (c.hcEvents) {
     e.target || Et(e, {
@@ -479,7 +479,7 @@ const z = {
   getMagnitude: rr,
   getNestedProperty: Gr,
   getStyle: Vt,
-  insertItem: Ar,
+  insertItem: Cr,
   isArray: Pe,
   isClass: er,
   isDOMElement: Ii,
@@ -494,7 +494,7 @@ const z = {
   pad: Er,
   pick: _t,
   pInt: tr,
-  pushUnique: Cr,
+  pushUnique: Ar,
   relativeLength: $r,
   removeEvent: or,
   replaceNested: Dr,
@@ -894,7 +894,7 @@ const Dt = {
   setAnimation: hn,
   stop: cr
 };
-var Ai;
+var Ci;
 (function(c) {
   c.xAxis = {
     /**
@@ -3864,8 +3864,8 @@ var Ai;
     gridLineWidth: 1,
     lineWidth: 0
   };
-})(Ai || (Ai = {}));
-const fn = Ai, pn = {
+})(Ci || (Ci = {}));
+const fn = Ci, pn = {
   /**
    * Default `mapData` for all series, in terms of a GeoJSON or TopoJSON
    * object. If set to a string, it functions as an index into the
@@ -5679,7 +5679,7 @@ class dr extends Mn {
     }), n;
   }
 }
-const { isTouchDevice: wn } = I, Ci = {
+const { isTouchDevice: wn } = I, Ai = {
   /**
    * An array containing the default colors for the chart's series. When
    * all colors are used, new colors are pulled from the start again.
@@ -8419,15 +8419,15 @@ const { isTouchDevice: wn } = I, Ci = {
      */
     text: "Highcharts.com"
   }
-}, An = new dr(Ci.time, Ci.lang), St = {
-  defaultOptions: Ci,
-  defaultTime: An
-}, { addEvent: Cn, isFunction: Tn, objectEach: On, removeEvent: Ln } = z;
+}, Cn = new dr(Ai.time, Ai.lang), St = {
+  defaultOptions: Ai,
+  defaultTime: Cn
+}, { addEvent: An, isFunction: Tn, objectEach: On, removeEvent: Ln } = z;
 var Ti;
 (function(c) {
   function t(e, i) {
     e.eventOptions = e.eventOptions || {}, On(i.events, function(s, r) {
-      e.eventOptions[r] !== s && (e.eventOptions[r] && (Ln(e, r, e.eventOptions[r]), delete e.eventOptions[r]), Tn(s) && (e.eventOptions[r] = s, Cn(e, r, s, {
+      e.eventOptions[r] !== s && (e.eventOptions[r] && (Ln(e, r, e.eventOptions[r]), delete e.eventOptions[r]), Tn(s) && (e.eventOptions[r] = s, An(e, r, s, {
         order: 0
         // #14080 fire those events as firsts
       })));
@@ -8499,11 +8499,11 @@ function Oe(c = "", t, e) {
     const { body: m, elseBody: b, expression: y, fn: v } = x;
     let S, M;
     if (v) {
-      const w = [x], k = [], A = y.length;
+      const w = [x], k = [], C = y.length;
       let T = 0, O;
-      for (M = 0; M <= A; M++) {
+      for (M = 0; M <= C; M++) {
         const B = y.charAt(M);
-        !O && (B === '"' || B === "'") ? O = B : O === B && (O = ""), !O && (B === " " || M === A) && (k.push(y.substr(T, M - T)), T = M + 1);
+        !O && (B === '"' || B === "'") ? O = B : O === B && (O = ""), !O && (B === " " || M === C) && (k.push(y.substr(T, M - T)), T = M + 1);
       }
       for (M = ke[v].length; M--; )
         w.unshift(d(k[M + 1]));
@@ -8513,12 +8513,12 @@ function Oe(c = "", t, e) {
       S = d(w.shift() || "");
       const k = S % 1 !== 0;
       if (typeof S == "number" && (w.length || k)) {
-        const A = w.join(":");
-        if (n.test(A) || k) {
-          const T = parseInt((A.match(o) || ["", "-1"])[1], 10);
-          S !== null && (S = h(S, T, a.decimalPoint, A.indexOf(",") > -1 ? a.thousandsSep : ""));
+        const C = w.join(":");
+        if (n.test(C) || k) {
+          const T = parseInt((C.match(o) || ["", "-1"])[1], 10);
+          S !== null && (S = h(S, T, a.decimalPoint, C.indexOf(",") > -1 ? a.thousandsSep : ""));
         } else
-          S = l.dateFormat(A, S);
+          S = l.dateFormat(C, S);
       }
       s.lastIndex = 0, s.test(x.find) && Bn(S) && (S = `"${S}"`);
     }
@@ -8794,7 +8794,7 @@ class Ut {
     e && !t.isNew && (e.animate({ opacity: 0 }, void 0, e.destroy), delete t.label), i.isDirty = !0, t.label = t.movedLabel, delete t.movedLabel;
   }
 }
-const { animObject: Gn } = Dt, { xAxis: is, yAxis: Yn } = fn, { defaultOptions: Oi } = St, { registerEventOptions: Vn } = Ni, { deg2rad: Un } = I, { arrayMax: ss, arrayMin: Kn, clamp: Ve, correctFloat: Q, defined: R, destroyObjectProperties: qn, erase: rs, error: Ue, extend: we, fireEvent: F, getClosestDistance: ns, insertItem: Zn, isArray: os, isNumber: C, isString: as, merge: Ae, normalizeTickInterval: _n, objectEach: ne, pick: L, relativeLength: oe, removeEvent: Jn, splat: Qn, syncTimeout: to } = z, ls = (c, t) => _n(t, void 0, void 0, L(
+const { animObject: Gn } = Dt, { xAxis: is, yAxis: Yn } = fn, { defaultOptions: Oi } = St, { registerEventOptions: Vn } = Ni, { deg2rad: Un } = I, { arrayMax: ss, arrayMin: Kn, clamp: Ve, correctFloat: Q, defined: R, destroyObjectProperties: qn, erase: rs, error: Ue, extend: we, fireEvent: F, getClosestDistance: ns, insertItem: Zn, isArray: os, isNumber: A, isString: as, merge: Ce, normalizeTickInterval: _n, objectEach: ne, pick: L, relativeLength: oe, removeEvent: Jn, splat: Qn, syncTimeout: to } = z, ls = (c, t) => _n(t, void 0, void 0, L(
   c.options.allowDecimals,
   // If the tick interval is greater than 0.5, avoid decimals, as
   // linear axes are often used to render discrete values (#3363). If
@@ -8802,7 +8802,7 @@ const { animObject: Gn } = Dt, { xAxis: is, yAxis: Yn } = fn, { defaultOptions: 
   // the chances for a good fit.
   t < 0.5 || c.tickAmount !== void 0
 ), !!c.tickAmount);
-we(Oi, { xAxis: is, yAxis: Ae(is, Yn) });
+we(Oi, { xAxis: is, yAxis: Ce(is, Yn) });
 class Zt {
   /* *
    *
@@ -8847,7 +8847,7 @@ class Zt {
     const o = r.options, a = o.labels;
     r.type ?? (r.type = o.type || "linear"), r.uniqueNames ?? (r.uniqueNames = o.uniqueNames ?? !0), F(r, "afterSetType"), r.userOptions = e, r.minPixelPadding = 0, r.reversed = L(o.reversed, r.reversed), r.visible = o.visible, r.zoomEnabled = o.zoomEnabled, r.hasNames = this.type === "category" || o.categories === !0, r.categories = os(o.categories) && o.categories || (r.hasNames ? [] : void 0), r.names || (r.names = [], r.names.keys = {}), r.plotLinesAndBandsGroups = {}, r.positiveValuesOnly = !!r.logarithmic, r.isLinked = R(o.linkedTo), r.ticks = {}, r.labelEdge = [], r.minorTicks = {}, r.plotLinesAndBands = [], r.alternateBands = {}, r.len ?? (r.len = 0), r.minRange = r.userMinRange = o.minRange || o.maxZoom, r.range = o.range, r.offset = o.offset || 0, r.max = void 0, r.min = void 0;
     const l = L(o.crosshair, Qn(t.options.tooltip.crosshairs)[s ? 0 : 1]);
-    r.crosshair = l === !0 ? {} : l, t.axes.indexOf(r) === -1 && (s ? t.axes.splice(t.xAxis.length, 0, r) : t.axes.push(r), Zn(this, t[this.coll])), t.orderItems(r.coll), r.series = r.series || [], t.inverted && !r.isZAxis && s && !R(r.reversed) && (r.reversed = !0), r.labelRotation = C(a.rotation) ? a.rotation : void 0, Vn(r, o), F(this, "afterInit");
+    r.crosshair = l === !0 ? {} : l, t.axes.indexOf(r) === -1 && (s ? t.axes.splice(t.xAxis.length, 0, r) : t.axes.push(r), Zn(this, t[this.coll])), t.orderItems(r.coll), r.series = r.series || [], t.inverted && !r.isZAxis && s && !R(r.reversed) && (r.reversed = !0), r.labelRotation = A(a.rotation) ? a.rotation : void 0, Vn(r, o), F(this, "afterInit");
   }
   /**
    * Merge and set options.
@@ -8882,7 +8882,7 @@ class Zt {
         }
       }
     );
-    this.options = Ae(
+    this.options = Ce(
       e,
       // Merge in the default title for y-axis, which changes with
       // language settings
@@ -8913,7 +8913,7 @@ class Zt {
    * The formatted label content.
    */
   defaultLabelFormatter() {
-    const t = this.axis, e = this.chart, { numberFormatter: i } = e, s = C(this.value) ? this.value : NaN, r = t.chart.time, n = t.categories, o = this.dateTimeLabelFormat, a = Oi.lang, l = a.numericSymbols, h = a.numericSymbolMagnitude || 1e3, d = t.logarithmic ? Math.abs(s) : t.tickInterval;
+    const t = this.axis, e = this.chart, { numberFormatter: i } = e, s = A(this.value) ? this.value : NaN, r = t.chart.time, n = t.categories, o = this.dateTimeLabelFormat, a = Oi.lang, l = a.numericSymbols, h = a.numericSymbolMagnitude || 1e3, d = t.logarithmic ? Math.abs(s) : t.tickInterval;
     let f = l?.length, p, u;
     if (n)
       u = `${this.value}`;
@@ -8948,11 +8948,11 @@ class Zt {
           const s = i.options;
           let r, n = s.threshold, o, a;
           if (t.hasVisibleSeries = !0, t.positiveValuesOnly && (n || 0) <= 0 && (n = void 0), t.isXAxis)
-            r = i.getColumn("x"), r.length && (r = t.logarithmic ? r.filter((l) => l > 0) : r, e = i.getXExtremes(r), o = e.min, a = e.max, !C(o) && // #5010:
-            !(o instanceof Date) && (r = r.filter(C), e = i.getXExtremes(r), o = e.min, a = e.max), r.length && (t.dataMin = Math.min(L(t.dataMin, o), o), t.dataMax = Math.max(L(t.dataMax, a), a)));
+            r = i.getColumn("x"), r.length && (r = t.logarithmic ? r.filter((l) => l > 0) : r, e = i.getXExtremes(r), o = e.min, a = e.max, !A(o) && // #5010:
+            !(o instanceof Date) && (r = r.filter(A), e = i.getXExtremes(r), o = e.min, a = e.max), r.length && (t.dataMin = Math.min(L(t.dataMin, o), o), t.dataMax = Math.max(L(t.dataMax, a), a)));
           else {
             const l = i.applyExtremes();
-            C(l.dataMin) && (o = l.dataMin, t.dataMin = Math.min(L(t.dataMin, o), o)), C(l.dataMax) && (a = l.dataMax, t.dataMax = Math.max(L(t.dataMax, a), a)), R(n) && (t.threshold = n), (!s.softThreshold || t.positiveValuesOnly) && (t.softThreshold = !1);
+            A(l.dataMin) && (o = l.dataMin, t.dataMin = Math.min(L(t.dataMin, o), o)), A(l.dataMax) && (a = l.dataMax, t.dataMax = Math.max(L(t.dataMax, a), a)), R(n) && (t.threshold = n), (!s.softThreshold || t.positiveValuesOnly) && (t.softThreshold = !1);
           }
         }
       });
@@ -8967,11 +8967,11 @@ class Zt {
    */
   translate(t, e, i, s, r, n) {
     const o = this.linkedParent || this, a = s && o.old ? o.old.min : o.min;
-    if (!C(a))
+    if (!A(a))
       return NaN;
     const l = o.minPixelPadding, h = (o.isOrdinal || o.brokenAxis?.hasBreaks || o.logarithmic && r) && !!o.lin2val;
     let d = 1, f = 0, p = s && o.old ? o.old.transA : o.transA, u = 0;
-    return p || (p = o.transA), i && (d *= -1, f = o.len), o.reversed && (d *= -1, f -= d * (o.sector || o.len)), e ? (t = t * d + f, t -= l, u = t / p + a, h && (u = o.lin2val(u))) : (h && (t = o.val2lin(t)), u = d * (t - a) * p + f + d * l + (C(n) ? p * n : 0), o.isRadial || (u = Q(u))), u;
+    return p || (p = o.transA), i && (d *= -1, f = o.len), o.reversed && (d *= -1, f -= d * (o.sector || o.len)), e ? (t = t * d + f, t -= l, u = t / p + a, h && (u = o.lin2val(u))) : (h && (t = o.val2lin(t)), u = d * (t - a) * p + f + d * l + (A(n) ? p * n : 0), o.isRadial || (u = Q(u))), u;
   }
   /**
    * Translate a value in terms of axis units into pixels within the chart.
@@ -9039,7 +9039,7 @@ class Zt {
       translatedValue: f
     };
     return F(this, "getPlotLinePath", v, function(S) {
-      f = L(f, e.translate(o, void 0, void 0, n)), f = Ve(f, -1e9, 1e9), u = x = f + d, g = m = l - f - d, C(f) ? e.horiz ? (g = r, m = l - e.bottom + (e.options.isInternal ? 0 : i.scrollablePixelsY || 0), u = x = y(u, s, s + e.width)) : (u = s, x = h - e.right + (i.scrollablePixelsX || 0), g = m = y(g, r, r + e.height)) : (b = !0, p = !1), S.path = b && !p ? void 0 : i.renderer.crispLine([["M", u, g], ["L", x, m]], a || 1);
+      f = L(f, e.translate(o, void 0, void 0, n)), f = Ve(f, -1e9, 1e9), u = x = f + d, g = m = l - f - d, A(f) ? e.horiz ? (g = r, m = l - e.bottom + (e.options.isInternal ? 0 : i.scrollablePixelsY || 0), u = x = y(u, s, s + e.width)) : (u = s, x = h - e.right + (i.scrollablePixelsX || 0), g = m = y(g, r, r + e.height)) : (b = !0, p = !1), S.path = b && !p ? void 0 : i.renderer.crispLine([["M", u, g], ["L", x, m]], a || 1);
     }), v.path;
   }
   /**
@@ -9127,7 +9127,7 @@ class Zt {
     t.isXAxis && typeof o > "u" && !i && (R(e.min) || R(e.max) || R(e.floor) || R(e.ceiling) ? o = null : (h = ns(t.series.map((p) => {
       const u = p.getColumn("x");
       return p.xIncrement ? u.slice(0, 2) : u;
-    })) || 0, o = Math.min(h * 5, t.dataMax - t.dataMin))), C(r) && C(n) && C(o) && r - n < o && (l = t.dataMax - t.dataMin >= o, a = (o - r + n) / 2, d = [
+    })) || 0, o = Math.min(h * 5, t.dataMax - t.dataMin))), A(r) && A(n) && A(o) && r - n < o && (l = t.dataMax - t.dataMin >= o, a = (o - r + n) / 2, d = [
       n - a,
       s.parse(e.min) ?? n - a
     ], l && (d[2] = i ? i.log2lin(t.dataMin) : t.dataMin), n = ss(d), f = [
@@ -9172,7 +9172,7 @@ class Zt {
   nameToX(t) {
     const e = os(this.options.categories), i = e ? this.categories : this.names;
     let s = t.options.x, r;
-    return t.series.requireSorting = !1, R(s) || (s = this.uniqueNames && i ? e ? i.indexOf(t.name) : L(i.keys[t.name], -1) : t.series.autoIncrement()), s === -1 ? !e && i && (r = i.length) : C(s) && (r = s), typeof r < "u" ? (this.names[r] = t.name, this.names.keys[t.name] = r) : t.x && (r = t.x), r;
+    return t.series.requireSorting = !1, R(s) || (s = this.uniqueNames && i ? e ? i.indexOf(t.name) : L(i.keys[t.name], -1) : t.series.autoIncrement()), s === -1 ? !e && i && (r = i.length) : A(s) && (r = s), typeof r < "u" ? (this.names[r] = t.name, this.names.keys[t.name] = r) : t.x && (r = t.x), r;
   }
   /**
    * When changes have been done to series data, update the axis.names.
@@ -9218,7 +9218,7 @@ class Zt {
    */
   minFromRange() {
     const { max: t, min: e } = this;
-    return C(t) && C(e) && t - e || void 0;
+    return A(t) && A(e) && t - e || void 0;
   }
   /**
    * Set the tick positions to round values and optionally extend the extremes
@@ -9233,16 +9233,16 @@ class Zt {
    * @emits Highcharts.Axis#event:foundExtremes
    */
   setTickInterval(t) {
-    const e = this, { categories: i, chart: s, dataMax: r, dataMin: n, dateTime: o, isXAxis: a, logarithmic: l, options: h, softThreshold: d } = e, f = s.time, p = C(e.threshold) ? e.threshold : void 0, u = e.minRange || 0, { ceiling: g, floor: x, linkedTo: m, softMax: b, softMin: y } = h, v = C(m) && s[e.coll]?.[m], S = h.tickPixelInterval;
-    let M = h.maxPadding, w = h.minPadding, k = 0, A, T = C(h.tickInterval) && h.tickInterval >= 0 ? h.tickInterval : void 0, O, B, D, N;
-    if (!o && !i && !v && this.getTickAmount(), D = L(e.userMin, f.parse(h.min)), N = L(e.userMax, f.parse(h.max)), v ? (e.linkedParent = v, A = v.getExtremes(), e.min = L(A.min, A.dataMin), e.max = L(A.max, A.dataMax), this.type !== v.type && Ue(11, !0, s)) : (d && R(p) && C(r) && C(n) && (n >= p ? (O = p, w = 0) : r <= p && (B = p, M = 0)), e.min = L(D, O, n), e.max = L(N, B, r)), C(e.max) && C(e.min) && (l && (e.positiveValuesOnly && !t && Math.min(e.min, L(n, e.min)) <= 0 && Ue(10, !0, s), e.min = Q(l.log2lin(e.min), 16), e.max = Q(l.log2lin(e.max), 16)), e.range && C(n) && (e.userMin = e.min = D = Math.max(n, e.minFromRange() || 0), e.userMax = N = e.max, e.range = void 0)), F(e, "foundExtremes"), e.adjustForMinRange(), C(e.min) && C(e.max)) {
-      if (!C(e.userMin) && C(y) && y < e.min && (e.min = D = y), !C(e.userMax) && C(b) && b > e.max && (e.max = N = b), !i && !e.axisPointRange && !e.stacking?.usePercentage && !v && (k = e.max - e.min, k && (!R(D) && w && (e.min -= k * w), !R(N) && M && (e.max += k * M))), !C(e.userMin) && C(x) && (e.min = Math.max(e.min, x)), !C(e.userMax) && C(g) && (e.max = Math.min(e.max, g)), d && C(n) && C(r)) {
+    const e = this, { categories: i, chart: s, dataMax: r, dataMin: n, dateTime: o, isXAxis: a, logarithmic: l, options: h, softThreshold: d } = e, f = s.time, p = A(e.threshold) ? e.threshold : void 0, u = e.minRange || 0, { ceiling: g, floor: x, linkedTo: m, softMax: b, softMin: y } = h, v = A(m) && s[e.coll]?.[m], S = h.tickPixelInterval;
+    let M = h.maxPadding, w = h.minPadding, k = 0, C, T = A(h.tickInterval) && h.tickInterval >= 0 ? h.tickInterval : void 0, O, B, D, N;
+    if (!o && !i && !v && this.getTickAmount(), D = L(e.userMin, f.parse(h.min)), N = L(e.userMax, f.parse(h.max)), v ? (e.linkedParent = v, C = v.getExtremes(), e.min = L(C.min, C.dataMin), e.max = L(C.max, C.dataMax), this.type !== v.type && Ue(11, !0, s)) : (d && R(p) && A(r) && A(n) && (n >= p ? (O = p, w = 0) : r <= p && (B = p, M = 0)), e.min = L(D, O, n), e.max = L(N, B, r)), A(e.max) && A(e.min) && (l && (e.positiveValuesOnly && !t && Math.min(e.min, L(n, e.min)) <= 0 && Ue(10, !0, s), e.min = Q(l.log2lin(e.min), 16), e.max = Q(l.log2lin(e.max), 16)), e.range && A(n) && (e.userMin = e.min = D = Math.max(n, e.minFromRange() || 0), e.userMax = N = e.max, e.range = void 0)), F(e, "foundExtremes"), e.adjustForMinRange(), A(e.min) && A(e.max)) {
+      if (!A(e.userMin) && A(y) && y < e.min && (e.min = D = y), !A(e.userMax) && A(b) && b > e.max && (e.max = N = b), !i && !e.axisPointRange && !e.stacking?.usePercentage && !v && (k = e.max - e.min, k && (!R(D) && w && (e.min -= k * w), !R(N) && M && (e.max += k * M))), !A(e.userMin) && A(x) && (e.min = Math.max(e.min, x)), !A(e.userMax) && A(g) && (e.max = Math.min(e.max, g)), d && A(n) && A(r)) {
         const $ = p || 0;
         !R(D) && e.min < $ && n >= $ ? e.min = h.minRange ? Math.min($, e.max - u) : $ : !R(N) && e.max > $ && r <= $ && (e.max = h.minRange ? Math.max($, e.min + u) : $);
       }
       !s.polar && e.min > e.max && (R(h.min) ? e.max = e.min : R(h.max) && (e.min = e.max)), k = e.max - e.min;
     }
-    if (e.min === e.max || !C(e.min) || !C(e.max) ? e.tickInterval = 1 : v && !T && S === v.options.tickPixelInterval ? e.tickInterval = T = v.tickInterval : e.tickInterval = L(
+    if (e.min === e.max || !A(e.min) || !A(e.max) ? e.tickInterval = 1 : v && !T && S === v.options.tickPixelInterval ? e.tickInterval = T = v.tickInterval : e.tickInterval = L(
       T,
       this.tickAmount ? k / Math.max(this.tickAmount - 1, 1) : void 0,
       // For categorized axis, 1 is default, for linear axis use
@@ -9281,7 +9281,7 @@ class Zt {
     (this.min % 1 === 0 || // Between integers and decimals are not allowed (#6274)
     e.allowDecimals !== !1), i)
       l = i.slice();
-    else if (C(this.min) && C(this.max)) {
+    else if (A(this.min) && A(this.max)) {
       if (!t.ordinal?.positions && (this.max - this.min) / this.tickInterval > Math.max(2 * this.len, 200))
         l = [this.min, this.max], Ue(19, !1, this.chart);
       else if (t.dateTime)
@@ -9299,7 +9299,7 @@ class Zt {
         l[l.length - 1]
       ], l[0] === l[1] && (l.length = 1)), s && (this.tickPositions = l, h = s.apply(t, [this.min, this.max]), h && (l = h));
     }
-    this.tickPositions = l, this.minorTickInterval = r === "auto" && this.tickInterval ? this.tickInterval / e.minorTicksPerMajor : r, this.paddedTicks = l.slice(0), this.trimTicks(l, o, a), !this.isLinked && C(this.min) && C(this.max) && (this.single && l.length < 2 && !this.categories && !this.series.some((d) => d.is("heatmap") && d.options.pointPlacement === "between") && (this.min -= 0.5, this.max += 0.5), !i && !h && this.adjustTickAmount()), F(this, "afterSetTickPositions");
+    this.tickPositions = l, this.minorTickInterval = r === "auto" && this.tickInterval ? this.tickInterval / e.minorTicksPerMajor : r, this.paddedTicks = l.slice(0), this.trimTicks(l, o, a), !this.isLinked && A(this.min) && A(this.max) && (this.single && l.length < 2 && !this.categories && !this.series.some((d) => d.is("heatmap") && d.options.pointPlacement === "between") && (this.min -= 0.5, this.max += 0.5), !i && !h && this.adjustTickAmount()), F(this, "afterSetTickPositions");
   }
   /**
    * Handle startOnTick and endOnTick by either adapting to padding min/max or
@@ -9370,7 +9370,7 @@ class Zt {
     if (a && n) {
       i.forEach((h) => {
         const d = h.getThresholdAlignment(t);
-        C(d) && o.push(d);
+        A(d) && o.push(d);
       });
       const l = o.length > 1 ? o.reduce((h, d) => h += d, 0) / o.length : void 0;
       i.forEach((h) => {
@@ -9387,7 +9387,7 @@ class Zt {
    * @function Highcharts.Axis#getThresholdAlignment
    */
   getThresholdAlignment(t) {
-    if ((!C(this.dataMin) || this !== t && this.series.some((e) => e.isDirty || e.isDirtyData)) && this.getSeriesExtremes(), C(this.threshold)) {
+    if ((!A(this.dataMin) || this !== t && this.series.some((e) => e.isDirty || e.isDirtyData)) && this.getSeriesExtremes(), A(this.threshold)) {
       let e = Ve((this.threshold - (this.dataMin || 0)) / ((this.dataMax || 0) - (this.dataMin || 0)), 0, 1);
       return this.options.reversed && (e = 1 - e), e;
     }
@@ -9415,11 +9415,11 @@ class Zt {
     const t = this, { finalTickAmt: e, max: i, min: s, options: r, tickPositions: n, tickAmount: o, thresholdAlignment: a } = t, l = n?.length, h = L(t.threshold, t.softThreshold ? 0 : null);
     let d, f, p = t.tickInterval, u;
     const g = () => n.push(Q(n[n.length - 1] + p)), x = () => n.unshift(Q(n[0] - p));
-    if (C(a) && (u = a < 0.5 ? Math.ceil(a * (o - 1)) : Math.floor(a * (o - 1)), r.reversed && (u = o - 1 - u)), t.hasData() && C(s) && C(i)) {
+    if (A(a) && (u = a < 0.5 ? Math.ceil(a * (o - 1)) : Math.floor(a * (o - 1)), r.reversed && (u = o - 1 - u)), t.hasData() && A(s) && A(i)) {
       const m = () => {
         t.transA *= (l - 1) / (o - 1), t.min = r.startOnTick ? n[0] : Math.min(s, n[0]), t.max = r.endOnTick ? n[n.length - 1] : Math.max(i, n[n.length - 1]);
       };
-      if (C(u) && C(t.threshold)) {
+      if (A(u) && A(t.threshold)) {
         for (; n[u] !== h || n.length !== o || n[0] > s || n[n.length - 1] < i; ) {
           for (n.length = 0, n.push(t.threshold); n.length < o; )
             // Start by prepending positions until the threshold
@@ -9623,14 +9623,14 @@ class Zt {
     };
     let h = s, d, f = Number.MAX_VALUE, p;
     if (i) {
-      if (t.staggerLines || (C(n) ? p = [n] : r < t.autoRotationLimit && (p = t.autoRotation)), p) {
+      if (t.staggerLines || (A(n) ? p = [n] : r < t.autoRotationLimit && (p = t.autoRotation)), p) {
         let u, g;
         for (const x of p)
           (x === n || x && x >= -90 && x <= 90) && (u = l(Math.abs(o / Math.sin(Un * x))), g = u + Math.abs(x / 360), g < f && (f = g, d = x, h = u));
       }
     } else
       h = l(o * 0.75);
-    return this.autoRotation = p, this.labelRotation = L(d, C(n) ? n : 0), t.step ? s : h;
+    return this.autoRotation = p, this.labelRotation = L(d, A(n) ? n : 0), t.step ? s : h;
   }
   /**
    * Get the general slot width for labels/categories on this axis. This may
@@ -9649,7 +9649,7 @@ class Zt {
    */
   getSlotWidth(t) {
     const e = this.chart, i = this.horiz, s = this.options.labels, r = Math.max(this.tickPositions.length - (this.categories ? 0 : 1), 1), n = e.margin[3];
-    if (t && C(t.slotWidth))
+    if (t && A(t.slotWidth))
       return t.slotWidth;
     if (i && s.step < 2 && !this.isRadial)
       return s.rotation ? 0 : (this.staggerLines || 1) * this.len / r;
@@ -9726,7 +9726,7 @@ class Zt {
       zIndex: 7,
       rotation: o.rotation || 0,
       align: l
-    }).addClass("highcharts-axis-title"), a || e.axisTitle.css(Ae(o.style)), e.axisTitle.add(e.axisGroup), e.axisTitle.isNew = !0), !a && !o.style.width && !e.isRadial && e.axisTitle.css({
+    }).addClass("highcharts-axis-title"), a || e.axisTitle.css(Ce(o.style)), e.axisTitle.add(e.axisGroup), e.axisTitle.isNew = !0), !a && !o.style.width && !e.isRadial && e.axisTitle.css({
       width: e.len + "px"
     }), e.axisTitle[t ? "show" : "hide"](t);
   }
@@ -9773,14 +9773,14 @@ class Zt {
    * @emits Highcharts.Axis#event:afterGetOffset
    */
   getOffset() {
-    const t = this, { chart: e, horiz: i, options: s, side: r, ticks: n, tickPositions: o, coll: a } = t, l = e.inverted && !t.isZAxis ? [1, 0, 3, 2][r] : r, h = t.hasData(), d = s.title, f = s.labels, p = C(s.crossing), u = e.axisOffset, g = e.clipOffset, x = [-1, 1, 1, -1][r];
+    const t = this, { chart: e, horiz: i, options: s, side: r, ticks: n, tickPositions: o, coll: a } = t, l = e.inverted && !t.isZAxis ? [1, 0, 3, 2][r] : r, h = t.hasData(), d = s.title, f = s.labels, p = A(s.crossing), u = e.axisOffset, g = e.clipOffset, x = [-1, 1, 1, -1][r];
     let m, b = 0, y, v = 0, S = 0, M, w;
     if (t.showAxis = m = h || s.showEmpty, t.staggerLines = t.horiz && f.staggerLines || void 0, t.createGroups(), h || t.isLinked ? (o.forEach(function(k) {
       t.generateTick(k);
     }), t.renderUnsquish(), t.reserveSpaceDefault = r === 0 || r === 2 || { 1: "left", 3: "right" }[r] === t.labelAlign, L(f.reserveSpace, p ? !1 : null, t.labelAlign === "center" ? !0 : null, t.reserveSpaceDefault) && o.forEach(function(k) {
       S = Math.max(n[k].getLabelSize(), S);
-    }), t.staggerLines && (S *= t.staggerLines), t.labelOffset = S * (t.opposite ? -1 : 1)) : ne(n, function(k, A) {
-      k.destroy(), delete n[A];
+    }), t.staggerLines && (S *= t.staggerLines), t.labelOffset = S * (t.opposite ? -1 : 1)) : ne(n, function(k, C) {
+      k.destroy(), delete n[C];
     }), d?.text && d.enabled !== !1 && (t.addTitle(m), m && !p && d.reserveSpace !== !1 && (t.titleOffset = b = t.axisTitle.getBBox()[i ? "height" : "width"], y = d.offset, v = R(y) ? 0 : L(d.margin, i ? 5 : 10))), t.renderLine(), t.offset = x * L(s.offset, u[r] ? u[r] + (s.margin || 0) : 0), t.tickRotCorr = t.tickRotCorr || { x: 0, y: 0 }, r === 0 ? w = -t.labelMetrics().h : r === 2 ? w = t.tickRotCorr.y : w = 0, M = Math.abs(S) + v, S && (M -= w, M += x * (i ? L(f.y, t.tickRotCorr.y + x * f.distance) : L(f.x, x * f.distance))), t.axisTitleMargin = L(y, M), t.getMaxLabelDimensions && (t.maxLabelDimensions = t.getMaxLabelDimensions(n, o)), a !== "colorAxis" && g) {
       const k = this.tickSize("tick");
       u[r] = Math.max(
@@ -9791,11 +9791,11 @@ class Zt {
         o?.length && k ? k[0] + x * t.offset : 0
         // #4866
       );
-      const A = !t.axisLine || s.offset ? 0 : (
+      const C = !t.axisLine || s.offset ? 0 : (
         // #4308, #4371
         t.axisLine.strokeWidth() / 2
       );
-      g[l] = Math.max(g[l], A);
+      g[l] = Math.max(g[l], C);
     }
     F(this, "afterGetOffset");
   }
@@ -9920,7 +9920,7 @@ class Zt {
       ne(S, function(M) {
         M.isActive = !1;
       });
-    }), C(u)) {
+    }), A(u)) {
       const S = this.isXAxis ? e.yAxis[0] : e.xAxis[0], M = [1, -1, -1, 1][this.side];
       if (S) {
         let w = S.toPixels(u, !0);
@@ -9928,7 +9928,7 @@ class Zt {
       }
     }
     if (t.hasData() || n) {
-      const S = t.chart.hasRendered && t.old && C(t.old.min);
+      const S = t.chart.hasRendered && t.old && A(t.old.min);
       t.minorTickInterval && !t.categories && t.getMinorTickPositions().forEach(function(M) {
         t.renderMinorTick(M, S);
       }), o.length && (o.forEach(function(M, w) {
@@ -9946,12 +9946,12 @@ class Zt {
     }
     [l, h, d].forEach(function(S) {
       const M = [], w = b.duration, k = function() {
-        let A = M.length;
-        for (; A--; )
-          S[M[A]] && !S[M[A]].isActive && (S[M[A]].destroy(), delete S[M[A]]);
+        let C = M.length;
+        for (; C--; )
+          S[M[C]] && !S[M[C]].isActive && (S[M[C]].destroy(), delete S[M[C]]);
       };
-      ne(S, function(A, T) {
-        A.isActive || (A.render(T, !1, 0), A.isActive = !1, M.push(T));
+      ne(S, function(C, T) {
+        C.isActive || (C.render(T, !1, 0), C.isActive = !1, M.push(T));
       }), to(k, S === d || !e.hasRendered || !w ? 0 : w);
     }), x && (x[x.isPlaced ? "animate" : "attr"]({
       d: this.getLinePath(x.strokeWidth())
@@ -10111,7 +10111,7 @@ class Zt {
    */
   update(t, e) {
     const i = this.chart;
-    t = Ae(this.userOptions, t), this.destroy(!0), this.init(i, t), i.isDirtyBox = !0, L(e, !0) && i.redraw();
+    t = Ce(this.userOptions, t), this.destroy(!0), this.init(i, t), i.isDirtyBox = !0, L(e, !0) && i.redraw();
   }
   /**
    * Remove the axis from the chart.
@@ -11400,7 +11400,7 @@ class pt {
     return e ? this.series.chart.renderer.symbols.circle(yo(e[0], 1) - t, e[1] - t, t * 2, t * 2) : [];
   }
 }
-const Ao = {
+const Co = {
   // Base series options
   /**
    * The SVG value used for the `stroke-linecap` and `stroke-linejoin`
@@ -13811,7 +13811,7 @@ const Ao = {
    * @private
    */
   findNearestPointBy: "x"
-}, { defaultOptions: xs } = St, { extend: Co, extendClass: To, merge: Oo } = z;
+}, { defaultOptions: xs } = St, { extend: Ao, extendClass: To, merge: Oo } = z;
 var $i;
 (function(c) {
   c.seriesTypes = I.seriesTypes;
@@ -13827,13 +13827,13 @@ var $i;
     if (t(i, h), c.seriesTypes[i].prototype.type = i, o) {
       class d extends pt {
       }
-      Co(d.prototype, o), c.seriesTypes[i].prototype.pointClass = d;
+      Ao(d.prototype, o), c.seriesTypes[i].prototype.pointClass = d;
     }
     return c.seriesTypes[i];
   }
   c.seriesType = e;
 })($i || ($i = {}));
-const Mt = $i, { animate: Lo, animObject: Po, stop: ys } = Dt, { deg2rad: bs, doc: wt, svg: Eo, SVG_NS: he, win: $o, isFirefox: Do } = I, { addEvent: Io, attr: Je, createElement: Bo, crisp: ce, css: vs, defined: rt, erase: No, extend: Wt, fireEvent: Qe, getAlignFactor: ti, isArray: Ss, isFunction: Ms, isNumber: Ro, isObject: zo, isString: ks, merge: ei, objectEach: At, pick: ot, pInt: de, pushUnique: Wo, replaceNested: Fo, syncTimeout: jo, uniqueKey: ws } = z;
+const Mt = $i, { animate: Lo, animObject: Po, stop: ys } = Dt, { deg2rad: bs, doc: wt, svg: Eo, SVG_NS: he, win: $o, isFirefox: Do } = I, { addEvent: Io, attr: Je, createElement: Bo, crisp: ce, css: vs, defined: rt, erase: No, extend: Wt, fireEvent: Qe, getAlignFactor: ti, isArray: Ss, isFunction: Ms, isNumber: Ro, isObject: zo, isString: ks, merge: ei, objectEach: Ct, pick: ot, pInt: de, pushUnique: Wo, replaceNested: Fo, syncTimeout: jo, uniqueKey: ws } = z;
 class H {
   // @todo public zIndex?: number;
   /* *
@@ -14004,7 +14004,7 @@ class H {
     const s = Po(ot(e, this.renderer.globalAnimation, !0)), r = s.defer;
     return wt.hidden && (s.duration = 0), s.duration !== 0 ? (i && (s.complete = i), jo(() => {
       this.element && Lo(this, t, s);
-    }, r)) : (this.attr(t, void 0, i || s.complete), At(t, function(n, o) {
+    }, r)) : (this.attr(t, void 0, i || s.complete), Ct(t, function(n, o) {
       s.step && s.step.call(this, n, { prop: o, pos: 1, elem: this });
     }, this)), this;
   }
@@ -14126,7 +14126,7 @@ class H {
   attr(t, e, i, s) {
     const { element: r } = this, n = H.symbolCustomAttribs;
     let o, a, l = this, h, d;
-    return typeof t == "string" && typeof e < "u" && (o = t, t = {}, t[o] = e), typeof t == "string" ? l = (this[t + "Getter"] || this._defaultGetter).call(this, t, r) : (At(t, function(p, u) {
+    return typeof t == "string" && typeof e < "u" && (o = t, t = {}, t[o] = e), typeof t == "string" ? l = (this[t + "Getter"] || this._defaultGetter).call(this, t, r) : (Ct(t, function(p, u) {
       h = !1, s || ys(this, u), this.symbolName && n.indexOf(u) !== -1 && (a || (this.symbolAttr(t), a = !0), h = !0), this.rotation && (u === "x" || u === "y") && (this.doTransform = !0), h || (d = this[u + "Setter"] || this._defaultSetter, d.call(this, p, u, r));
     }, this), this.afterSetters()), i && i.call(this), l;
   }
@@ -14204,9 +14204,9 @@ class H {
           x2: o[2],
           y2: o[3],
           gradientUnits: "userSpaceOnUse"
-        }), n === "radialGradient" && p && !rt(o.gradientUnits) && (a = o, o = ei(o, s.getRadialAttr(p, a), { gradientUnits: "userSpaceOnUse" })), At(o, function(m, b) {
+        }), n === "radialGradient" && p && !rt(o.gradientUnits) && (a = o, o = ei(o, s.getRadialAttr(p, a), { gradientUnits: "userSpaceOnUse" })), Ct(o, function(m, b) {
           b !== "id" && g.push(b, m);
-        }), At(h, function(m) {
+        }), Ct(h, function(m) {
           g.push(m);
         }), g = g.join(","), l[g])
           u = l[g].attr("id");
@@ -14249,7 +14249,7 @@ class H {
   css(t) {
     const e = this.styles, i = {}, s = this.element;
     let r, n = !e;
-    if (e && At(t, function(o, a) {
+    if (e && Ct(t, function(o, a) {
       e && e[a] !== o && (i[a] = o, n = !0);
     }), n) {
       e && (t = Wt(e, i)), t.width === null || t.width === "auto" ? delete this.textWidth : s.nodeName.toLowerCase() === "text" && t.width && (r = this.textWidth = de(t.width)), Wt(this.styles, t), r && !Eo && this.renderer.forExport && delete t.width;
@@ -14297,7 +14297,7 @@ class H {
     }
     for (t.safeRemoveChild(e); r?.div && r.div.childNodes.length === 0; )
       n = r.parentGroup, t.safeRemoveChild(r.div), delete r.div, r = n;
-    t.alignOptions && No(i.alignedObjects, t), At(t, (a, l) => {
+    t.alignOptions && No(i.alignedObjects, t), Ct(t, (a, l) => {
       // Destroy child elements of a group
       (t[l]?.parentGroup === t || // Destroy own elements
       ["connector", "foreignObject"].indexOf(l) !== -1) && t[l]?.destroy?.(), delete t[l];
@@ -14421,7 +14421,7 @@ class H {
     ].map((kt) => [
       kt - kt * g,
       kt * x
-    ]), A = i + d * (r - m) + S + k, T = s + f - d * b - M + w, O = A + f * y, B = O + m, D = B - n * y, N = D - m, E = T + f * v, $ = E + b, W = $ - n * v, Z = W - b, et = Math.min(O, B, D, N), Jt = Math.min(E, $, W, Z), De = Math.max(O, B, D, N) - et, Qt = Math.max(E, $, W, Z) - Jt;
+    ]), C = i + d * (r - m) + S + k, T = s + f - d * b - M + w, O = C + f * y, B = O + m, D = B - n * y, N = D - m, E = T + f * v, $ = E + b, W = $ - n * v, Z = W - b, et = Math.min(O, B, D, N), Jt = Math.min(E, $, W, Z), De = Math.max(O, B, D, N) - et, Qt = Math.max(E, $, W, Z) - Jt;
     return {
       x: et,
       y: Jt,
@@ -14838,7 +14838,7 @@ H.prototype.yGetter = H.prototype.xGetter;
 H.prototype.matrixSetter = H.prototype.rotationOriginXSetter = H.prototype.rotationOriginYSetter = H.prototype.rotationSetter = H.prototype.scaleXSetter = H.prototype.scaleYSetter = H.prototype.translateXSetter = H.prototype.translateYSetter = H.prototype.verticalAlignSetter = function(c, t) {
   this[t] = c, this.doTransform = !0;
 };
-const { animObject: As, setAnimation: Xo } = Dt, { defaultOptions: fe } = St, { registerEventOptions: Ho } = Ni, { svg: Go, win: Yo } = I, { seriesTypes: Ct } = Mt, { format: Vo } = Ee, { arrayMax: ii, arrayMin: Cs, clamp: Ts, correctFloat: Os, crisp: Uo, defined: U, destroyObjectProperties: Ko, diffObjects: qo, erase: Ls, error: pe, extend: Lt, find: Zo, fireEvent: j, getClosestDistance: _o, getNestedProperty: Ps, insertItem: Es, isArray: $s, isNumber: K, isString: Jo, merge: Ft, objectEach: si, pick: X, removeEvent: Qo, syncTimeout: Ds } = z;
+const { animObject: Cs, setAnimation: Xo } = Dt, { defaultOptions: fe } = St, { registerEventOptions: Ho } = Ni, { svg: Go, win: Yo } = I, { seriesTypes: At } = Mt, { format: Vo } = Ee, { arrayMax: ii, arrayMin: As, clamp: Ts, correctFloat: Os, crisp: Uo, defined: U, destroyObjectProperties: Ko, diffObjects: qo, erase: Ls, error: pe, extend: Lt, find: Zo, fireEvent: j, getClosestDistance: _o, getNestedProperty: Ps, insertItem: Es, isArray: $s, isNumber: K, isString: Jo, merge: Ft, objectEach: si, pick: X, removeEvent: Qo, syncTimeout: Ds } = z;
 class q {
   constructor() {
     this.zoneAxis = "y";
@@ -14900,7 +14900,7 @@ class q {
    *        True if this item is or inherits from the given type.
    */
   is(t) {
-    return Ct[t] && this instanceof Ct[t];
+    return At[t] && this instanceof At[t];
   }
   /**
    * Set the xAxis and yAxis properties of cartesian series, and register
@@ -15213,8 +15213,8 @@ class q {
     // (#8355)
     !r.boosted && (v = this.updateData(t, i)), !v) {
       r.xIncrement = null, r.colorCounter = 0;
-      let A = f && !a.relativeXValue && k > f;
-      if (A) {
+      let C = f && !a.relativeXValue && k > f;
+      if (C) {
         const T = r.getFirstValidPoint(t), O = r.getFirstValidPoint(t, k - 1, -1), B = (D) => !!($s(D) && (b || K(D[0])));
         if (K(T) && K(O)) {
           const D = [], N = [];
@@ -15248,9 +15248,9 @@ class q {
             });
           }
         else
-          A = !1;
+          C = !1;
       }
-      if (!A) {
+      if (!C) {
         const T = u.reduce((O, B) => (O[B] = [], O), {});
         for (y = 0; y < k; y++) {
           const O = r.pointClass.prototype.applyOptions.apply({ series: r }, [t[y]]);
@@ -15407,7 +15407,7 @@ class q {
    */
   getXExtremes(t) {
     return {
-      min: Cs(t),
+      min: As(t),
       max: ii(t)
     };
   }
@@ -15435,7 +15435,7 @@ class q {
     const v = {
       activeYData: d,
       // Needed for Stock Cumulative Sum
-      dataMin: Cs(d),
+      dataMin: As(d),
       dataMax: ii(d)
     };
     return j(this, "afterGetExtremes", { dataExtremes: v }), v;
@@ -15492,7 +15492,7 @@ class q {
     }
     for (u = 0; u < a; u++) {
       const v = o[u], S = v.x;
-      let M, w, k = v.y, A = v.low;
+      let M, w, k = v.y, C = v.low;
       const T = i && n.stacking?.stacks[(t.negStacks && k < (f ? 0 : d) ? "-" : "") + t.stackKey];
       g = s.translate(
         // #3923
@@ -15506,7 +15506,7 @@ class q {
         // #5236
         y(g)
         // #3923
-      ) : void 0, i && t.visible && T && T[S] && (m = t.getStackIndicator(m, S, t.index), !v.isNull && m.key && (M = T[S], w = M.points[m.key]), M && $s(w) && (A = w[0], k = w[1], A === f && m.key === T[S].base && (A = X(K(d) ? d : n.min)), n.positiveValuesOnly && U(A) && A <= 0 && (A = void 0), v.total = v.stackTotal = X(M.total), v.percentage = U(v.y) && M.total ? v.y / M.total * 100 : void 0, v.stackY = k, t.irregularWidths || M.setOffset(t.pointXOffset || 0, t.barW || 0, void 0, void 0, void 0, t.xAxis))), v.yBottom = U(A) ? y(n.translate(A, !1, !0, !1, !0)) : void 0, t.dataModify && (k = t.dataModify.modifyValue(k, u));
+      ) : void 0, i && t.visible && T && T[S] && (m = t.getStackIndicator(m, S, t.index), !v.isNull && m.key && (M = T[S], w = M.points[m.key]), M && $s(w) && (C = w[0], k = w[1], C === f && m.key === T[S].base && (C = X(K(d) ? d : n.min)), n.positiveValuesOnly && U(C) && C <= 0 && (C = void 0), v.total = v.stackTotal = X(M.total), v.percentage = U(v.y) && M.total ? v.y / M.total * 100 : void 0, v.stackY = k, t.irregularWidths || M.setOffset(t.pointXOffset || 0, t.barW || 0, void 0, void 0, void 0, t.xAxis))), v.yBottom = U(C) ? y(n.translate(C, !1, !0, !1, !0)) : void 0, t.dataModify && (k = t.dataModify.modifyValue(k, u));
       let O;
       K(k) && v.plotX !== void 0 ? (O = n.translate(k, !1, !0, !1, !0), O = K(O) ? y(O) : void 0) : !K(k) && p && (O = p), v.plotY = O, v.isInside = this.isPointInside(v), v.clientX = h ? Os(s.translate(S, !1, !1, !1, !0, l)) : g, v.negative = (v.y || 0) < (d || 0), !v.isNull && v.visible !== !1 && (typeof x < "u" && (b = Math.min(b, Math.abs(g - x))), x = g), v.zone = this.zones.length ? v.getZone() : void 0, !v.graphic && t.group && r && (v.isNew = !0);
     }
@@ -15569,7 +15569,7 @@ class q {
    * Initialize the animation.
    */
   animate(t) {
-    const { chart: e, group: i, markerGroup: s } = this, r = e.inverted, n = As(this.options.animation), o = [
+    const { chart: e, group: i, markerGroup: s } = this, r = e.inverted, n = Cs(this.options.animation), o = [
       this.getSharedClipKey(),
       n.duration,
       n.easing,
@@ -15760,14 +15760,14 @@ class q {
       }), s && !this.showLine && s.hide(), e && e.hide(), l === "y" && // Overheat protection
       n.length < o.len)
         for (const M of n) {
-          const { plotX: w, plotY: k, zone: A } = M, T = A && r[r.indexOf(A) - 1];
-          A && m(A, w, k), T && m(T, w, k);
+          const { plotX: w, plotY: k, zone: C } = M, T = C && r[r.indexOf(C) - 1];
+          C && m(C, w, k), T && m(T, w, k);
         }
       let v = [], S = f.toPixels(f.getExtremes().min - g, !0);
       r.forEach((M) => {
         const w = M.lineClip || [], k = Math.round(M.translated || 0);
         o.reversed && w.reverse();
-        let { clip: A, simpleClip: T } = M, O = 0, B = 0, D = o.len, N = a.len;
+        let { clip: C, simpleClip: T } = M, O = 0, B = 0, D = o.len, N = a.len;
         p ? (O = k, D = S) : (B = k, N = S);
         const E = [
           ["M", O, B],
@@ -15784,7 +15784,7 @@ class q {
           E[3],
           E[4]
         ];
-        v = w.reverse(), S = k, h && (y($), e && y(E)), A ? (A.animate({ d: $ }), T?.animate({ d: E })) : (A = M.clip = d.path($), e && (T = M.simpleClip = d.path(E))), s && M.graph?.clip(A), e && M.area?.clip(T);
+        v = w.reverse(), S = k, h && (y($), e && y(E)), C ? (C.animate({ d: $ }), T?.animate({ d: E })) : (C = M.clip = d.path($), e && (T = M.simpleClip = d.path(E))), s && M.graph?.clip(C), e && M.area?.clip(T);
       });
     } else t.visible && (s && s.show(), e && e.show());
   }
@@ -15854,7 +15854,7 @@ class q {
    * @emits Highcharts.Series#event:afterRender
    */
   render() {
-    const t = this, { chart: e, options: i, hasRendered: s } = t, r = As(i.animation), n = t.visible ? "inherit" : "hidden", o = i.zIndex, a = e.seriesGroup;
+    const t = this, { chart: e, options: i, hasRendered: s } = t, r = Cs(i.animation), n = t.visible ? "inherit" : "hidden", o = i.zIndex, a = e.seriesGroup;
     let l = t.finishedAnimating ? 0 : r.duration;
     j(this, "render"), t.plotGroup("group", "series", n, o, a), t.markerGroup = t.plotGroup("markerGroup", "markers", n, o, a), i.clip !== !1 && t.setClip(), l && t.animate?.(!0), t.drawGraph && (t.drawGraph(), t.applyZones()), t.visible && t.drawPoints(), t.drawDataLabels?.(), t.redrawPoints?.(), i.enableMouseTracking && t.drawTracker?.(), l && t.animate?.(), s || (l && r.defer && (l += r.defer), t.animationTimeout = Ds(() => {
       t.afterAnimate();
@@ -15958,8 +15958,8 @@ class q {
       const v = m.point, S = n.kdAxisArray[b % y];
       let M = v, w = !1;
       u(x, v);
-      const k = (x[S] || 0) - (v[S] || 0) + (d && v.marker?.radius || 0), A = k < 0 ? "left" : "right", T = k < 0 ? "right" : "left";
-      if (m[A] && ([M, w] = f(v, g(x, m[A], b + 1, y), l)), m[T]) {
+      const k = (x[S] || 0) - (v[S] || 0) + (d && v.marker?.radius || 0), C = k < 0 ? "left" : "right", T = k < 0 ? "right" : "left";
+      if (m[C] && ([M, w] = f(v, g(x, m[C], b + 1, y), l)), m[T]) {
         const O = Math.sqrt(k * k), B = M[l];
         p(O, B, w) && (M = f(M, g(x, m[T], b + 1, y), l)[0]);
       }
@@ -16182,7 +16182,7 @@ class q {
    */
   update(t, e) {
     t = qo(t, this.userOptions), j(this, "update", { options: t });
-    const i = this, s = i.chart, r = i.userOptions, n = i.initialType || i.type, o = s.options.plotOptions, a = Ct[n].prototype, l = [
+    const i = this, s = i.chart, r = i.userOptions, n = i.initialType || i.type, o = s.options.plotOptions, a = At[n].prototype, l = [
       "group",
       "markerGroup",
       "dataLabelsGroup",
@@ -16217,15 +16217,15 @@ class q {
       g[y] = i[y], delete i[y];
     });
     let b = !1;
-    if (Ct[x]) {
+    if (At[x]) {
       if (b = x !== i.type, i.remove(!1, !1, !1, !0), b)
         if (s.propFromSeries(), Object.setPrototypeOf)
-          Object.setPrototypeOf(i, Ct[x].prototype);
+          Object.setPrototypeOf(i, At[x].prototype);
         else {
           const y = Object.hasOwnProperty.call(i, "hcEvents") && i.hcEvents;
           for (u in a)
             i[u] = void 0;
-          Lt(i, Ct[x].prototype), y ? i.hcEvents = y : delete i.hcEvents;
+          Lt(i, At[x].prototype), y ? i.hcEvents = y : delete i.hcEvents;
         }
     } else
       pe(17, !0, s, { missingModuleFor: x });
@@ -16439,7 +16439,7 @@ class q {
     no[this.options.legendSymbol || "rectangle"]?.call(this, t, e);
   }
 }
-q.defaultOptions = Ao;
+q.defaultOptions = Co;
 q.types = Mt.seriesTypes;
 q.registerType = Mt.registerSeriesType;
 q.keepProps = [
@@ -17058,7 +17058,7 @@ class ga {
     }), t;
   }
 }
-const { defaultOptions: ma } = St, { charts: xa, deg2rad: Fs, doc: Tt, isFirefox: js, isMS: Xs, isWebKit: ya, noop: ba, SVG_NS: va, symbolSizes: ai, win: li } = I, { addEvent: ge, attr: me, createElement: Sa, crisp: Hs, css: xe, defined: ut, destroyObjectProperties: Ma, extend: xt, isArray: ka, isNumber: gt, isObject: Ht, isString: wa, merge: hi, pick: ci, pInt: Aa, replaceNested: Ca, uniqueKey: Ta } = z;
+const { defaultOptions: ma } = St, { charts: xa, deg2rad: Fs, doc: Tt, isFirefox: js, isMS: Xs, isWebKit: ya, noop: ba, SVG_NS: va, symbolSizes: ai, win: li } = I, { addEvent: ge, attr: me, createElement: Sa, crisp: Hs, css: xe, defined: ut, destroyObjectProperties: Ma, extend: xt, isArray: ka, isNumber: gt, isObject: Ht, isString: wa, merge: hi, pick: ci, pInt: Ca, replaceNested: Aa, uniqueKey: Ta } = z;
 let di;
 class zi {
   /**
@@ -17226,7 +17226,7 @@ class zi {
         }), di = Tt.elementFromPoint(6, 6)?.id === "hitme", Tt.body.removeChild(i);
       }
       if (di)
-        return Ca(
+        return Aa(
           li.location.href.split("#")[0],
           // Remove hash
           [/<[^>]*>/g, ""],
@@ -17849,12 +17849,12 @@ class zi {
       }), ["width", "height"].forEach((m) => {
         x[`${m}Setter`] = function(b, y) {
           this[y] = b;
-          const { alignByTranslate: v, element: S, width: M, height: w, imgwidth: k, imgheight: A } = this, T = y === "width" ? k : A;
+          const { alignByTranslate: v, element: S, width: M, height: w, imgwidth: k, imgheight: C } = this, T = y === "width" ? k : C;
           let O = 1;
-          n && n.backgroundSize === "within" && M && w && k && A ? (O = Math.min(M / k, w / A), me(S, {
+          n && n.backgroundSize === "within" && M && w && k && C ? (O = Math.min(M / k, w / C), me(S, {
             width: Math.round(k * O),
-            height: Math.round(A * O)
-          })) : S && T && S.setAttribute(y, T), !v && k && A && this.translate(((M || 0) - k * O) / 2, ((w || 0) - A * O) / 2);
+            height: Math.round(C * O)
+          })) : S && T && S.setAttribute(y, T), !v && k && C && this.translate(((M || 0) - k * O) / 2, ((w || 0) - C * O) / 2);
         };
       }), ut(e) && x.attr({
         x: e,
@@ -17967,7 +17967,7 @@ class zi {
    * The font metrics.
    */
   fontMetrics(t) {
-    const e = gt(t) ? t : Aa(H.prototype.getStyle.call(t, "font-size") || 0), i = e < 24 ? e + 3 : Math.round(e * 1.2), s = Math.round(i * 0.8);
+    const e = gt(t) ? t : Ca(H.prototype.getStyle.call(t, "font-size") || 0), i = e < 24 ? e + 3 : Math.round(e * 1.2), s = Math.round(i * 0.8);
     return {
       // Line height
       h: i,
@@ -19522,8 +19522,8 @@ class at {
     this.hoverPoints?.forEach((u) => u.setState()), P(this, "transform", t);
     let d = t.hasZoomed || !1, f, p;
     for (const u of e) {
-      const { horiz: g, len: x, minPointOffset: m = 0, options: b, reversed: y } = u, v = g ? "width" : "height", S = g ? "x" : "y", M = _(o[v], u.len), w = _(s[v], u.len), k = Math.abs(M) < 10 ? 1 : M / w, A = (s[S] || 0) + w / 2 - u.pos, T = (o[S] ?? u.pos) + M / 2 - u.pos, O = A - T / k, B = y && !l || !y && l ? -1 : 1, D = O;
-      if (!r && (A < 0 || A > u.len))
+      const { horiz: g, len: x, minPointOffset: m = 0, options: b, reversed: y } = u, v = g ? "width" : "height", S = g ? "x" : "y", M = _(o[v], u.len), w = _(s[v], u.len), k = Math.abs(M) < 10 ? 1 : M / w, C = (s[S] || 0) + w / 2 - u.pos, T = (o[S] ?? u.pos) + M / 2 - u.pos, O = C - T / k, B = y && !l || !y && l ? -1 : 1, D = O;
+      if (!r && (C < 0 || C > u.len))
         continue;
       const N = u.chart.polar || u.isOrdinal ? 0 : m * B || 0, E = u.toValue(D, !0), $ = u.toValue(D + x / k, !0);
       let W = E + N, Z = $ - N, et = u.allExtremes;
@@ -20123,7 +20123,7 @@ class $e extends q {
     let x = t.barW = Math.max(d, 1 + 2 * r);
     i.pointPadding && i.crisp && (x = Math.ceil(x)), q.prototype.translate.apply(t), t.points.forEach(function(m) {
       const b = Yt(m.yBottom, g), y = 999 + Math.abs(b), v = m.plotX || 0, S = ve(m.plotY, -y, o.len + y);
-      let M, w = Math.min(S, b), k = Math.max(S, b) - w, A = d, T = v + f, O = x;
+      let M, w = Math.min(S, b), k = Math.max(S, b) - w, C = d, T = v + f, O = x;
       l && Math.abs(k) < l && (k = l, M = !o.reversed && !m.negative || o.reversed && m.negative, Me(a) && Me(u) && m.y === a && u <= a && // And if there's room for it (#7311)
       (o.min || 0) < a && // If all points are the same value (i.e zero) not draw
       // as negative points (#10646), but only if there's room
@@ -20134,7 +20134,7 @@ class $e extends q {
       ) : (
         // #1485, #4051
         g - (M ? l : 0)
-      )), _s(m.options.pointWidth) && (A = O = Math.ceil(m.options.pointWidth), T -= Math.round((A - d) / 2)), i.centerInCategory && (T = t.adjustForMissingColumns(T, A, m, h)), m.barX = T, m.pointWidth = A, m.tooltipPos = e.inverted ? [
+      )), _s(m.options.pointWidth) && (C = O = Math.ceil(m.options.pointWidth), T -= Math.round((C - d) / 2)), i.centerInCategory && (T = t.adjustForMissingColumns(T, C, m, h)), m.barX = T, m.pointWidth = C, m.tooltipPos = e.inverted ? [
         ve(o.len + o.pos - e.plotLeft - S, o.pos - e.plotLeft, o.len + o.pos - e.plotLeft),
         n.len + n.pos - e.plotTop - T - O / 2,
         k
@@ -20360,9 +20360,9 @@ class Va {
       console.log("0000", at);
       const e = new at(t, {
         chart: { type: "column", reflow: !1 },
-        title: { text: "Fruit Consumption" },
-        xAxis: { categories: ["Apples", "Bananas", "Oranges"] },
-        yAxis: { title: { text: "Fruit eaten" } },
+        // title: { text: 'Fruit Consumption' },
+        // xAxis: { categories: ['Apples', 'Bananas', 'Oranges'] },
+        // yAxis: { title: { text: 'Fruit eaten' } },
         series: [
           { type: "column", name: "Jane", data: [1, 0, 4] },
           { type: "column", name: "John", data: [15, 17, 13] }
