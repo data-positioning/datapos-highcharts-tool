@@ -1,6 +1,6 @@
 {
     "name": "@datapos/datapos-tool-highcharts",
-    "version": "0.0.18",
+    "version": "0.0.19",
     "description": "A TypeScript library ...",
     "license": "MIT",
     "private": false,
@@ -25,6 +25,7 @@
         "dist"
     ],
     "dependencies": {
+        "@datapos/datapos-shared": "^0.3.210",
         "highcharts": "^12.4.0"
     },
     "devDependencies": {

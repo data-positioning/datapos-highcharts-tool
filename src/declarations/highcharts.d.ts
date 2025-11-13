@@ -1,9 +1,0 @@
-declare module 'highcharts/es-modules/Core/Chart/Chart.js';
-declare module 'highcharts/es-modules/Core/Defaults.js';
-declare module 'highcharts/es-modules/Core/Axis/Axis.js';
-declare module 'highcharts/es-modules/Core/Axis/Stacking/StackingAxis.js';
-declare module 'highcharts/es-modules/Core/Legend/Legend.js';
-declare module 'highcharts/es-modules/Series/Area/AreaSeries.js';
-declare module 'highcharts/es-modules/Series/Column/ColumnSeries.js';
-declare module 'highcharts/es-modules/Series/Column/ColumnDataLabel.js';
-declare module 'highcharts/es-modules/Series/Line/LineSeries.js';

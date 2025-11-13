@@ -2,37 +2,107 @@
  * Highcharts tool class.
  */
 
-// Core Highcharts
-import Chart from 'highcharts/es-modules/Core/Chart/Chart.js';
+// Dependencies - Vendor.
+import Highcharts from 'highcharts';
+import type { Chart, Options, SeriesOptionsType } from 'highcharts';
 
-import ColumnSeries from 'highcharts/es-modules/Series/Column/ColumnSeries.js';
+import Accessibility from 'highcharts/modules/accessibility';
+console.log('Accessibility', Accessibility);
 
-import ColumnDataLabel from 'highcharts/es-modules/Series/Column/ColumnDataLabel.js';
-ColumnDataLabel.compose(ColumnSeries);
+// Dependencies - Framework.
+import type {
+    PresentationView,
+    PresentationVisualCartesianViewType,
+    PresentationVisualContentConfig,
+    PresentationVisualPolarViewType,
+    PresentationVisualRangeViewType
+} from '@datapos/datapos-shared';
 
-import LineSeries from 'highcharts/es-modules/Series/Line/LineSeries.js';
+// Types/Interfaces - Highcharts view.
+export interface HighchartsView extends PresentationView {
+    chart: Chart;
+}
+// Constants
+const HIGHCHARTS_ID = 'highcharts';
+
+// Module Variables
+let highchartsMoreModuleLoaded = false;
 
 // Classes - Highcharts tool.
 export default class HighchartsTool {
     constructor() {}
 
-    // Operations - Render.
-    render = (renderTo: HTMLElement): unknown => {
-        try {
-            const chart = new Chart(renderTo, {
-                chart: { type: 'column', reflow: false },
-                title: { text: 'Fruit Consumption' },
-                xAxis: { categories: ['Apples', 'Bananas', 'Oranges'] },
-                yAxis: { title: { text: 'Fruit eaten' } },
-                series: [
-                    { type: 'column', name: 'Jane', data: [1, 0, 4] },
-                    { type: 'column', name: 'John', data: [15, 17, 13] }
-                ]
-            });
-            console.log('OK', chart);
-            return { chart, resize: (): void => chart.reflow() };
-        } catch (error) {
-            console.log('ERROR', error);
+    // Operations - Render cartesian chart.
+    async renderCartesianChart(
+        type: PresentationVisualCartesianViewType,
+        contentConfig: PresentationVisualContentConfig,
+        element: HTMLElement,
+        callback?: () => void
+    ): Promise<HighchartsView> {
+        const series: SeriesOptionsType[] = [];
+        for (const measure of contentConfig.data.measures) {
+            // series.push({ type: type.options.highchartsType, name: measure.name, data: getMeasureValues([measure.id]) });
+            series.push({ type: type.options.highchartsType, name: measure.name, data: measure.data });
         }
-    };
+        const options: Options = {
+            chart: { type: type.options.highchartsType },
+            plotOptions: { series: { borderColor: '#333' } },
+            series,
+            title: { text: contentConfig.title.text },
+            xAxis: { categories: contentConfig.data.categoryLabels },
+            yAxis: { title: { text: contentConfig.data.name } }
+        };
+        const chart = Highcharts.chart(element, options, callback);
+        return { chart, resize: () => chart.reflow(), vendorId: HIGHCHARTS_ID };
+    }
+
+    // Operations - Render polar chart.
+    async renderPolarChart(type: PresentationVisualPolarViewType, content: PresentationVisualContentConfig, element: HTMLElement, callback?: () => void): Promise<HighchartsView> {
+        await Promise.all([this.loadHighchartsMoreModule()]);
+        const series: SeriesOptionsType[] = [];
+        for (const measure of content.data.measures) {
+            // series.push({ type: type.options.highchartsType, name: measure.name, data: getMeasureValues([measure.id]) });
+            series.push({ type: type.options.highchartsType, name: measure.name, data: measure.data });
+        }
+        const options: Options = {
+            chart: { polar: true },
+            plotOptions: { series: { borderColor: '#333' } },
+            series,
+            title: { text: content.title.text },
+            xAxis: { categories: content.data.categoryLabels },
+            yAxis: { title: { text: content.data.name } }
+        };
+        const chart = Highcharts!.chart(element, options, callback);
+        return { chart, resize: () => chart.reflow(), vendorId: HIGHCHARTS_ID };
+    }
+
+    // Operations - Render range chart.
+    async renderRangeChart(type: PresentationVisualRangeViewType, content: PresentationVisualContentConfig, element: HTMLElement, callback?: () => void): Promise<HighchartsView> {
+        await Promise.all([this.loadHighchartsMoreModule()]);
+        const series: SeriesOptionsType[] = [];
+        // series.push({ type: type.options.highchartsType, name: 'Unknown', data: getMeasureValues([content.data.measures[0].id, content.data.measures[1].id]) });
+        const data = [];
+        for (let index = 0; index < content.data.measures[0].data!.length; index++) {
+            data.push([content.data.measures[0].data![index][0], content.data.measures[1].data![index][0]]);
+        }
+        series.push({ type: type.options.highchartsType, name: 'Unknown', data });
+        const options: Options = {
+            chart: { type: type.options.highchartsType, inverted: type.options.inverted },
+            plotOptions: { series: { borderColor: '#333' } },
+            series,
+            title: { text: content.title.text },
+            xAxis: { categories: content.data.categoryLabels },
+            yAxis: { title: { text: content.data.name } }
+        };
+        const chart = Highcharts!.chart(element, options, callback);
+        return { chart, resize: () => chart.reflow(), vendorId: HIGHCHARTS_ID };
+    }
+
+    // Utilities - Load Highcharts more module.
+    private async loadHighchartsMoreModule(): Promise<void> {
+        if (highchartsMoreModuleLoaded) return;
+        const moreModule = await import('highcharts/highcharts-more');
+        console.log('moreModule', moreModule);
+        highchartsMoreModuleLoaded = true;
+    }
 }
