@@ -2,10 +2,16 @@
  * Highcharts tool class.
  */
 
+import 'highcharts/es-modules/Core/Defaults.js';
+
 // Dependencies - Highcharts.
 import Chart from 'highcharts/es-modules/Core/Chart/Chart.js';
 
+import 'highcharts/es-modules/Series/Area/AreaSeries.js';
 import 'highcharts/es-modules/Series/Column/ColumnSeries.js';
+import 'highcharts/es-modules/Series/Line/LineSeries.js';
+import 'highcharts/es-modules/Core/Axis/Axis.js';
+import 'highcharts/es-modules/Core/Legend/Legend.js';
 
 // Classes - Highcharts tool.
 export default class HighchartsTool {
