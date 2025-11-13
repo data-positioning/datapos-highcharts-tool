@@ -3,5 +3,5 @@
  */
 export default class HighchartsTool {
     constructor();
-    render(markdown: string): void;
+    render: (renderTo: HTMLElement) => unknown;
 }
