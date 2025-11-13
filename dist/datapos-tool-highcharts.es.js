@@ -19644,17 +19644,21 @@ class Ta {
   }
   // Operations - Render.
   render = (t) => {
-    const e = new xt(t, {
-      chart: { type: "column", reflow: !1 },
-      title: { text: "Fruit Consumption" },
-      xAxis: { categories: ["Apples", "Bananas", "Oranges"] },
-      yAxis: { title: { text: "Fruit eaten" } },
-      series: [
-        { name: "Jane", data: [1, 0, 4] },
-        { name: "John", data: [15, 17, 13] }
-      ]
-    });
-    return { chart: e, resize: () => e.reflow() };
+    try {
+      const e = new xt(t, {
+        chart: { type: "column", reflow: !1 },
+        title: { text: "Fruit Consumption" },
+        xAxis: { categories: ["Apples", "Bananas", "Oranges"] },
+        yAxis: { title: { text: "Fruit eaten" } },
+        series: [
+          { name: "Jane", data: [1, 0, 4] },
+          { name: "John", data: [15, 17, 13] }
+        ]
+      });
+      return console.log(1111, e), { chart: e, resize: () => e.reflow() };
+    } catch (e) {
+      console.log(2222, e);
+    }
   };
 }
 export {
