@@ -1,4 +1,4 @@
-import { H as f } from "./index-Ao2tnOF1.js";
+import { H as a } from "./index-DXAkulvC.js";
 export {
-  f as default
+  a as HighchartsTool
 };

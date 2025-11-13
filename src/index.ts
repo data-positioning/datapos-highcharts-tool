@@ -2,12 +2,12 @@
  * Highcharts tool class.
  */
 
-// Dependencies - Vendor.
+// Dependencies - Highcharts.
 import Highcharts from 'highcharts';
 import type { Chart, Options, SeriesOptionsType } from 'highcharts';
 
-import Accessibility from 'highcharts/modules/accessibility';
-console.log('Accessibility', Accessibility);
+// Dependencies - Highcharts core modules.
+import 'highcharts/modules/accessibility';
 
 // Dependencies - Framework.
 import type {
@@ -19,7 +19,7 @@ import type {
 } from '@datapos/datapos-shared';
 
 // Types/Interfaces - Highcharts view.
-export interface HighchartsView extends PresentationView {
+interface HighchartsView extends PresentationView {
     chart: Chart;
 }
 // Constants
@@ -29,7 +29,7 @@ const HIGHCHARTS_ID = 'highcharts';
 let highchartsMoreModuleLoaded = false;
 
 // Classes - Highcharts tool.
-export default class HighchartsTool {
+class HighchartsTool {
     constructor() {}
 
     // Operations - Render cartesian chart.
@@ -106,3 +106,5 @@ export default class HighchartsTool {
         highchartsMoreModuleLoaded = true;
     }
 }
+
+export { HighchartsTool, HighchartsView };
