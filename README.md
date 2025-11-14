@@ -52,7 +52,8 @@ The following list details the repository management commands implementation by 
 
 ## Statistics
 
-[View stats](stats/index.html)
+Visualise grouping and size of modules that comprise distribution bundle.
+[View Stats](https://data-positioning/datapos-highcharts-tool/stats/index.html)
 
 ## Compliance
 
