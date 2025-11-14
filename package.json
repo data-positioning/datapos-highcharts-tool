@@ -25,7 +25,6 @@
         "dist"
     ],
     "dependencies": {
-        "@datapos/datapos-shared": "^0.3.215",
         "highcharts": "^12.4.0"
     },
     "devDependencies": {
