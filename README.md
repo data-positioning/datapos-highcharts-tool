@@ -50,6 +50,10 @@ The following list details the repository management commands implementation by 
 | test               | alt+ctrl+shift+t  | ❌ Not implemented.                                                                                                                             |
 | update:dataPosDeps | alt+ctrl+shift+u  | Install the latest version of all Data Positioning dependencies.                                                                                |
 
+## Statistics
+
+[View stats](stats/index.html)
+
 ## Compliance
 
 The following badge reflects FOSSA's assessment of this repository's open-source license compliance.
