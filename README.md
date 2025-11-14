@@ -18,7 +18,7 @@ import type { HighchartsTool, HighchartsView } from '@datapos/datapos-tool-highc
 async function loadHighchartsTool(version: string): Promise<HighchartsTool> {
     if (highchartsTool) return highchartsTool;
 
-    const URL = `https://engine-eu.datapos.app/tools/v${version}/datapos-tool-highcharts.es.js`;
+    const URL = `https://engine-eu.datapos.app/tools/highcharts_v${version}/datapos-tool-highcharts.es.js`;
     const HighchartsTool = (await import(/* @vite-ignore */ URL)).HighchartsTool as new () => HighchartsTool;
     return new HighchartsTool();
 }
