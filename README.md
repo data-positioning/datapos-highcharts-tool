@@ -52,7 +52,7 @@ The following list details the repository management commands implementation by 
 
 ## Bundle Analysis
 
-View the [bundle report](https://yourusername.github.io/your-repo-name/stats/index.html) to analyze the bundle composition and module sizes (generated with rollup-plugin-visualizer).
+View the [bundle report](https://data-positioning.github.io/datapos-highcharts-tool/stats/index.html) to analyze the bundle composition and module sizes (generated with rollup-plugin-visualizer).
 
 ## Compliance
 
