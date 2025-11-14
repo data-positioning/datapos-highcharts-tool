@@ -10,35 +10,24 @@ There’s no need to install this tool manually. Once released, it’s uploaded 
 
 ## Usage
 
+Basic usage example with no error handling.
+
 ```typescript
-import type { Presenter, PresenterConfig } from '@datapos/datapos-shared';
-import config from '~/config.json';
+import type { HighchartsTool, HighchartsView } from '@datapos/datapos-tool-highcharts';
 
-class MyPresenter implements Presenter {
+async function loadHighchartsTool(version: string): Promise<HighchartsTool> {
+    if (highchartsTool) return highchartsTool;
 
-    highchartsTool?: HighchartsTool;
-
-    constructor(toolModuleConfigs: ToolModuleConfig[]) {
-        this.config = config as PresenterConfig;
-        this.toolModuleConfigs = toolModuleConfigs;
-    }
-
-    private async function loadHighchartsTool(version: string): Promise<HighchartsTool> {
-        if (this.highchartsTool) return this.highchartsTool;
-
-        const URL = `https://engine-eu.datapos.app/tools/v${version}/datapos-tool-highcharts.es.js`;
-        const HighchartsTool = (await import(/* @vite-ignore */ URL)).HighchartsTool as new () => HighchartsTool;
-        return new HighchartsTool();
-    }
-
-    this.highchartsTool = await loadHighchartsTool('n.n.nnn');
-
-    await this.highchartsTool.renderCartesianChart(...);
-    await this.highchartsTool.renderPolarChart(...);
-    await this.highchartsTool.renderRangeChart(...);
-
-    ...
+    const URL = `https://engine-eu.datapos.app/tools/v${version}/datapos-tool-highcharts.es.js`;
+    const HighchartsTool = (await import(/* @vite-ignore */ URL)).HighchartsTool as new () => HighchartsTool;
+    return new HighchartsTool();
 }
+
+const highchartsTool = await loadHighchartsTool('n.n.nnn');
+
+const cartesianChart: HighchartsView = await highchartsTool.renderCartesianChart(/* arguments... */);
+const polarChart: HighchartsView = await highchartsTool.renderPolarChart(/* arguments... */);
+const rangeChart: HighchartsView = await highchartsTool.renderRangeChart(/* arguments... */);
 ```
 
 ## Repository Management Commands
