@@ -50,10 +50,9 @@ The following list details the repository management commands implementation by 
 | test               | alt+ctrl+shift+t  | ❌ Not implemented.                                                                                                                             |
 | update:dataPosDeps | alt+ctrl+shift+u  | Install the latest version of all Data Positioning dependencies.                                                                                |
 
-## Statistics
+## Bundle Analysis
 
-Visualise grouping and size of modules that comprise distribution bundle.
-[View Stats](https://data-positioning.github.io/datapos-highcharts-tool/stats/index.html)
+View the [bundle report](https://yourusername.github.io/your-repo-name/stats/index.html) to analyze the bundle composition and module sizes (generated with rollup-plugin-visualizer).
 
 ## Compliance
 
