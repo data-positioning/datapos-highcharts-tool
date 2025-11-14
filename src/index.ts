@@ -1,5 +1,8 @@
 /**
  * Highcharts tool class.
+ *
+ * Notes:
+ * Templating: https://www.highcharts.com/docs/chart-concepts/templating.
  */
 
 // Dependencies - Highcharts.
