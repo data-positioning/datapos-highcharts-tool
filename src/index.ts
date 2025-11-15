@@ -62,6 +62,13 @@ class HighchartsTool {
         return { chart, resize: () => chart.reflow(), vendorId: HIGHCHARTS_ID };
     }
 
+    // Operations - Render.
+    async render(renderTo: HTMLElement, options: Options, callback?: () => void) {
+        await Promise.all([this.loadHighchartsMore()]);
+        const chart = Highcharts!.chart(renderTo, options, callback);
+        return { chart, resize: () => chart.reflow(), vendorId: HIGHCHARTS_ID };
+    }
+
     // Operations - Render polar chart.
     async renderPolarChart(type: PresentationVisualPolarViewType, content: PresentationVisualContentConfig, renderTo: HTMLElement, callback?: () => void): Promise<HighchartsView> {
         await Promise.all([this.loadHighchartsMore()]);
