@@ -8,6 +8,8 @@
 // Dependencies - Highcharts.
 import Highcharts from 'highcharts';
 import type { Chart, Options, SeriesOptionsType } from 'highcharts';
+import AdaptiveTheme from 'highcharts/themes/adaptive';
+console.log(AdaptiveTheme);
 
 // Dependencies - Highcharts core modules.
 import 'highcharts/modules/accessibility';
