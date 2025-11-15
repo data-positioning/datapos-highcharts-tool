@@ -2,6 +2,7 @@
  * Highcharts tool class.
  *
  * Notes:
+ * Dark mode: https://www.highcharts.com/docs/chart-design-and-style/themes#dark-mode-in-highcharts-the-adaptive-theme.
  * Templating: https://www.highcharts.com/docs/chart-concepts/templating.
  */
 
@@ -42,7 +43,7 @@ class HighchartsTool {
     async renderCartesianChart(
         type: PresentationVisualCartesianViewType,
         contentConfig: PresentationVisualContentConfig,
-        element: HTMLElement,
+        renderTo: HTMLElement,
         callback?: () => void
     ): Promise<HighchartsView> {
         const series: SeriesOptionsType[] = [];
@@ -57,12 +58,12 @@ class HighchartsTool {
             xAxis: { categories: contentConfig.data.categoryLabels },
             yAxis: { title: { text: contentConfig.data.name } }
         };
-        const chart = Highcharts.chart(element, options, callback);
+        const chart = Highcharts.chart(renderTo, options, callback);
         return { chart, resize: () => chart.reflow(), vendorId: HIGHCHARTS_ID };
     }
 
     // Operations - Render polar chart.
-    async renderPolarChart(type: PresentationVisualPolarViewType, content: PresentationVisualContentConfig, element: HTMLElement, callback?: () => void): Promise<HighchartsView> {
+    async renderPolarChart(type: PresentationVisualPolarViewType, content: PresentationVisualContentConfig, renderTo: HTMLElement, callback?: () => void): Promise<HighchartsView> {
         await Promise.all([this.loadHighchartsMore()]);
         const series: SeriesOptionsType[] = [];
         for (const measure of content.data.measures) {
@@ -76,12 +77,12 @@ class HighchartsTool {
             xAxis: { categories: content.data.categoryLabels },
             yAxis: { title: { text: content.data.name } }
         };
-        const chart = Highcharts!.chart(element, options, callback);
+        const chart = Highcharts!.chart(renderTo, options, callback);
         return { chart, resize: () => chart.reflow(), vendorId: HIGHCHARTS_ID };
     }
 
     // Operations - Render range chart.
-    async renderRangeChart(type: PresentationVisualRangeViewType, content: PresentationVisualContentConfig, element: HTMLElement, callback?: () => void): Promise<HighchartsView> {
+    async renderRangeChart(type: PresentationVisualRangeViewType, content: PresentationVisualContentConfig, renderTo: HTMLElement, callback?: () => void): Promise<HighchartsView> {
         await Promise.all([this.loadHighchartsMore()]);
         const series: SeriesOptionsType[] = [];
         const data = [];
@@ -97,7 +98,7 @@ class HighchartsTool {
             xAxis: { categories: content.data.categoryLabels },
             yAxis: { title: { text: content.data.name } }
         };
-        const chart = Highcharts!.chart(element, options, callback);
+        const chart = Highcharts!.chart(renderTo, options, callback);
         return { chart, resize: () => chart.reflow(), vendorId: HIGHCHARTS_ID };
     }
 

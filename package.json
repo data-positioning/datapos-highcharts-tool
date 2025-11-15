@@ -1,6 +1,6 @@
 {
     "name": "@datapos/datapos-tool-highcharts",
-    "version": "0.0.33",
+    "version": "0.0.34",
     "description": "A TypeScript wrapper for Highcharts that implements the Data Positioning chart-rendering interface. It optimizes browser memory usage by maintaining a single Highcharts instance shared across all presenters, loading optional modules only as needed.",
     "license": "MIT",
     "private": false,
@@ -28,7 +28,7 @@
         "highcharts": "^12.4.0"
     },
     "devDependencies": {
-        "@datapos/datapos-development": "^0.3.91",
+        "@datapos/datapos-development": "^0.3.92",
         "@datapos/datapos-shared": "^0.3.215",
         "@types/node": "^24.10.1",
         "@typescript-eslint/eslint-plugin": "^8.46.4",
@@ -59,13 +59,13 @@
         "sync:withGitHub": "node -e \"import('@datapos/datapos-development').then(m => m.syncWithGitHub())\"",
         "send:deployNotice": "node -e \"import('@datapos/datapos-development').then(m => m.echoScriptNotImplemented('Send deployment notice'))\"",
         "test": "node -e \"import('@datapos/datapos-development').then(m => m.echoScriptNotImplemented('Test'))\"",
-        "update:dataPosDeps": "npm run _update:developDeps && npm run _update:shared",
+        "update:dataPosDeps": "npm run _update:developDep && npm run _update:sharedDep",
         "_build:config": "node -e \"import('@datapos/datapos-development').then(m => m.buildConfig())\"",
         "_bump:version": "node -e \"import('@datapos/datapos-development').then(m => m.bumpVersion())\"",
         "_document:licenceReport": "license-report --only=prod,peer > LICENSES.json",
         "_document:licenceCheck": "license-report-check --source ./LICENSES.json --allowed 'MIT' --allowed 'n/a' --allowed 'Apache-2.0' --output=table",
-        "_update:developDeps": "npm install --save-dev @datapos/datapos-development@latest",
-        "_update:shared": "npm install --save-dev @datapos/datapos-shared@latest",
+        "_update:developDep": "npm install --save-dev @datapos/datapos-development@latest",
+        "_update:sharedDep": "npm install --save-dev @datapos/datapos-shared@latest",
         "_upload": "npm run _upload:moduleToR2 && npm run _upload:moduleConfigToDO",
         "_upload:moduleConfigToDO": "node -e \"import('@datapos/datapos-development').then(m => m.uploadModuleConfigToDO())\"",
         "_upload:moduleToR2": "node -e \"import('@datapos/datapos-development').then(m => m.uploadModuleToR2('datapos-engine-eu/tools/highcharts'))\""
