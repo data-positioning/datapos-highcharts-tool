@@ -11,6 +11,11 @@ declare class HighchartsTool {
         resize: () => void;
         vendorId: string;
     }>;
+    renderPeriodFlowBoundaries(renderTo: HTMLElement, options: Options, callback?: () => void): Promise<{
+        chart: Highcharts.Chart;
+        resize: () => void;
+        vendorId: string;
+    }>;
     renderPolarChart(type: PresentationVisualPolarViewType, content: PresentationVisualContentConfig, renderTo: HTMLElement, callback?: () => void): Promise<HighchartsView>;
     renderRangeChart(type: PresentationVisualRangeViewType, content: PresentationVisualContentConfig, renderTo: HTMLElement, callback?: () => void): Promise<HighchartsView>;
     private loadDependencyWheelAndSankeyModules;
