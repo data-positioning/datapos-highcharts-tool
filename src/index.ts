@@ -70,9 +70,21 @@ class HighchartsTool {
         return { chart, resize: () => chart.reflow(), vendorId: HIGHCHARTS_ID };
     }
 
-    // Operations - Render.
-    async renderPeriodFlowBoundaries(renderTo: HTMLElement, options: Options, callback?: () => void) {
+    // Operations - Render period flow & boundaries chart.
+    async renderPeriodFlowBoundaries(content: PresentationVisualContentConfig, renderTo: HTMLElement, callback?: () => void) {
         await Promise.all([this.loadHighchartsMore()]);
+        const series: SeriesOptionsType[] = [];
+        for (const measure of content.data.measures) {
+            series.push({ type: 'waterfall', name: measure.name, data: measure.data });
+        }
+        const options: Options = {
+            chart: { type: 'waterfall' },
+            plotOptions: { series: { borderColor: '#333' } },
+            series,
+            title: { text: content.title.text },
+            xAxis: { categories: content.data.categoryLabels },
+            yAxis: { title: { text: content.data.name } }
+        };
         const chart = Highcharts!.chart(renderTo, options, callback);
         return { chart, resize: () => chart.reflow(), vendorId: HIGHCHARTS_ID };
     }

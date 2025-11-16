@@ -3,7 +3,7 @@ function Ip(ve) {
 }
 var za = { exports: {} }, Bp = za.exports, _h;
 function Np() {
-  return _h || (_h = 1, (function(ve, Xt) {
+  return _h || (_h = 1, (function(ve, It) {
     /**
     * Highcharts JS v12.4.0 (2025-09-04)
     * @module highcharts/highcharts
@@ -12,11 +12,11 @@ function Np() {
     *
     * License: www.highcharts.com/license
     */
-    (function(nt, At) {
-      nt._Highcharts = At(), ve.exports = nt._Highcharts;
+    (function(nt, Tt) {
+      nt._Highcharts = Tt(), ve.exports = nt._Highcharts;
     })(typeof window > "u" ? Bp : window, () => (() => {
-      let nt, At;
-      var $t, Pt, Nt, re, Vt, ne, gi, de, ti, We, Te, Le, kt, Rt, le, ei, ft, Ci, fi = {};
+      let nt, Tt;
+      var $t, Ct, St, _t, Vt, ne, gi, de, ti, We, Te, Le, kt, zt, le, ei, ft, Ci, fi = {};
       fi.d = (h, t) => {
         for (var e in t) fi.o(t, e) && !fi.o(h, e) && Object.defineProperty(h, e, { enumerable: !0, get: t[e] });
       }, fi.o = (h, t) => Object.prototype.hasOwnProperty.call(h, t);
@@ -54,7 +54,7 @@ function Np() {
       function Ai(h, t) {
         return parseInt(h, t || 10);
       }
-      function zt(h) {
+      function Ft(h) {
         return typeof h == "string";
       }
       function Xe(h) {
@@ -77,16 +77,16 @@ function Np() {
       function lt(h) {
         return h != null;
       }
-      function Tt(h, t, e) {
-        let i, s = zt(t) && !lt(e), r = (o, a) => {
+      function Et(h, t, e) {
+        let i, s = Ft(t) && !lt(e), r = (o, a) => {
           lt(o) ? h.setAttribute(a, o) : s ? (i = h.getAttribute(a)) || a !== "class" || (i = h.getAttribute(a + "Name")) : h.removeAttribute(a);
         };
-        return zt(t) ? r(e, t) : ge(t, r), i;
+        return Ft(t) ? r(e, t) : ge(t, r), i;
       }
       function mt(h) {
         return Xe(h) ? h : [h];
       }
-      function Dt(h, t) {
+      function Bt(h, t) {
         let e;
         for (e in h || (h = {}), t) h[e] = t[e];
         return h;
@@ -99,7 +99,7 @@ function Np() {
         }
       }
       function ue(h, t) {
-        Dt(h.style, t);
+        Bt(h.style, t);
       }
       function Ee(h) {
         return Math.pow(10, Math.floor(Math.log(h) / Math.LN10));
@@ -110,7 +110,7 @@ function Np() {
       (ii || (ii = {})).messages = [], Math.easeInOutSine = function(h) {
         return -0.5 * (Math.cos(Math.PI * h) - 1);
       };
-      let It = Array.prototype.find ? function(h, t) {
+      let Nt = Array.prototype.find ? function(h, t) {
         return h.find(t);
       } : function(h, t) {
         let e, i = h.length;
@@ -144,9 +144,9 @@ function Np() {
       function us(h, t, e, i) {
         if (e = e || {}, mi?.createEvent && (h.dispatchEvent || h.fireEvent && h !== X)) {
           let s = mi.createEvent("Events");
-          s.initEvent(t, !0, !0), e = Dt(s, e), h.dispatchEvent ? h.dispatchEvent(e) : h.fireEvent(t, e);
+          s.initEvent(t, !0, !0), e = Bt(s, e), h.dispatchEvent ? h.dispatchEvent(e) : h.fireEvent(t, e);
         } else if (h.hcEvents) {
-          e.target || Dt(e, { preventDefault: function() {
+          e.target || Bt(e, { preventDefault: function() {
             e.defaultPrevented = !0;
           }, target: h, type: t });
           let s = [], r = h, o = !1;
@@ -165,7 +165,7 @@ function Np() {
       })();
       De.jQuery && (De.jQuery.fn.highcharts = function() {
         let h = [].slice.call(arguments);
-        if (this[0]) return h[0] ? (new X[zt(h[0]) ? h.shift() : "Chart"](this[0], h[0], h[1]), this) : pe[Tt(this[0], "data-highcharts-chart")];
+        if (this[0]) return h[0] ? (new X[Ft(h[0]) ? h.shift() : "Chart"](this[0], h[0], h[1]), this) : pe[Et(this[0], "data-highcharts-chart")];
       });
       let J = { addEvent: function(h, t, e, i = {}) {
         let s = typeof h == "function" && h.prototype || h;
@@ -186,13 +186,13 @@ function Np() {
         let t = h.length, e = h[0];
         for (; t--; ) h[t] < e && (e = h[t]);
         return e;
-      }, attr: Tt, clamp: function(h, t, e) {
+      }, attr: Et, clamp: function(h, t, e) {
         return h > t ? h < e ? h : e : t;
       }, clearTimeout: function(h) {
         lt(h) && clearTimeout(h);
       }, correctFloat: xi, createElement: function(h, t, e, i, s) {
         let r = mi.createElement(h);
-        return t && Dt(r, t), s && ue(r, { padding: "0", border: "none", margin: "0" }), e && ue(r, e), i && i.appendChild(r), r;
+        return t && Bt(r, t), s && ue(r, { padding: "0", border: "none", margin: "0" }), e && ue(r, e), i && i.appendChild(r), r;
       }, crisp: function(h, t = 0, e) {
         let i = t % 2 / 2, s = e ? -1 : 1;
         return (Math.round(h * s - i) + i) * s;
@@ -219,11 +219,11 @@ function Np() {
           h.splice(e, 1);
           break;
         }
-      }, error: ii, extend: Dt, extendClass: function(h, t) {
+      }, error: ii, extend: Bt, extendClass: function(h, t) {
         let e = function() {
         };
-        return e.prototype = new h(), Dt(e.prototype, t), e;
-      }, find: It, fireEvent: us, getAlignFactor: (h = "") => ({ center: 0.5, right: 1, middle: 0.5, bottom: 1 })[h] || 0, getClosestDistance: function(h, t) {
+        return e.prototype = new h(), Bt(e.prototype, t), e;
+      }, find: Nt, fireEvent: us, getAlignFactor: (h = "") => ({ center: 0.5, right: 1, middle: 0.5, bottom: 1 })[h] || 0, getClosestDistance: function(h, t) {
         let e, i, s, r = !t;
         return h.forEach((o) => {
           if (o.length > 1) for (s = o.length - 1; s > 0; s--) (i = o[s] - o[s - 1]) < 0 && !r ? (t?.(), t = void 0) : i && (e === void 0 || i < e) && (e = i);
@@ -260,7 +260,7 @@ function Np() {
         return e;
       }, isArray: Xe, isClass: U, isDOMElement: Y, isFunction: function(h) {
         return typeof h == "function";
-      }, isNumber: $, isObject: Se, isString: zt, merge: function(h, ...t) {
+      }, isNumber: $, isObject: Se, isString: Ft, merge: function(h, ...t) {
         let e, i = [h, ...t], s = {}, r = function(a, l) {
           return typeof a != "object" && (a = {}), ge(l, function(c, f) {
             f !== "__proto__" && f !== "constructor" && (!Se(c, !0) || U(c) || Y(c) ? a[f] = l[f] : a[f] = r(a[f] || {}, c));
@@ -302,7 +302,7 @@ function Np() {
       }, syncTimeout: function(h, t, e) {
         return t > 0 ? setTimeout(h, t, e) : (h.call(0, e), -1);
       }, timeUnits: { millisecond: 1, second: 1e3, minute: 6e4, hour: 36e5, day: 864e5, week: 6048e5, month: 24192e5, year: 314496e5 }, ucfirst: function(h) {
-        return zt(h) ? h.substring(0, 1).toUpperCase() + h.substring(1) : String(h);
+        return Ft(h) ? h.substring(0, 1).toUpperCase() + h.substring(1) : String(h);
       }, uniqueKey: Xa, useSerialIds: function(h) {
         return nt = Gt(h, nt);
       }, wrap: function(h, t, e) {
@@ -413,19 +413,19 @@ function Np() {
           }
           return this.resolveDTLFormat(i[a]).main;
         }
-      }, { defined: lo, extend: ho, timeUnits: Ft } = J, $s = class extends qa {
+      }, { defined: lo, extend: ho, timeUnits: Ht } = J, $s = class extends qa {
         getTimeTicks(h, t, e, i) {
           let s = this, r = [], o = {}, { count: a = 1, unitRange: l } = h, [c, f, d, m, x, y] = s.toParts(t), M = (t || 0) % 1e3, w;
           if (i ?? (i = 1), lo(t)) {
-            if (M = l >= Ft.second ? 0 : a * Math.floor(M / a), l >= Ft.second && (y = l >= Ft.minute ? 0 : a * Math.floor(y / a)), l >= Ft.minute && (x = l >= Ft.hour ? 0 : a * Math.floor(x / a)), l >= Ft.hour && (m = l >= Ft.day ? 0 : a * Math.floor(m / a)), l >= Ft.day && (d = l >= Ft.month ? 1 : Math.max(1, a * Math.floor(d / a))), l >= Ft.month && (f = l >= Ft.year ? 0 : a * Math.floor(f / a)), l >= Ft.year && (c -= c % a), l === Ft.week) {
+            if (M = l >= Ht.second ? 0 : a * Math.floor(M / a), l >= Ht.second && (y = l >= Ht.minute ? 0 : a * Math.floor(y / a)), l >= Ht.minute && (x = l >= Ht.hour ? 0 : a * Math.floor(x / a)), l >= Ht.hour && (m = l >= Ht.day ? 0 : a * Math.floor(m / a)), l >= Ht.day && (d = l >= Ht.month ? 1 : Math.max(1, a * Math.floor(d / a))), l >= Ht.month && (f = l >= Ht.year ? 0 : a * Math.floor(f / a)), l >= Ht.year && (c -= c % a), l === Ht.week) {
               a && (t = s.makeTime(c, f, d, m, x, y, M));
               let S = this.dateTimeFormat({ timeZone: this.timezone, weekday: "narrow" }, t, "es"), O = "DLMXJVS".indexOf(S);
               d += -O + i + (O < i ? -7 : 0);
             }
-            t = s.makeTime(c, f, d, m, x, y, M), s.variableTimezone && lo(e) && (w = e - t > 4 * Ft.month || s.getTimezoneOffset(t) !== s.getTimezoneOffset(e));
+            t = s.makeTime(c, f, d, m, x, y, M), s.variableTimezone && lo(e) && (w = e - t > 4 * Ht.month || s.getTimezoneOffset(t) !== s.getTimezoneOffset(e));
             let v = t, T = 1;
-            for (; v < e; ) r.push(v), l === Ft.year ? v = s.makeTime(c + T * a, 0) : l === Ft.month ? v = s.makeTime(c, f + T * a) : w && (l === Ft.day || l === Ft.week) ? v = s.makeTime(c, f, d + T * a * (l === Ft.day ? 1 : 7)) : w && l === Ft.hour && a > 1 ? v = s.makeTime(c, f, d, m + T * a) : v += l * a, T++;
-            r.push(v), l <= Ft.hour && r.length < 1e4 && r.forEach((S) => {
+            for (; v < e; ) r.push(v), l === Ht.year ? v = s.makeTime(c + T * a, 0) : l === Ht.month ? v = s.makeTime(c, f + T * a) : w && (l === Ht.day || l === Ht.week) ? v = s.makeTime(c, f, d + T * a * (l === Ht.day ? 1 : 7)) : w && l === Ht.hour && a > 1 ? v = s.makeTime(c, f, d, m + T * a) : v += l * a, T++;
+            r.push(v), l <= Ht.hour && r.length < 1e4 && r.forEach((S) => {
               S % 18e5 == 0 && s.dateFormat("%H%M%S%L", S) === "000000000" && (o[S] = "day");
             });
           }
@@ -438,17 +438,17 @@ function Np() {
       }, setOptions: function(h) {
         return co(X, "setOptions", { options: h }), po(!0, Ye, h), h.time && Zs.update(Ye.time), h.lang && "locale" in h.lang && Zs.update({ locale: h.lang.locale }), h.lang?.chartTitle && (Ye.title = { ...Ye.title, text: h.lang.chartTitle }), Ye;
       } }, { win: $a } = X, { isNumber: qi, isString: Za, merge: fs, pInt: oe, defined: uo } = J, go = (h, t, e) => `color-mix(in srgb,${h},${t} ${100 * e}%)`, ms = (h) => Za(h) && !!h && h !== "none";
-      class St {
+      class Pt {
         static parse(t) {
-          return t ? new St(t) : St.None;
+          return t ? new Pt(t) : Pt.None;
         }
         constructor(t) {
           let e, i, s, r;
           this.rgba = [NaN, NaN, NaN, NaN], this.input = t;
           let o = X.Color;
-          if (o && o !== St) return new o(t);
-          if (typeof t == "object" && t.stops !== void 0) this.stops = t.stops.map((a) => new St(a[1]));
-          else if (typeof t == "string") for (this.input = t = St.names[t.toLowerCase()] || t, s = St.parsers.length; s-- && !i; ) (e = (r = St.parsers[s]).regex.exec(t)) && (i = r.parse(e));
+          if (o && o !== Pt) return new o(t);
+          if (typeof t == "object" && t.stops !== void 0) this.stops = t.stops.map((a) => new Pt(a[1]));
+          else if (typeof t == "string") for (this.input = t = Pt.names[t.toLowerCase()] || t, s = Pt.parsers.length; s-- && !i; ) (e = (r = Pt.parsers[s]).regex.exec(t)) && (i = r.parse(e));
           i && (this.rgba = i);
         }
         get(t) {
@@ -468,7 +468,7 @@ function Np() {
             i.brighten(t);
           });
           else if (qi(t) && t !== 0) if (qi(e[0])) for (let i = 0; i < 3; i++) e[i] += oe(255 * t), e[i] < 0 && (e[i] = 0), e[i] > 255 && (e[i] = 255);
-          else St.useColorMix && ms(this.input) && (this.output = go(this.input, t > 0 ? "white" : "black", Math.abs(t)));
+          else Pt.useColorMix && ms(this.input) && (this.output = go(this.input, t > 0 ? "white" : "black", Math.abs(t)));
           return this;
         }
         setOpacity(t) {
@@ -476,12 +476,12 @@ function Np() {
         }
         tweenTo(t, e) {
           let i = this.rgba, s = t.rgba;
-          if (!qi(i[0]) || !qi(s[0])) return St.useColorMix && ms(this.input) && ms(t.input) && e < 0.99 ? go(this.input, t.input, e) : t.input || "none";
+          if (!qi(i[0]) || !qi(s[0])) return Pt.useColorMix && ms(this.input) && ms(t.input) && e < 0.99 ? go(this.input, t.input, e) : t.input || "none";
           let r = s[3] !== 1 || i[3] !== 1, o = (l, c) => l + (i[c] - l) * (1 - e), a = s.slice(0, 3).map(o).map(Math.round);
           return r && a.push(o(s[3], 3)), (r ? "rgba(" : "rgb(") + a.join(",") + ")";
         }
       }
-      St.names = { white: "#ffffff", black: "#000000" }, St.parsers = [{ regex: /rgba\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d?(?:\.\d+)?)\s*\)/, parse: function(h) {
+      Pt.names = { white: "#ffffff", black: "#000000" }, Pt.parsers = [{ regex: /rgba\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d?(?:\.\d+)?)\s*\)/, parse: function(h) {
         return [oe(h[1]), oe(h[2]), oe(h[3]), parseFloat(h[4], 10)];
       } }, { regex: /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)/, parse: function(h) {
         return [oe(h[1]), oe(h[2]), oe(h[3]), 1];
@@ -489,8 +489,8 @@ function Np() {
         return [oe(h[1] + h[1], 16), oe(h[2] + h[2], 16), oe(h[3] + h[3], 16), uo(h[4]) ? oe(h[4] + h[4], 16) / 255 : 1];
       } }, { regex: /^#([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})?$/i, parse: function(h) {
         return [oe(h[1], 16), oe(h[2], 16), oe(h[3], 16), uo(h[4]) ? oe(h[4], 16) / 255 : 1];
-      } }], St.useColorMix = $a.CSS?.supports("color", "color-mix(in srgb,red,blue 9%)"), St.None = new St("");
-      let { parse: fo } = St, { win: mo } = X, { isNumber: _s, objectEach: xo } = J;
+      } }], Pt.useColorMix = $a.CSS?.supports("color", "color-mix(in srgb,red,blue 9%)"), Pt.None = new Pt("");
+      let { parse: fo } = Pt, { win: mo } = X, { isNumber: _s, objectEach: xo } = J;
       class ae {
         constructor(t, e, i) {
           this.pos = NaN, this.options = e, this.elem = t, this.prop = i;
@@ -596,11 +596,11 @@ function Np() {
       }, setAnimation: function(h, t) {
         t.renderer.globalAnimation = bs(h, t.options.chart.animation, !0);
       }, stop: ys }, { SVG_NS: Qs, win: tn } = X, { attr: en, createElement: sn, css: rn, error: vo, isFunction: tr, isString: er, objectEach: ko, splat: ir } = J, { trustedTypes: sr } = tn, vs = sr && tr(sr.createPolicy) && sr.createPolicy("highcharts", { createHTML: (h) => h }), on = vs ? vs.createHTML("") : "";
-      class Bt {
+      class Rt {
         static filterUserAttributes(t) {
           return ko(t, (e, i) => {
             let s = !0;
-            Bt.allowedAttributes.indexOf(i) === -1 && (s = !1), ["background", "dynsrc", "href", "lowsrc", "src"].indexOf(i) !== -1 && (s = er(e) && Bt.allowedReferences.some((r) => e.indexOf(r) === 0)), s || (vo(33, !1, void 0, { "Invalid attribute in config": `${i}` }), delete t[i]), er(e) && t[i] && (t[i] = e.replace(/</g, "&lt;"));
+            Rt.allowedAttributes.indexOf(i) === -1 && (s = !1), ["background", "dynsrc", "href", "lowsrc", "src"].indexOf(i) !== -1 && (s = er(e) && Rt.allowedReferences.some((r) => e.indexOf(r) === 0)), s || (vo(33, !1, void 0, { "Invalid attribute in config": `${i}` }), delete t[i]), er(e) && t[i] && (t[i] = e.replace(/</g, "&lt;"));
           }), t;
         }
         static parseStyle(t) {
@@ -610,7 +610,7 @@ function Np() {
           }, {});
         }
         static setElementHTML(t, e) {
-          t.innerHTML = Bt.emptyHTML, e && new Bt(e).addToDOM(t);
+          t.innerHTML = Rt.emptyHTML, e && new Rt(e).addToDOM(t);
         }
         constructor(t) {
           this.nodes = typeof t == "string" ? this.parseMarkup(t) : t;
@@ -619,13 +619,13 @@ function Np() {
           return (function e(i, s) {
             let r;
             return ir(i).forEach(function(o) {
-              let a, l = o.tagName, c = o.textContent ? X.doc.createTextNode(o.textContent) : void 0, f = Bt.bypassHTMLFiltering;
+              let a, l = o.tagName, c = o.textContent ? X.doc.createTextNode(o.textContent) : void 0, f = Rt.bypassHTMLFiltering;
               if (l) if (l === "#text") a = c;
-              else if (Bt.allowedTags.indexOf(l) !== -1 || f) {
+              else if (Rt.allowedTags.indexOf(l) !== -1 || f) {
                 let d = l === "svg" ? Qs : s.namespaceURI || Qs, m = X.doc.createElementNS(d, l), x = o.attributes || {};
                 ko(o, function(y, M) {
                   M !== "tagName" && M !== "attributes" && M !== "children" && M !== "style" && M !== "textContent" && (x[M] = y);
-                }), en(m, f ? x : Bt.filterUserAttributes(x)), o.style && rn(m, o.style), c && m.appendChild(c), e(o.children || [], m), a = m;
+                }), en(m, f ? x : Rt.filterUserAttributes(x)), o.style && rn(m, o.style), c && m.appendChild(c), e(o.children || [], m), a = m;
               } else vo(33, !1, void 0, { "Invalid tagName in config": l });
               a && s.appendChild(a), r = a;
             }), r;
@@ -649,7 +649,7 @@ function Np() {
             if (c) {
               let f = {};
               [].forEach.call(c, (d) => {
-                d.name === "data-style" ? l.style = Bt.parseStyle(d.value) : f[d.name] = d.value;
+                d.name === "data-style" ? l.style = Rt.parseStyle(d.value) : f[d.name] = d.value;
               }), l.attributes = f;
             }
             if (r.childNodes.length) {
@@ -663,7 +663,7 @@ function Np() {
           return [].forEach.call(e.body.childNodes, (r) => s(r, i)), i;
         }
       }
-      Bt.allowedAttributes = ["alt", "aria-controls", "aria-describedby", "aria-expanded", "aria-haspopup", "aria-hidden", "aria-label", "aria-labelledby", "aria-live", "aria-pressed", "aria-readonly", "aria-roledescription", "aria-selected", "class", "clip-path", "color", "colspan", "cx", "cy", "d", "disabled", "dx", "dy", "fill", "filterUnits", "flood-color", "flood-opacity", "height", "href", "id", "in", "in2", "markerHeight", "markerWidth", "offset", "opacity", "operator", "orient", "padding", "paddingLeft", "paddingRight", "patternUnits", "r", "radius", "refX", "refY", "result", "role", "rowspan", "scope", "slope", "src", "startOffset", "stdDeviation", "stroke-linecap", "stroke-width", "stroke", "style", "summary", "tabindex", "tableValues", "target", "text-align", "text-anchor", "textAnchor", "textLength", "title", "type", "valign", "width", "x", "x1", "x2", "xlink:href", "y", "y1", "y2", "zIndex"], Bt.allowedReferences = ["https://", "http://", "mailto:", "/", "../", "./", "#"], Bt.allowedTags = ["#text", "a", "abbr", "b", "br", "button", "caption", "circle", "clipPath", "code", "dd", "defs", "div", "dl", "dt", "em", "feComponentTransfer", "feComposite", "feDropShadow", "feFlood", "feFuncA", "feFuncB", "feFuncG", "feFuncR", "feGaussianBlur", "feMerge", "feMergeNode", "feMorphology", "feOffset", "filter", "h1", "h2", "h3", "h4", "h5", "h6", "hr", "i", "img", "li", "linearGradient", "marker", "ol", "p", "path", "pattern", "pre", "rect", "small", "span", "stop", "strong", "style", "sub", "sup", "svg", "table", "tbody", "td", "text", "textPath", "th", "thead", "title", "tr", "tspan", "u", "ul"], Bt.emptyHTML = on, Bt.bypassHTMLFiltering = !1;
+      Rt.allowedAttributes = ["alt", "aria-controls", "aria-describedby", "aria-expanded", "aria-haspopup", "aria-hidden", "aria-label", "aria-labelledby", "aria-live", "aria-pressed", "aria-readonly", "aria-roledescription", "aria-selected", "class", "clip-path", "color", "colspan", "cx", "cy", "d", "disabled", "dx", "dy", "fill", "filterUnits", "flood-color", "flood-opacity", "height", "href", "id", "in", "in2", "markerHeight", "markerWidth", "offset", "opacity", "operator", "orient", "padding", "paddingLeft", "paddingRight", "patternUnits", "r", "radius", "refX", "refY", "result", "role", "rowspan", "scope", "slope", "src", "startOffset", "stdDeviation", "stroke-linecap", "stroke-width", "stroke", "style", "summary", "tabindex", "tableValues", "target", "text-align", "text-anchor", "textAnchor", "textLength", "title", "type", "valign", "width", "x", "x1", "x2", "xlink:href", "y", "y1", "y2", "zIndex"], Rt.allowedReferences = ["https://", "http://", "mailto:", "/", "../", "./", "#"], Rt.allowedTags = ["#text", "a", "abbr", "b", "br", "button", "caption", "circle", "clipPath", "code", "dd", "defs", "div", "dl", "dt", "em", "feComponentTransfer", "feComposite", "feDropShadow", "feFlood", "feFuncA", "feFuncB", "feFuncG", "feFuncR", "feGaussianBlur", "feMerge", "feMergeNode", "feMorphology", "feOffset", "filter", "h1", "h2", "h3", "h4", "h5", "h6", "hr", "i", "img", "li", "linearGradient", "marker", "ol", "p", "path", "pattern", "pre", "rect", "small", "span", "stop", "strong", "style", "sub", "sup", "svg", "table", "tbody", "td", "text", "textPath", "th", "thead", "title", "tr", "tspan", "u", "ul"], Rt.emptyHTML = on, Rt.bypassHTMLFiltering = !1;
       let { defaultOptions: wo, defaultTime: Mo } = fe, { pageLang: an } = X, { extend: nn, getNestedProperty: Co, isArray: ln, isNumber: Ao, isObject: rr, isString: or, pick: ar, ucfirst: To } = J, ks = { add: (h, t) => h + t, divide: (h, t) => t !== 0 ? h / t : "", eq: (h, t) => h == t, each: function(h) {
         let t = arguments[arguments.length - 1];
         return !!ln(h) && h.map((e, i) => je(t.body, nn(rr(e) ? e : { "@this": e }, { "@index": i, "@first": i === 0, "@last": i === h.length - 1 }))).join("");
@@ -728,9 +728,9 @@ function Np() {
         }, h.registerRendererType = function(e, i, s) {
           h.rendererTypes[e] = i, (!t || s) && (t = e, X.Renderer = i);
         };
-      })(Pt || (Pt = {}));
-      let $i = Pt, { clamp: hn, pick: cn, pushUnique: dn, stableSort: cr } = J;
-      (Nt || (Nt = {})).distribute = function h(t, e, i) {
+      })(Ct || (Ct = {}));
+      let $i = Ct, { clamp: hn, pick: cn, pushUnique: dn, stableSort: cr } = J;
+      (St || (St = {})).distribute = function h(t, e, i) {
         let s = t, r = s.reducedLen || e, o = (S, O) => S.target - O.target, a = [], l = t.length, c = [], f = a.push, d, m, x, y = !0, M, w, v = 0, T;
         for (d = l; d--; ) v += t[d].size;
         if (v > r) {
@@ -746,8 +746,8 @@ function Np() {
           return (S.targets || []).some(() => (s[d].pos = S.pos + O, i !== void 0 && Math.abs(s[d].pos - s[d].target) > i ? (s.slice(0, d + 1).forEach((L) => delete L.pos), s.reducedLen = (s.reducedLen || e) - 0.1 * e, s.reducedLen > 0.1 * e && h(s, e, i), !0) : (O += s[d].size, d++, !1)));
         }), cr(s, o), s;
       };
-      let ws = Nt, { animate: pn, animObject: un, stop: So } = Zt, { deg2rad: Eo, doc: bi, svg: Po, SVG_NS: Si, win: Oo, isFirefox: Lo } = X, { addEvent: gn, attr: dr, createElement: pr, crisp: Ms, css: Do, defined: Be, erase: Io, extend: Zi, fireEvent: ur, getAlignFactor: gr, isArray: fn, isFunction: mn, isNumber: zl, isObject: xn, isString: Bo, merge: fr, objectEach: Ei, pick: Ue, pInt: _i, pushUnique: bn, replaceNested: yn, syncTimeout: vn, uniqueKey: No } = J;
-      class _t {
+      let ws = St, { animate: pn, animObject: un, stop: So } = Zt, { deg2rad: Eo, doc: bi, svg: Po, SVG_NS: Si, win: Oo, isFirefox: Lo } = X, { addEvent: gn, attr: dr, createElement: pr, crisp: Ms, css: Do, defined: Be, erase: Io, extend: Zi, fireEvent: ur, getAlignFactor: gr, isArray: fn, isFunction: mn, isNumber: zl, isObject: xn, isString: Bo, merge: fr, objectEach: Ei, pick: Ue, pInt: _i, pushUnique: bn, replaceNested: yn, syncTimeout: vn, uniqueKey: No } = J;
+      class Jt {
         _defaultGetter(t) {
           let e = Ue(this[t + "Value"], this[t], this.element ? this.element.getAttribute(t) : null, 0);
           return /^-?[\d\.]+$/.test(e) && (e = parseFloat(e)), e;
@@ -812,7 +812,7 @@ function Np() {
           }
         }
         attr(t, e, i, s) {
-          let { element: r } = this, o = _t.symbolCustomAttribs, a, l, c = this, f;
+          let { element: r } = this, o = Jt.symbolCustomAttribs, a, l, c = this, f;
           return typeof t == "string" && e !== void 0 && (a = t, (t = {})[a] = e), typeof t == "string" ? c = (this[t + "Getter"] || this._defaultGetter).call(this, t, r) : (Ei(t, function(d, m) {
             f = !1, s || So(this, m), this.symbolName && o.indexOf(m) !== -1 && (l || (this.symbolAttr(t), l = !0), f = !0), this.rotation && (m === "x" || m === "y") && (this.doTransform = !0), f || (this[m + "Setter"] || this._defaultSetter).call(this, d, m, r);
           }, this), this.afterSetters()), i && i.call(this), c;
@@ -842,7 +842,7 @@ function Np() {
                 a.id = y = No();
                 let v = c[M] = s.createElement(o).attr(a).add(s.defs);
                 v.radAttr = l, v.stops = [], f.forEach(function(T) {
-                  T[1].indexOf("rgba") === 0 ? (d = (r = St.parse(T[1])).get("rgb"), m = r.get("a")) : (d = T[1], m = 1);
+                  T[1].indexOf("rgba") === 0 ? (d = (r = Pt.parse(T[1])).get("rgb"), m = r.get("a")) : (d = T[1], m = 1);
                   let S = s.createElement("stop").attr({ offset: T[0], "stop-color": d, "stop-opacity": m }).add(v);
                   v.stops.push(S);
                 });
@@ -901,7 +901,7 @@ function Np() {
           i.setAttributeNS("http://www.w3.org/1999/xlink", e, t);
         }
         getBBox(t, e) {
-          let i, s, r, o, { alignValue: a, element: l, renderer: c, styles: f, textStr: d } = this, { cache: m, cacheKeys: x } = c, y = l.namespaceURI === this.SVG_NS, M = Ue(e, this.rotation, 0), w = c.styledMode ? l && _t.prototype.getStyle.call(l, "font-size") : f.fontSize;
+          let i, s, r, o, { alignValue: a, element: l, renderer: c, styles: f, textStr: d } = this, { cache: m, cacheKeys: x } = c, y = l.namespaceURI === this.SVG_NS, M = Ue(e, this.rotation, 0), w = c.styledMode ? l && Jt.prototype.getStyle.call(l, "font-size") : f.fontSize;
           if (Be(d) && ((o = d.toString()).indexOf("<") === -1 && (o = o.replace(/\d/g, "0")), o += ["", c.rootFontSize, w, M, this.textWidth, a, f.lineClamp, f.textOverflow, f.fontWeight].join(",")), o && !t && (i = m[o]), !i || i.polygon) {
             if (y || c.forExport) {
               try {
@@ -924,8 +924,8 @@ function Np() {
           return i;
         }
         getRotatedBox(t, e) {
-          let { x: i, y: s, width: r, height: o } = t, { alignValue: a, translateY: l, rotationOriginX: c = 0, rotationOriginY: f = 0 } = this, d = gr(a), m = Number(this.element.getAttribute("y") || 0) - (l ? 0 : s), x = e * Eo, y = (e - 90) * Eo, M = Math.cos(x), w = Math.sin(x), v = r * M, T = r * w, S = Math.cos(y), O = Math.sin(y), [[L, D], [N, I]] = [c, f].map((at) => [at - at * M, at * w]), W = i + d * (r - v) + L + I + m * S, j = W + v, H = j - o * S, K = H - v, Q = s + m - d * T - D + N + m * O, et = Q + T, V = et - o * O, Z = V - T, tt = Math.min(W, j, H, K), Et = Math.min(Q, et, V, Z), gt = Math.max(W, j, H, K) - tt, xe = Math.max(Q, et, V, Z) - Et;
-          return { x: tt, y: Et, width: gt, height: xe, polygon: [[W, Q], [j, et], [H, V], [K, Z]] };
+          let { x: i, y: s, width: r, height: o } = t, { alignValue: a, translateY: l, rotationOriginX: c = 0, rotationOriginY: f = 0 } = this, d = gr(a), m = Number(this.element.getAttribute("y") || 0) - (l ? 0 : s), x = e * Eo, y = (e - 90) * Eo, M = Math.cos(x), w = Math.sin(x), v = r * M, T = r * w, S = Math.cos(y), O = Math.sin(y), [[L, D], [N, I]] = [c, f].map((at) => [at - at * M, at * w]), W = i + d * (r - v) + L + I + m * S, j = W + v, H = j - o * S, K = H - v, Q = s + m - d * T - D + N + m * O, et = Q + T, V = et - o * O, Z = V - T, tt = Math.min(W, j, H, K), Ot = Math.min(Q, et, V, Z), gt = Math.max(W, j, H, K) - tt, xe = Math.max(Q, et, V, Z) - Ot;
+          return { x: tt, y: Ot, width: gt, height: xe, polygon: [[W, Q], [j, et], [H, V], [K, Z]] };
         }
         getStyle(t) {
           return Oo.getComputedStyle(this.element || this, "").getPropertyValue(t);
@@ -985,7 +985,7 @@ function Np() {
         }
         symbolAttr(t) {
           let e = this;
-          _t.symbolCustomAttribs.forEach(function(i) {
+          Jt.symbolCustomAttribs.forEach(function(i) {
             e[i] = Ue(t[i], e[i]);
           }), e.attr({ d: e.renderer.symbols[e.symbolName](e.x, e.y, e.width, e.height, e) });
         }
@@ -1022,10 +1022,10 @@ function Np() {
           return d;
         }
       }
-      _t.symbolCustomAttribs = ["anchorX", "anchorY", "clockwise", "end", "height", "innerR", "r", "start", "width", "x", "y"], _t.prototype.strokeSetter = _t.prototype.fillSetter, _t.prototype.yGetter = _t.prototype.xGetter, _t.prototype.matrixSetter = _t.prototype.rotationOriginXSetter = _t.prototype.rotationOriginYSetter = _t.prototype.rotationSetter = _t.prototype.scaleXSetter = _t.prototype.scaleYSetter = _t.prototype.translateXSetter = _t.prototype.translateYSetter = _t.prototype.verticalAlignSetter = function(h, t) {
+      Jt.symbolCustomAttribs = ["anchorX", "anchorY", "clockwise", "end", "height", "innerR", "r", "start", "width", "x", "y"], Jt.prototype.strokeSetter = Jt.prototype.fillSetter, Jt.prototype.yGetter = Jt.prototype.xGetter, Jt.prototype.matrixSetter = Jt.prototype.rotationOriginXSetter = Jt.prototype.rotationOriginYSetter = Jt.prototype.rotationSetter = Jt.prototype.scaleXSetter = Jt.prototype.scaleYSetter = Jt.prototype.translateXSetter = Jt.prototype.translateYSetter = Jt.prototype.verticalAlignSetter = function(h, t) {
         this[t] = h, this.doTransform = !0;
       };
-      let Pe = _t, { defined: Ro, extend: kn, getAlignFactor: zo, isNumber: Ji, merge: Cs, pick: Qi, removeEvent: si } = J;
+      let Pe = Jt, { defined: Ro, extend: kn, getAlignFactor: zo, isNumber: Ji, merge: Cs, pick: Qi, removeEvent: si } = J;
       class ri extends Pe {
         constructor(t, e, i, s, r, o, a, l, c, f) {
           let d;
@@ -1183,7 +1183,7 @@ function Np() {
             if (s || this.ellipsis || this.width || h.textPath || i.indexOf(" ") !== -1 && (!this.noWrap || /<br.*?>/g.test(i))) {
               if (i !== "") {
                 o && o.appendChild(t);
-                let l = new Bt(i);
+                let l = new Rt(i);
                 this.modifyTree(l.nodes), l.addToDOM(t), this.modifyDOM(), this.ellipsis && (t.textContent || "").indexOf("…") !== -1 && h.attr("title", this.unescapeEntities(h.textStr || "", ["&lt;", "&gt;"])), o && o.removeChild(t);
               }
             } else t.appendChild(Pi.createTextNode(this.unescapeEntities(i)));
@@ -1260,26 +1260,26 @@ function Np() {
             t && t.indexOf(e) !== -1 || (h = h.toString().replace(RegExp(e, "g"), i));
           }), h;
         }
-      }, { defaultOptions: Tn } = fe, { charts: yr, deg2rad: Yo, doc: vi, isFirefox: Qt, isMS: vr, isWebKit: As, noop: Oi, SVG_NS: Sn, symbolSizes: ni, win: kr } = X, { addEvent: Ts, attr: Li, createElement: jo, crisp: Oe, css: Ve, defined: Jt, destroyObjectProperties: Ss, extend: li, isArray: Es, isNumber: Ne, isObject: is, isString: wr, merge: Mr, pick: Cr, pInt: En, replaceNested: Pn, uniqueKey: On } = J;
+      }, { defaultOptions: Tn } = fe, { charts: yr, deg2rad: Yo, doc: vi, isFirefox: te, isMS: vr, isWebKit: As, noop: Oi, SVG_NS: Sn, symbolSizes: ni, win: kr } = X, { addEvent: Ts, attr: Li, createElement: jo, crisp: Oe, css: Ve, defined: Qt, destroyObjectProperties: Ss, extend: li, isArray: Es, isNumber: Ne, isObject: is, isString: wr, merge: Mr, pick: Cr, pInt: En, replaceNested: Pn, uniqueKey: On } = J;
       class Ps {
         constructor(t, e, i, s, r, o, a) {
           let l, c;
           this.x = 0, this.y = 0;
           let f = this.createElement("svg").attr({ version: "1.1", class: "highcharts-root" }), d = f.element;
-          a || f.css(this.getStyle(s || {})), t.appendChild(d), Li(t, "dir", "ltr"), t.innerHTML.indexOf("xmlns") === -1 && Li(d, "xmlns", this.SVG_NS), this.box = d, this.boxWrapper = f, this.alignedObjects = [], this.url = this.getReferenceURL(), this.createElement("desc").add().element.appendChild(vi.createTextNode("Created with Highcharts 12.4.0")), this.defs = this.createElement("defs").add(), this.allowHTML = o, this.forExport = r, this.styledMode = a, this.gradients = {}, this.cache = {}, this.cacheKeys = [], this.imgCount = 0, this.rootFontSize = f.getStyle("font-size"), this.setSize(e, i, !1), Qt && t.getBoundingClientRect && ((l = function() {
+          a || f.css(this.getStyle(s || {})), t.appendChild(d), Li(t, "dir", "ltr"), t.innerHTML.indexOf("xmlns") === -1 && Li(d, "xmlns", this.SVG_NS), this.box = d, this.boxWrapper = f, this.alignedObjects = [], this.url = this.getReferenceURL(), this.createElement("desc").add().element.appendChild(vi.createTextNode("Created with Highcharts 12.4.0")), this.defs = this.createElement("defs").add(), this.allowHTML = o, this.forExport = r, this.styledMode = a, this.gradients = {}, this.cache = {}, this.cacheKeys = [], this.imgCount = 0, this.rootFontSize = f.getStyle("font-size"), this.setSize(e, i, !1), te && t.getBoundingClientRect && ((l = function() {
             Ve(t, { left: 0, top: 0 }), c = t.getBoundingClientRect(), Ve(t, { left: Math.ceil(c.left) - c.left + "px", top: Math.ceil(c.top) - c.top + "px" });
           })(), this.unSubPixelFix = Ts(kr, "resize", l));
         }
         definition(t) {
-          return new Bt([t]).addToDOM(this.defs.element);
+          return new Rt([t]).addToDOM(this.defs.element);
         }
         getReferenceURL() {
-          if ((Qt || As) && vi.getElementsByTagName("base").length) {
-            if (!Jt(At)) {
-              let t = On(), e = new Bt([{ tagName: "svg", attributes: { width: 8, height: 8 }, children: [{ tagName: "defs", children: [{ tagName: "clipPath", attributes: { id: t }, children: [{ tagName: "rect", attributes: { width: 4, height: 4 } }] }] }, { tagName: "rect", attributes: { id: "hitme", width: 8, height: 8, "clip-path": `url(#${t})`, fill: "rgba(0,0,0,0.001)" } }] }]).addToDOM(vi.body);
-              Ve(e, { position: "fixed", top: 0, left: 0, zIndex: 9e5 }), At = vi.elementFromPoint(6, 6)?.id === "hitme", vi.body.removeChild(e);
+          if ((te || As) && vi.getElementsByTagName("base").length) {
+            if (!Qt(Tt)) {
+              let t = On(), e = new Rt([{ tagName: "svg", attributes: { width: 8, height: 8 }, children: [{ tagName: "defs", children: [{ tagName: "clipPath", attributes: { id: t }, children: [{ tagName: "rect", attributes: { width: 4, height: 4 } }] }] }, { tagName: "rect", attributes: { id: "hitme", width: 8, height: 8, "clip-path": `url(#${t})`, fill: "rgba(0,0,0,0.001)" } }] }]).addToDOM(vi.body);
+              Ve(e, { position: "fixed", top: 0, left: 0, zIndex: 9e5 }), Tt = vi.elementFromPoint(6, 6)?.id === "hitme", vi.body.removeChild(e);
             }
-            if (At) return Pn(kr.location.href.split("#")[0], [/<[^>]*>/g, ""], [/([\('\)])/g, "\\$1"], [/ /g, "%20"]);
+            if (Tt) return Pn(kr.location.href.split("#")[0], [/<[^>]*>/g, ""], [/([\('\)])/g, "\\$1"], [/ /g, "%20"]);
           }
           return "";
         }
@@ -1314,8 +1314,8 @@ function Np() {
         }
         getContrast(t) {
           if (t === "transparent") return "#000000";
-          let e = St.parse(t).rgba, i = " clamp(0,calc(9e9*(0.5 - (0.2126*r + 0.7152*g + 0.0722*b))),1)";
-          if (Ne(e[0]) || !St.useColorMix) {
+          let e = Pt.parse(t).rgba, i = " clamp(0,calc(9e9*(0.5 - (0.2126*r + 0.7152*g + 0.0722*b))),1)";
+          if (Ne(e[0]) || !Pt.useColorMix) {
             let s = e.map((o) => {
               let a = o / 255;
               return a <= 0.04 ? a / 12.92 : Math.pow((a + 0.055) / 1.055, 2.4);
@@ -1329,9 +1329,9 @@ function Np() {
           r = Mr(Tn.global.buttonTheme, r), m && (delete r.fill, delete r.stroke, delete r["stroke-width"]);
           let M = r.states || {}, w = r.style || {};
           delete r.states, delete r.style;
-          let v = [Bt.filterUserAttributes(r)], T = [w];
+          let v = [Rt.filterUserAttributes(r)], T = [w];
           return m || ["hover", "select", "disabled"].forEach((S, O) => {
-            v.push(Mr(v[0], Bt.filterUserAttributes(x[O + 5] || M[S] || {}))), T.push(v[O + 1].style), delete v[O + 1].style;
+            v.push(Mr(v[0], Rt.filterUserAttributes(x[O + 5] || M[S] || {}))), T.push(v[O + 1].style), delete v[O + 1].style;
           }), Ts(d.element, vr ? "mouseover" : "mouseenter", function() {
             y !== 3 && d.setState(1);
           }), Ts(d.element, vr ? "mouseout" : "mouseleave", function() {
@@ -1348,7 +1348,7 @@ function Np() {
         }
         crispLine(t, e) {
           let [i, s] = t;
-          return Jt(i[1]) && i[1] === s[1] && (i[1] = s[1] = Oe(i[1], e)), Jt(i[2]) && i[2] === s[2] && (i[2] = s[2] = Oe(i[2], e)), t;
+          return Qt(i[1]) && i[1] === s[1] && (i[1] = s[1] = Oe(i[1], e)), Qt(i[2]) && i[2] === s[2] && (i[2] = s[2] = Oe(i[2], e)), t;
         }
         path(t) {
           let e = this.styledMode ? {} : { fill: "none" };
@@ -1411,7 +1411,7 @@ function Np() {
                 let { alignByTranslate: O, element: L, width: D, height: N, imgwidth: I, imgheight: W } = this, j = S === "width" ? I : W, H = 1;
                 o && o.backgroundSize === "within" && D && N && I && W ? (H = Math.min(D / I, N / W), Li(L, { width: Math.round(I * H), height: Math.round(W * H) })) : L && j && L.setAttribute(S, j), !O && I && W && this.translate(((D || 0) - I * H) / 2, ((N || 0) - W * H) / 2);
               };
-            }), Jt(e) && w.attr({ x: e, y: i }), w.isImg = !0, w.symbolUrl = t, Jt(w.imgwidth) && Jt(w.imgheight) ? f(w) : (w.attr({ width: 0, height: 0 }), jo("img", { onload: function() {
+            }), Qt(e) && w.attr({ x: e, y: i }), w.isImg = !0, w.symbolUrl = t, Qt(w.imgwidth) && Qt(w.imgheight) ? f(w) : (w.attr({ width: 0, height: 0 }), jo("img", { onload: function() {
               let v = yr[d.chartIndex];
               this.width === 0 && (Ve(this, { position: "absolute", top: "-999em" }), vi.body.appendChild(this)), ni[c] = { width: this.width, height: this.height }, w.imgwidth = this.width, w.imgheight = this.height, w.element && f(w), this.parentNode && this.parentNode.removeChild(this), d.imgCount--, d.imgCount || !v || v.hasLoaded || v.onload();
             }, src: c }), this.imgCount++);
@@ -1424,7 +1424,7 @@ function Np() {
         text(t, e, i, s) {
           let r = {};
           if (s && (this.allowHTML || !this.forExport)) return this.html(t, e, i);
-          r.x = Math.round(e || 0), i && (r.y = Math.round(i)), Jt(t) && (r.text = t);
+          r.x = Math.round(e || 0), i && (r.y = Math.round(i)), Qt(t) && (r.text = t);
           let o = this.createElement("text").attr(r);
           return s && (!this.forExport || this.allowHTML) || (o.xSetter = function(a, l, c) {
             let f = c.getElementsByTagName("tspan"), d = c.getAttribute(l);
@@ -1525,7 +1525,7 @@ function Np() {
           return this.added = !0, this.alignOnAdd && this.updateTransform(), this;
         }
         textSetter(t) {
-          t !== this.textStr && (delete this.bBox, delete this.oldTextWidth, Bt.setElementHTML(this.element, t ?? ""), this.textStr = t, this.doTransform = !0);
+          t !== this.textStr && (delete this.bBox, delete this.oldTextWidth, Rt.setElementHTML(this.element, t ?? ""), this.textStr = t, this.doTransform = !0);
         }
         alignSetter(t) {
           this.alignValue = this.textAlign = t, this.doTransform = !0;
@@ -1540,8 +1540,8 @@ function Np() {
           let { numberFormatter: t } = this.axis.chart;
           return t(this.total || 0, -1);
         }, style: { color: "#000000", fontSize: "0.7em", fontWeight: "bold", textOutline: "1px contrast" } }, gridLineWidth: 1, lineWidth: 0 };
-      })(re || (re = {}));
-      let $o = re, { addEvent: Zo, isFunction: _o, objectEach: Jo, removeEvent: Qo } = J;
+      })(_t || (_t = {}));
+      let $o = _t, { addEvent: Zo, isFunction: _o, objectEach: Jo, removeEvent: Qo } = J;
       (Vt || (Vt = {})).registerEventOptions = function(h, t) {
         h.eventOptions = h.eventOptions || {}, Jo(t.events, function(e, i) {
           h.eventOptions[i] !== e && (h.eventOptions[i] && (Qo(h, i, h.eventOptions[i]), delete h.eventOptions[i]), _o(e) && (h.eventOptions[i] = e, Zo(h, i, e, { order: 0 })));
@@ -1613,7 +1613,7 @@ function Np() {
           let h = this.label, t = this.axis;
           h && !this.isNew && (h.animate({ opacity: 0 }, void 0, h.destroy), delete this.label), t.isDirty = !0, this.label = this.movedLabel, delete this.movedLabel;
         }
-      }, { animObject: ia } = Zt, { xAxis: sa, yAxis: ra } = $o, { defaultOptions: Or } = fe, { registerEventOptions: Fn } = Di, { deg2rad: Hn } = X, { arrayMax: oa, arrayMin: Wn, clamp: Lr, correctFloat: ce, defined: Ct, destroyObjectProperties: aa, erase: Dr, error: Ir, extend: Ni, fireEvent: Ht, getClosestDistance: os, insertItem: na, isArray: Ds, isNumber: it, isString: la, merge: ki, normalizeTickInterval: Is, objectEach: Bs, pick: ct, relativeLength: Ns, removeEvent: Xn, splat: Gn, syncTimeout: Yn } = J, Br = (h, t) => Is(t, void 0, void 0, ct(h.options.allowDecimals, t < 0.5 || h.tickAmount !== void 0), !!h.tickAmount);
+      }, { animObject: ia } = Zt, { xAxis: sa, yAxis: ra } = $o, { defaultOptions: Or } = fe, { registerEventOptions: Fn } = Di, { deg2rad: Hn } = X, { arrayMax: oa, arrayMin: Wn, clamp: Lr, correctFloat: ce, defined: At, destroyObjectProperties: aa, erase: Dr, error: Ir, extend: Ni, fireEvent: Wt, getClosestDistance: os, insertItem: na, isArray: Ds, isNumber: it, isString: la, merge: ki, normalizeTickInterval: Is, objectEach: Bs, pick: ct, relativeLength: Ns, removeEvent: Xn, splat: Gn, syncTimeout: Yn } = J, Br = (h, t) => Is(t, void 0, void 0, ct(h.options.allowDecimals, t < 0.5 || h.tickAmount !== void 0), !!h.tickAmount);
       Ni(Or, { xAxis: sa, yAxis: ki(sa, ra) });
       class Ri {
         constructor(t, e, i) {
@@ -1621,15 +1621,15 @@ function Np() {
         }
         init(t, e, i = this.coll) {
           let s = i === "xAxis", r = this.isZAxis || (t.inverted ? !s : s);
-          this.chart = t, this.horiz = r, this.isXAxis = s, this.coll = i, Ht(this, "init", { userOptions: e }), this.opposite = ct(e.opposite, this.opposite), this.side = ct(e.side, this.side, r ? 2 * !this.opposite : this.opposite ? 1 : 3), this.setOptions(e);
+          this.chart = t, this.horiz = r, this.isXAxis = s, this.coll = i, Wt(this, "init", { userOptions: e }), this.opposite = ct(e.opposite, this.opposite), this.side = ct(e.side, this.side, r ? 2 * !this.opposite : this.opposite ? 1 : 3), this.setOptions(e);
           let o = this.options, a = o.labels;
-          this.type ?? (this.type = o.type || "linear"), this.uniqueNames ?? (this.uniqueNames = o.uniqueNames ?? !0), Ht(this, "afterSetType"), this.userOptions = e, this.minPixelPadding = 0, this.reversed = ct(o.reversed, this.reversed), this.visible = o.visible, this.zoomEnabled = o.zoomEnabled, this.hasNames = this.type === "category" || o.categories === !0, this.categories = Ds(o.categories) && o.categories || (this.hasNames ? [] : void 0), this.names || (this.names = [], this.names.keys = {}), this.plotLinesAndBandsGroups = {}, this.positiveValuesOnly = !!this.logarithmic, this.isLinked = Ct(o.linkedTo), this.ticks = {}, this.labelEdge = [], this.minorTicks = {}, this.plotLinesAndBands = [], this.alternateBands = {}, this.len ?? (this.len = 0), this.minRange = this.userMinRange = o.minRange || o.maxZoom, this.range = o.range, this.offset = o.offset || 0, this.max = void 0, this.min = void 0;
+          this.type ?? (this.type = o.type || "linear"), this.uniqueNames ?? (this.uniqueNames = o.uniqueNames ?? !0), Wt(this, "afterSetType"), this.userOptions = e, this.minPixelPadding = 0, this.reversed = ct(o.reversed, this.reversed), this.visible = o.visible, this.zoomEnabled = o.zoomEnabled, this.hasNames = this.type === "category" || o.categories === !0, this.categories = Ds(o.categories) && o.categories || (this.hasNames ? [] : void 0), this.names || (this.names = [], this.names.keys = {}), this.plotLinesAndBandsGroups = {}, this.positiveValuesOnly = !!this.logarithmic, this.isLinked = At(o.linkedTo), this.ticks = {}, this.labelEdge = [], this.minorTicks = {}, this.plotLinesAndBands = [], this.alternateBands = {}, this.len ?? (this.len = 0), this.minRange = this.userMinRange = o.minRange || o.maxZoom, this.range = o.range, this.offset = o.offset || 0, this.max = void 0, this.min = void 0;
           let l = ct(o.crosshair, Gn(t.options.tooltip.crosshairs)[+!s]);
-          this.crosshair = l === !0 ? {} : l, t.axes.indexOf(this) === -1 && (s ? t.axes.splice(t.xAxis.length, 0, this) : t.axes.push(this), na(this, t[this.coll])), t.orderItems(this.coll), this.series = this.series || [], t.inverted && !this.isZAxis && s && !Ct(this.reversed) && (this.reversed = !0), this.labelRotation = it(a.rotation) ? a.rotation : void 0, Fn(this, o), Ht(this, "afterInit");
+          this.crosshair = l === !0 ? {} : l, t.axes.indexOf(this) === -1 && (s ? t.axes.splice(t.xAxis.length, 0, this) : t.axes.push(this), na(this, t[this.coll])), t.orderItems(this.coll), this.series = this.series || [], t.inverted && !this.isZAxis && s && !At(this.reversed) && (this.reversed = !0), this.labelRotation = it(a.rotation) ? a.rotation : void 0, Fn(this, o), Wt(this, "afterInit");
         }
         setOptions(t) {
           let e = this.horiz ? { labels: { autoRotation: [-45], padding: 3 }, margin: 15 } : { labels: { padding: 1 }, title: { rotation: 90 * this.side } };
-          this.options = ki(e, this.coll === "yAxis" ? { title: { text: this.chart.options.lang.yAxisTitle } } : {}, Or[this.coll], t), Ht(this, "afterSetOptions", { userOptions: t });
+          this.options = ki(e, this.coll === "yAxis" ? { title: { text: this.chart.options.lang.yAxisTitle } } : {}, Or[this.coll], t), Wt(this, "afterSetOptions", { userOptions: t });
         }
         defaultLabelFormatter() {
           let t = this.axis, { numberFormatter: e } = this.chart, i = it(this.value) ? this.value : NaN, s = t.chart.time, r = t.categories, o = this.dateTimeLabelFormat, a = Or.lang, l = a.numericSymbols, c = a.numericSymbolMagnitude || 1e3, f = t.logarithmic ? Math.abs(i) : t.tickInterval, d = l?.length, m, x;
@@ -1640,18 +1640,18 @@ function Np() {
         }
         getSeriesExtremes() {
           let t, e = this;
-          Ht(this, "getSeriesExtremes", null, function() {
+          Wt(this, "getSeriesExtremes", null, function() {
             e.hasVisibleSeries = !1, e.dataMin = e.dataMax = e.threshold = void 0, e.softThreshold = !e.isXAxis, e.series.forEach((i) => {
               if (i.reserveSpace()) {
                 let s = i.options, r, o = s.threshold, a, l;
                 if (e.hasVisibleSeries = !0, e.positiveValuesOnly && 0 >= (o || 0) && (o = void 0), e.isXAxis) (r = i.getColumn("x")).length && (r = e.logarithmic ? r.filter((c) => c > 0) : r, a = (t = i.getXExtremes(r)).min, l = t.max, it(a) || a instanceof Date || (r = r.filter(it), a = (t = i.getXExtremes(r)).min, l = t.max), r.length && (e.dataMin = Math.min(ct(e.dataMin, a), a), e.dataMax = Math.max(ct(e.dataMax, l), l)));
                 else {
                   let c = i.applyExtremes();
-                  it(c.dataMin) && (a = c.dataMin, e.dataMin = Math.min(ct(e.dataMin, a), a)), it(c.dataMax) && (l = c.dataMax, e.dataMax = Math.max(ct(e.dataMax, l), l)), Ct(o) && (e.threshold = o), (!s.softThreshold || e.positiveValuesOnly) && (e.softThreshold = !1);
+                  it(c.dataMin) && (a = c.dataMin, e.dataMin = Math.min(ct(e.dataMin, a), a)), it(c.dataMax) && (l = c.dataMax, e.dataMax = Math.max(ct(e.dataMax, l), l)), At(o) && (e.threshold = o), (!s.softThreshold || e.positiveValuesOnly) && (e.softThreshold = !1);
                 }
               }
             });
-          }), Ht(this, "afterGetSeriesExtremes");
+          }), Wt(this, "afterGetSeriesExtremes");
         }
         translate(t, e, i, s, r, o) {
           let a = this.linkedParent || this, l = s && a.old ? a.old.min : a.min;
@@ -1671,7 +1671,7 @@ function Np() {
             return x !== "pass" && (L < D || L > N) && (x ? L = Lr(L, D, N) : T = !0), L;
           }
           let O = { value: a, lineWidth: l, old: o, force: x, acrossPanes: t.acrossPanes, translatedValue: m };
-          return Ht(this, "getPlotLinePath", O, function(L) {
+          return Wt(this, "getPlotLinePath", O, function(L) {
             y = w = (m = Lr(m = ct(m, e.translate(a, void 0, void 0, o)), -1e9, 1e9)) + d, M = v = c - m - d, it(m) ? e.horiz ? (M = r, v = c - e.bottom + (e.options.isInternal ? 0 : i.scrollablePixelsY || 0), y = w = S(y, s, s + e.width)) : (y = s, w = f - e.right + (i.scrollablePixelsX || 0), M = v = S(M, r, r + e.height)) : (T = !0, x = !1), L.path = T && !x ? void 0 : i.renderer.crispLine([["M", y, M], ["L", w, v]], l || 1);
           }), O.path;
         }
@@ -1699,7 +1699,7 @@ function Np() {
         }
         adjustForMinRange() {
           let t = this.options, e = this.logarithmic, i = this.chart.time, { max: s, min: r, minRange: o } = this, a, l, c, f;
-          this.isXAxis && o === void 0 && !e && (o = Ct(t.min) || Ct(t.max) || Ct(t.floor) || Ct(t.ceiling) ? null : Math.min(5 * (os(this.series.map((d) => {
+          this.isXAxis && o === void 0 && !e && (o = At(t.min) || At(t.max) || At(t.floor) || At(t.ceiling) ? null : Math.min(5 * (os(this.series.map((d) => {
             let m = d.getColumn("x");
             return d.xIncrement ? m.slice(0, 2) : m;
           })) || 0), this.dataMax - this.dataMin)), it(s) && it(r) && it(o) && s - r < o && (l = this.dataMax - this.dataMin >= o, a = (o - s + r) / 2, c = [r - a, i.parse(t.min) ?? r - a], l && (c[2] = e ? e.log2lin(this.dataMin) : this.dataMin), f = [(r = oa(c)) + o, i.parse(t.max) ?? r + o], l && (f[2] = e ? e.log2lin(this.dataMax) : this.dataMax), (s = Wn(f)) - r < o && (c[0] = s - o, c[1] = i.parse(t.min) ?? s - o, r = oa(c))), this.minRange = o, this.min = r, this.max = s;
@@ -1711,14 +1711,14 @@ function Np() {
             let i = [];
             this.series.forEach(function(s) {
               let r = s.closestPointRange, o = s.getColumn("x");
-              o.length === 1 ? i.push(o[0]) : s.sorted && Ct(r) && s.reserveSpace() && (e = Ct(e) ? Math.min(e, r) : r);
+              o.length === 1 ? i.push(o[0]) : s.sorted && At(r) && s.reserveSpace() && (e = At(e) ? Math.min(e, r) : r);
             }), i.length && (i.sort((s, r) => s - r), t = os([i]));
           }
           return t && e ? Math.min(t, e) : t || e;
         }
         nameToX(t) {
           let e = Ds(this.options.categories), i = e ? this.categories : this.names, s = t.options.x, r;
-          return t.series.requireSorting = !1, Ct(s) || (s = this.uniqueNames && i ? e ? i.indexOf(t.name) : ct(i.keys[t.name], -1) : t.series.autoIncrement()), s === -1 ? !e && i && (r = i.length) : it(s) && (r = s), r !== void 0 ? (this.names[r] = t.name, this.names.keys[t.name] = r) : t.x && (r = t.x), r;
+          return t.series.requireSorting = !1, At(s) || (s = this.uniqueNames && i ? e ? i.indexOf(t.name) : ct(i.keys[t.name], -1) : t.series.autoIncrement()), s === -1 ? !e && i && (r = i.length) : it(s) && (r = s), r !== void 0 ? (this.names[r] = t.name, this.names.keys[t.name] = r) : t.x && (r = t.x), r;
         }
         updateNames() {
           let t = this, e = this.names;
@@ -1741,7 +1741,7 @@ function Np() {
               let M = m.is("xrange") ? !r : r;
               l = Math.max(l, M && la(y) ? 0 : x / 2), c = Math.max(c, M && y === "on" ? 0 : x);
             }
-          }), f = t.ordinal?.slope && a ? t.ordinal.slope / a : 1, t.minPointOffset = l *= f, t.pointRangePadding = c *= f, t.pointRange = Math.min(o, t.single && s ? 1 : e), r && (t.closestPointRange = a)), t.translationSlope = t.transA = d = t.staticScale || t.len / (e + c || 1), t.transB = t.horiz ? t.left : t.bottom, t.minPixelPadding = d * l, Ht(this, "afterSetAxisTranslation");
+          }), f = t.ordinal?.slope && a ? t.ordinal.slope / a : 1, t.minPointOffset = l *= f, t.pointRangePadding = c *= f, t.pointRange = Math.min(o, t.single && s ? 1 : e), r && (t.closestPointRange = a)), t.translationSlope = t.transA = d = t.staticScale || t.len / (e + c || 1), t.transB = t.horiz ? t.left : t.bottom, t.minPixelPadding = d * l, Wt(this, "afterSetAxisTranslation");
         }
         minFromRange() {
           let { max: t, min: e } = this;
@@ -1749,26 +1749,26 @@ function Np() {
         }
         setTickInterval(t) {
           let { categories: e, chart: i, dataMax: s, dataMin: r, dateTime: o, isXAxis: a, logarithmic: l, options: c, softThreshold: f } = this, d = i.time, m = it(this.threshold) ? this.threshold : void 0, x = this.minRange || 0, { ceiling: y, floor: M, linkedTo: w, softMax: v, softMin: T } = c, S = it(w) && i[this.coll]?.[w], O = c.tickPixelInterval, L = c.maxPadding, D = c.minPadding, N = 0, I, W = it(c.tickInterval) && c.tickInterval >= 0 ? c.tickInterval : void 0, j, H, K, Q;
-          if (o || e || S || this.getTickAmount(), K = ct(this.userMin, d.parse(c.min)), Q = ct(this.userMax, d.parse(c.max)), S ? (this.linkedParent = S, I = S.getExtremes(), this.min = ct(I.min, I.dataMin), this.max = ct(I.max, I.dataMax), this.type !== S.type && Ir(11, !0, i)) : (f && Ct(m) && it(s) && it(r) && (r >= m ? (j = m, D = 0) : s <= m && (H = m, L = 0)), this.min = ct(K, j, r), this.max = ct(Q, H, s)), it(this.max) && it(this.min) && (l && (this.positiveValuesOnly && !t && 0 >= Math.min(this.min, ct(r, this.min)) && Ir(10, !0, i), this.min = ce(l.log2lin(this.min), 16), this.max = ce(l.log2lin(this.max), 16)), this.range && it(r) && (this.userMin = this.min = K = Math.max(r, this.minFromRange() || 0), this.userMax = Q = this.max, this.range = void 0)), Ht(this, "foundExtremes"), this.adjustForMinRange(), it(this.min) && it(this.max)) {
-            if (!it(this.userMin) && it(T) && T < this.min && (this.min = K = T), !it(this.userMax) && it(v) && v > this.max && (this.max = Q = v), e || this.axisPointRange || this.stacking?.usePercentage || S || (N = this.max - this.min) && (!Ct(K) && D && (this.min -= N * D), !Ct(Q) && L && (this.max += N * L)), !it(this.userMin) && it(M) && (this.min = Math.max(this.min, M)), !it(this.userMax) && it(y) && (this.max = Math.min(this.max, y)), f && it(r) && it(s)) {
+          if (o || e || S || this.getTickAmount(), K = ct(this.userMin, d.parse(c.min)), Q = ct(this.userMax, d.parse(c.max)), S ? (this.linkedParent = S, I = S.getExtremes(), this.min = ct(I.min, I.dataMin), this.max = ct(I.max, I.dataMax), this.type !== S.type && Ir(11, !0, i)) : (f && At(m) && it(s) && it(r) && (r >= m ? (j = m, D = 0) : s <= m && (H = m, L = 0)), this.min = ct(K, j, r), this.max = ct(Q, H, s)), it(this.max) && it(this.min) && (l && (this.positiveValuesOnly && !t && 0 >= Math.min(this.min, ct(r, this.min)) && Ir(10, !0, i), this.min = ce(l.log2lin(this.min), 16), this.max = ce(l.log2lin(this.max), 16)), this.range && it(r) && (this.userMin = this.min = K = Math.max(r, this.minFromRange() || 0), this.userMax = Q = this.max, this.range = void 0)), Wt(this, "foundExtremes"), this.adjustForMinRange(), it(this.min) && it(this.max)) {
+            if (!it(this.userMin) && it(T) && T < this.min && (this.min = K = T), !it(this.userMax) && it(v) && v > this.max && (this.max = Q = v), e || this.axisPointRange || this.stacking?.usePercentage || S || (N = this.max - this.min) && (!At(K) && D && (this.min -= N * D), !At(Q) && L && (this.max += N * L)), !it(this.userMin) && it(M) && (this.min = Math.max(this.min, M)), !it(this.userMax) && it(y) && (this.max = Math.min(this.max, y)), f && it(r) && it(s)) {
               let V = m || 0;
-              !Ct(K) && this.min < V && r >= V ? this.min = c.minRange ? Math.min(V, this.max - x) : V : !Ct(Q) && this.max > V && s <= V && (this.max = c.minRange ? Math.max(V, this.min + x) : V);
+              !At(K) && this.min < V && r >= V ? this.min = c.minRange ? Math.min(V, this.max - x) : V : !At(Q) && this.max > V && s <= V && (this.max = c.minRange ? Math.max(V, this.min + x) : V);
             }
-            !i.polar && this.min > this.max && (Ct(c.min) ? this.max = this.min : Ct(c.max) && (this.min = this.max)), N = this.max - this.min;
+            !i.polar && this.min > this.max && (At(c.min) ? this.max = this.min : At(c.max) && (this.min = this.max)), N = this.max - this.min;
           }
           if (this.min !== this.max && it(this.min) && it(this.max) ? S && !W && O === S.options.tickPixelInterval ? this.tickInterval = W = S.tickInterval : this.tickInterval = ct(W, this.tickAmount ? N / Math.max(this.tickAmount - 1, 1) : void 0, e ? 1 : N * O / Math.max(this.len, O)) : this.tickInterval = 1, a && !t) {
             let V = this.min !== this.old?.min || this.max !== this.old?.max;
             this.series.forEach(function(Z) {
               Z.forceCrop = Z.forceCropping?.(), Z.processData(V);
-            }), Ht(this, "postProcessData", { hasExtremesChanged: V });
+            }), Wt(this, "postProcessData", { hasExtremesChanged: V });
           }
-          this.setAxisTranslation(), Ht(this, "initialAxisTranslation"), this.pointRange && !W && (this.tickInterval = Math.max(this.pointRange, this.tickInterval));
+          this.setAxisTranslation(), Wt(this, "initialAxisTranslation"), this.pointRange && !W && (this.tickInterval = Math.max(this.pointRange, this.tickInterval));
           let et = ct(c.minTickInterval, o && !this.series.some((V) => !V.sorted) ? this.closestPointRange : 0);
           !W && et && this.tickInterval < et && (this.tickInterval = et), o || l || W || (this.tickInterval = Br(this, this.tickInterval)), this.tickAmount || (this.tickInterval = this.unsquish()), this.setTickPositions();
         }
         setTickPositions() {
           let t = this.options, e = t.tickPositions, i = t.tickPositioner, s = this.getMinorTickInterval(), r = !this.isPanning, o = r && t.startOnTick, a = r && t.endOnTick, l = [], c;
-          if (this.tickmarkOffset = this.categories && t.tickmarkPlacement === "between" && this.tickInterval === 1 ? 0.5 : 0, this.single = this.min === this.max && Ct(this.min) && !this.tickAmount && (this.min % 1 == 0 || t.allowDecimals !== !1), e) l = e.slice();
+          if (this.tickmarkOffset = this.categories && t.tickmarkPlacement === "between" && this.tickInterval === 1 ? 0.5 : 0, this.single = this.min === this.max && At(this.min) && !this.tickAmount && (this.min % 1 == 0 || t.allowDecimals !== !1), e) l = e.slice();
           else if (it(this.min) && it(this.max)) {
             if (!this.ordinal?.positions && (this.max - this.min) / this.tickInterval > Math.max(2 * this.len, 200)) l = [this.min, this.max], Ir(19, !1, this.chart);
             else if (this.dateTime) l = this.getTimeTicks(this.dateTime.normalizeTimeTickInterval(this.tickInterval, t.units), this.min, this.max, t.startOfWeek, this.ordinal?.positions, this.closestPointRange, !0);
@@ -1779,16 +1779,16 @@ function Np() {
             }
             l.length > this.len && (l = [l[0], l[l.length - 1]])[0] === l[1] && (l.length = 1), i && (this.tickPositions = l, (c = i.apply(this, [this.min, this.max])) && (l = c));
           }
-          this.tickPositions = l, this.minorTickInterval = s === "auto" && this.tickInterval ? this.tickInterval / t.minorTicksPerMajor : s, this.paddedTicks = l.slice(0), this.trimTicks(l, o, a), !this.isLinked && it(this.min) && it(this.max) && (this.single && l.length < 2 && !this.categories && !this.series.some((f) => f.is("heatmap") && f.options.pointPlacement === "between") && (this.min -= 0.5, this.max += 0.5), e || c || this.adjustTickAmount()), Ht(this, "afterSetTickPositions");
+          this.tickPositions = l, this.minorTickInterval = s === "auto" && this.tickInterval ? this.tickInterval / t.minorTicksPerMajor : s, this.paddedTicks = l.slice(0), this.trimTicks(l, o, a), !this.isLinked && it(this.min) && it(this.max) && (this.single && l.length < 2 && !this.categories && !this.series.some((f) => f.is("heatmap") && f.options.pointPlacement === "between") && (this.min -= 0.5, this.max += 0.5), e || c || this.adjustTickAmount()), Wt(this, "afterSetTickPositions");
         }
         trimTicks(t, e, i) {
           let s = t[0], r = t[t.length - 1], o = !this.isOrdinal && this.minPointOffset || 0;
-          if (Ht(this, "trimTicks"), !this.isLinked || !this.grid) {
+          if (Wt(this, "trimTicks"), !this.isLinked || !this.grid) {
             if (e && s !== -1 / 0) this.min = s;
             else for (; this.min - o > t[0]; ) t.shift();
             if (i) this.max = r;
             else for (; this.max + o < t[t.length - 1]; ) t.pop();
-            t.length === 0 && Ct(s) && !this.options.tickPositions && t.push((r + s) / 2);
+            t.length === 0 && At(s) && !this.options.tickPositions && t.push((r + s) / 2);
           }
         }
         alignToOthers() {
@@ -1823,7 +1823,7 @@ function Np() {
         }
         getTickAmount() {
           let t = this.options, e = t.tickPixelInterval, i = t.tickAmount;
-          Ct(t.tickInterval) || i || !(this.len < e) || this.isRadial || this.logarithmic || !t.startOnTick || !t.endOnTick || (i = 2), !i && this.alignToOthers() && (i = Math.ceil(this.len / e) + 1), i < 4 && (this.finalTickAmt = i, i = 5), this.tickAmount = i;
+          At(t.tickInterval) || i || !(this.len < e) || this.isRadial || this.logarithmic || !t.startOnTick || !t.endOnTick || (i = 2), !i && this.alignToOthers() && (i = Math.ceil(this.len / e) + 1), i < 4 && (this.finalTickAmt = i, i = 5), this.tickAmount = i;
         }
         adjustTickAmount() {
           let t = this, { finalTickAmt: e, max: i, min: s, options: r, tickPositions: o, tickAmount: a, thresholdAlignment: l } = t, c = o?.length, f = ct(t.threshold, t.softThreshold ? 0 : null), d, m, x = t.tickInterval, y, M = () => o.push(ce(o[o.length - 1] + x)), w = () => o.unshift(ce(o[0] - x));
@@ -1842,7 +1842,7 @@ function Np() {
               for (; o.length < a; ) o.length % 2 || s === f ? M() : w();
               v();
             }
-            if (Ct(e)) {
+            if (At(e)) {
               for (m = d = o.length; m--; ) (e === 3 && m % 2 == 1 || e <= 2 && m > 0 && m < d - 1) && o.splice(m, 1);
               t.finalTickAmt = void 0;
             }
@@ -1854,13 +1854,13 @@ function Np() {
             i = i || o.isDirtyData || o.isDirty, s = s || o.xAxis?.isDirty || !1;
           }), this.setAxisSize();
           let r = this.len !== this.old?.len;
-          r || i || s || this.isLinked || this.forceRedraw || this.userMin !== this.old?.userMin || this.userMax !== this.old?.userMax || this.alignToOthers() ? (e && t === "yAxis" && e.buildStacks(), this.forceRedraw = !1, this.userMinRange || (this.minRange = void 0), this.getSeriesExtremes(), this.setTickInterval(), e && t === "xAxis" && e.buildStacks(), this.isDirty || (this.isDirty = r || this.min !== this.old?.min || this.max !== this.old?.max)) : e && e.cleanStacks(), i && delete this.allExtremes, Ht(this, "afterSetScale");
+          r || i || s || this.isLinked || this.forceRedraw || this.userMin !== this.old?.userMin || this.userMax !== this.old?.userMax || this.alignToOthers() ? (e && t === "yAxis" && e.buildStacks(), this.forceRedraw = !1, this.userMinRange || (this.minRange = void 0), this.getSeriesExtremes(), this.setTickInterval(), e && t === "xAxis" && e.buildStacks(), this.isDirty || (this.isDirty = r || this.min !== this.old?.min || this.max !== this.old?.max)) : e && e.cleanStacks(), i && delete this.allExtremes, Wt(this, "afterSetScale");
         }
         setExtremes(t, e, i = !0, s, r) {
           let o = this.chart;
           this.series.forEach((a) => {
             delete a.kdTree;
-          }), t = o.time.parse(t), e = o.time.parse(e), Ht(this, "setExtremes", r = Ni(r, { min: t, max: e }), (a) => {
+          }), t = o.time.parse(t), e = o.time.parse(e), Wt(this, "setExtremes", r = Ni(r, { min: t, max: e }), (a) => {
             this.userMin = a.min, this.userMax = a.max, this.eventArgs = a, i && o.redraw(s);
           });
         }
@@ -1878,7 +1878,7 @@ function Np() {
         }
         autoLabelAlign(t) {
           let e = (ct(t, 0) - 90 * this.side + 720) % 360, i = { align: "center" };
-          return Ht(this, "autoLabelAlign", i, function(s) {
+          return Wt(this, "autoLabelAlign", i, function(s) {
             e > 15 && e < 165 ? s.align = "right" : e > 195 && e < 345 && (s.align = "left");
           }), i.align;
         }
@@ -1886,7 +1886,7 @@ function Np() {
           let e = this.options, i = ct(e[t === "tick" ? "tickWidth" : "minorTickWidth"], t === "tick" && this.isXAxis && !this.categories ? 1 : 0), s = e[t === "tick" ? "tickLength" : "minorTickLength"], r;
           i && s && (e[t + "Position"] === "inside" && (s = -s), r = [s, i]);
           let o = { tickSize: r };
-          return Ht(this, "afterTickSize", o), o.tickSize;
+          return Wt(this, "afterTickSize", o), o.tickSize;
         }
         labelMetrics() {
           let t = this.chart.renderer, e = this.ticks, i = e[Object.keys(e)[0]] || {};
@@ -1931,7 +1931,7 @@ function Np() {
         hasData() {
           return this.series.some(function(t) {
             return t.hasData();
-          }) || this.options.showEmpty && Ct(this.min) && Ct(this.max);
+          }) || this.options.showEmpty && At(this.min) && At(this.max);
         }
         addTitle(t) {
           let e, i = this.chart.renderer, s = this.horiz, r = this.opposite, o = this.options.title, a = this.chart.styledMode;
@@ -1953,13 +1953,13 @@ function Np() {
             L = Math.max(o[I].getLabelSize(), L);
           }), t.staggerLines && (L *= t.staggerLines), t.labelOffset = L * (t.opposite ? -1 : 1)) : Bs(o, function(I, W) {
             I.destroy(), delete o[W];
-          }), d?.text && d.enabled !== !1 && (t.addTitle(v), v && !x && d.reserveSpace !== !1 && (t.titleOffset = T = t.axisTitle.getBBox()[i ? "height" : "width"], O = Ct(S = d.offset) ? 0 : ct(d.margin, i ? 5 : 10))), t.renderLine(), t.offset = w * ct(s.offset, y[r] ? y[r] + (s.margin || 0) : 0), t.tickRotCorr = t.tickRotCorr || { x: 0, y: 0 }, N = r === 0 ? -t.labelMetrics().h : r === 2 ? t.tickRotCorr.y : 0, D = Math.abs(L) + O, L && (D -= N, D += w * (i ? ct(m.y, t.tickRotCorr.y + w * m.distance) : ct(m.x, w * m.distance))), t.axisTitleMargin = ct(S, D), t.getMaxLabelDimensions && (t.maxLabelDimensions = t.getMaxLabelDimensions(o, a)), l !== "colorAxis" && M) {
+          }), d?.text && d.enabled !== !1 && (t.addTitle(v), v && !x && d.reserveSpace !== !1 && (t.titleOffset = T = t.axisTitle.getBBox()[i ? "height" : "width"], O = At(S = d.offset) ? 0 : ct(d.margin, i ? 5 : 10))), t.renderLine(), t.offset = w * ct(s.offset, y[r] ? y[r] + (s.margin || 0) : 0), t.tickRotCorr = t.tickRotCorr || { x: 0, y: 0 }, N = r === 0 ? -t.labelMetrics().h : r === 2 ? t.tickRotCorr.y : 0, D = Math.abs(L) + O, L && (D -= N, D += w * (i ? ct(m.y, t.tickRotCorr.y + w * m.distance) : ct(m.x, w * m.distance))), t.axisTitleMargin = ct(S, D), t.getMaxLabelDimensions && (t.maxLabelDimensions = t.getMaxLabelDimensions(o, a)), l !== "colorAxis" && M) {
             let I = this.tickSize("tick");
             y[r] = Math.max(y[r], (t.axisTitleMargin || 0) + T + w * t.offset, D, a?.length && I ? I[0] + w * t.offset : 0);
             let W = !t.axisLine || s.offset ? 0 : t.axisLine.strokeWidth() / 2;
             M[c] = Math.max(M[c], W);
           }
-          Ht(this, "afterGetOffset");
+          Wt(this, "afterGetOffset");
         }
         getLinePath(t) {
           let e = this.chart, i = this.opposite, s = this.offset, r = this.horiz, o = this.left + (i ? this.width : 0) + s, a = e.chartHeight - this.bottom - (i ? this.height : 0) + s;
@@ -1970,7 +1970,7 @@ function Np() {
         }
         getTitlePosition(t) {
           let e = this.horiz, i = this.left, s = this.top, r = this.len, o = this.options.title, a = e ? i : s, l = this.opposite, c = this.offset, f = o.x, d = o.y, m = this.chart.renderer.fontMetrics(t), x = t ? Math.max(t.getBBox(!1, 0).height - m.h - 1, 0) : 0, y = { low: a + (e ? 0 : r), middle: a + r / 2, high: a + (e ? r : 0) }[o.align], M = (e ? s + this.height : i) + (e ? 1 : -1) * (l ? -1 : 1) * (this.axisTitleMargin || 0) + [-x, x, m.f, -x][this.side], w = { x: e ? y + f : M + (l ? this.width : 0) + c + f, y: e ? M + d - (l ? this.height : 0) + c : y + d };
-          return Ht(this, "afterGetTitlePosition", { titlePosition: w }), w;
+          return Wt(this, "afterGetTitlePosition", { titlePosition: w }), w;
         }
         renderMinorTick(t, e) {
           let i = this.minorTicks;
@@ -2013,7 +2013,7 @@ function Np() {
               let I = D.length;
               for (; I--; ) L[D[I]] && !L[D[I]].isActive && (L[D[I]].destroy(), delete L[D[I]]);
             }, L !== x && s.hasRendered && N ? N : 0);
-          }), T && (T[T.isPlaced ? "animate" : "attr"]({ d: this.getLinePath(T.strokeWidth()) }), T.isPlaced = !0, T[S ? "show" : "hide"](S)), f && S && (f[f.isNew ? "attr" : "animate"](i.getTitlePosition(f)), f.isNew = !1), y?.enabled && i.stacking && i.stacking.renderStackTotals(), i.old = { len: i.len, max: i.max, min: i.min, transA: i.transA, userMax: i.userMax, userMin: i.userMin }, i.isDirty = !1, Ht(this, "afterRender");
+          }), T && (T[T.isPlaced ? "animate" : "attr"]({ d: this.getLinePath(T.strokeWidth()) }), T.isPlaced = !0, T[S ? "show" : "hide"](S)), f && S && (f[f.isNew ? "attr" : "animate"](i.getTitlePosition(f)), f.isNew = !1), y?.enabled && i.stacking && i.stacking.renderStackTotals(), i.old = { len: i.len, max: i.max, min: i.min, transA: i.transA, userMax: i.userMax, userMin: i.userMin }, i.isDirty = !1, Wt(this, "afterRender");
         }
         redraw() {
           this.visible && (this.render(), this.plotLinesAndBands.forEach(function(t) {
@@ -2027,7 +2027,7 @@ function Np() {
         }
         destroy(t) {
           let e = this, i = e.plotLinesAndBands, s = this.eventOptions;
-          if (Ht(this, "destroy", { keepEvents: t }), t || Xn(e), [e.ticks, e.minorTicks, e.alternateBands].forEach(function(r) {
+          if (Wt(this, "destroy", { keepEvents: t }), t || Xn(e), [e.ticks, e.minorTicks, e.alternateBands].forEach(function(r) {
             aa(r);
           }), i) {
             let r = i.length;
@@ -2042,14 +2042,14 @@ function Np() {
         }
         drawCrosshair(t, e) {
           let i = this.crosshair, s = i?.snap ?? !0, r = this.chart, o, a, l, c = this.cross, f;
-          if (Ht(this, "drawCrosshair", { e: t, point: e }), t || (t = this.cross?.e), i && (Ct(e) || !s) !== !1) {
-            if (s ? Ct(e) && (a = ct(this.coll !== "colorAxis" ? e.crosshairPos : null, this.isXAxis ? e.plotX : this.len - e.plotY)) : a = t && (this.horiz ? t.chartX - this.pos : this.len - t.chartY + this.pos), Ct(a) && (f = { value: e && (this.isXAxis ? e.x : ct(e.stackY, e.y)), translatedValue: a }, r.polar && Ni(f, { isCrosshair: !0, chartX: t?.chartX, chartY: t?.chartY, point: e }), o = this.getPlotLinePath(f) || null), !Ct(o)) return void this.hideCrosshair();
-            l = this.categories && !this.isRadial, c || (this.cross = c = r.renderer.path().addClass("highcharts-crosshair highcharts-crosshair-" + (l ? "category " : "thin ") + (i.className || "")).attr({ zIndex: ct(i.zIndex, 2) }).add(), !r.styledMode && (c.attr({ stroke: i.color || (l ? St.parse("#ccd3ff").setOpacity(0.25).get() : "#cccccc"), "stroke-width": ct(i.width, 1) }).css({ "pointer-events": "none" }), i.dashStyle && c.attr({ dashstyle: i.dashStyle }))), c.show().attr({ d: o }), l && !i.width && c.attr({ "stroke-width": this.transA }), this.cross.e = t;
+          if (Wt(this, "drawCrosshair", { e: t, point: e }), t || (t = this.cross?.e), i && (At(e) || !s) !== !1) {
+            if (s ? At(e) && (a = ct(this.coll !== "colorAxis" ? e.crosshairPos : null, this.isXAxis ? e.plotX : this.len - e.plotY)) : a = t && (this.horiz ? t.chartX - this.pos : this.len - t.chartY + this.pos), At(a) && (f = { value: e && (this.isXAxis ? e.x : ct(e.stackY, e.y)), translatedValue: a }, r.polar && Ni(f, { isCrosshair: !0, chartX: t?.chartX, chartY: t?.chartY, point: e }), o = this.getPlotLinePath(f) || null), !At(o)) return void this.hideCrosshair();
+            l = this.categories && !this.isRadial, c || (this.cross = c = r.renderer.path().addClass("highcharts-crosshair highcharts-crosshair-" + (l ? "category " : "thin ") + (i.className || "")).attr({ zIndex: ct(i.zIndex, 2) }).add(), !r.styledMode && (c.attr({ stroke: i.color || (l ? Pt.parse("#ccd3ff").setOpacity(0.25).get() : "#cccccc"), "stroke-width": ct(i.width, 1) }).css({ "pointer-events": "none" }), i.dashStyle && c.attr({ dashstyle: i.dashStyle }))), c.show().attr({ d: o }), l && !i.width && c.attr({ "stroke-width": this.transA }), this.cross.e = t;
           } else this.hideCrosshair();
-          Ht(this, "afterDrawCrosshair", { e: t, point: e });
+          Wt(this, "afterDrawCrosshair", { e: t, point: e });
         }
         hideCrosshair() {
-          this.cross && this.cross.hide(), Ht(this, "afterHideCrosshair");
+          this.cross && this.cross.hide(), Wt(this, "afterHideCrosshair");
         }
         update(t, e) {
           let i = this.chart;
@@ -2310,18 +2310,18 @@ function Np() {
             return [V, Z ? v : w, Z ? t : e].concat(o ? [Z ? S(t) : O(e), Z ? T.left - s + S(m + c) : T.top - s + O(x + f), 0, Z ? v : w] : [Z ? t : e, Z ? m + c : x + f, Z ? c : f, Z ? c + r.plotWidth : f + r.plotHeight]);
           }, D = L("y"), N = L("x"), I, W = !!i.negative;
           !d && r.hoverSeries?.yAxis?.reversed && (W = !W);
-          let j = !this.followPointer && n(i.ttBelow, !d && !l === W), H = function(V, Z, tt, Et, gt, xe, at) {
-            let ot = o ? V === "y" ? O(s) : S(s) : s, yt = (tt - Et) / 2, pt = Et < gt - s, Ot = gt + s + Et < Z, Lt = gt - ot - tt + yt, vt = gt + ot - yt;
-            if (j && Ot) y[V] = vt;
-            else if (!j && pt) y[V] = Lt;
-            else if (pt) y[V] = Math.min(at - Et, Lt - M < 0 ? Lt : Lt - M);
+          let j = !this.followPointer && n(i.ttBelow, !d && !l === W), H = function(V, Z, tt, Ot, gt, xe, at) {
+            let ot = o ? V === "y" ? O(s) : S(s) : s, yt = (tt - Ot) / 2, pt = Ot < gt - s, Lt = gt + s + Ot < Z, Dt = gt - ot - tt + yt, vt = gt + ot - yt;
+            if (j && Lt) y[V] = vt;
+            else if (!j && pt) y[V] = Dt;
+            else if (pt) y[V] = Math.min(at - Ot, Dt - M < 0 ? Dt : Dt - M);
             else {
-              if (!Ot) return y[V] = 0, !1;
+              if (!Lt) return y[V] = 0, !1;
               y[V] = Math.max(xe, vt + M + tt > Z ? vt : vt + M);
             }
-          }, K = function(V, Z, tt, Et, gt) {
+          }, K = function(V, Z, tt, Ot, gt) {
             if (gt < s || gt > Z - s) return !1;
-            gt < tt / 2 ? y[V] = 1 : gt > Z - Et / 2 ? y[V] = Z - Et - 2 : y[V] = gt - tt / 2;
+            gt < tt / 2 ? y[V] = 1 : gt > Z - Ot / 2 ? y[V] = Z - Ot - 2 : y[V] = gt - tt / 2;
           }, Q = function(V) {
             [D, N] = [N, D], I = V;
           }, et = () => {
@@ -2377,27 +2377,27 @@ function Np() {
           Ws(this, "refresh");
         }
         renderSplit(t, e) {
-          let i = this, { chart: s, chart: { chartWidth: r, chartHeight: o, plotHeight: a, plotLeft: l, plotTop: c, scrollablePixelsY: f = 0, scrollablePixelsX: d, styledMode: m }, distance: x, options: y, options: { fixed: M, position: w, positioner: v }, pointer: T } = i, { scrollLeft: S = 0, scrollTop: O = 0 } = s.scrollablePlotArea?.scrollingContainer || {}, L = i.outside && typeof d != "number" ? Wr.documentElement.getBoundingClientRect() : { left: S, right: S + r }, D = i.getLabel(), N = this.renderer || s.renderer, I = !!s.xAxis[0]?.opposite, { left: W, top: j } = T.getChartPosition(), H = v || M, K = c + O, Q = 0, et = a - f, V = function(at, ot, yt, pt = [0, 0], Ot = !0) {
-            let Lt, vt;
-            if (yt.isHeader) vt = I ? 0 : et, Lt = zi(pt[0] - at / 2, L.left, L.right - at - (i.outside ? W : 0));
+          let i = this, { chart: s, chart: { chartWidth: r, chartHeight: o, plotHeight: a, plotLeft: l, plotTop: c, scrollablePixelsY: f = 0, scrollablePixelsX: d, styledMode: m }, distance: x, options: y, options: { fixed: M, position: w, positioner: v }, pointer: T } = i, { scrollLeft: S = 0, scrollTop: O = 0 } = s.scrollablePlotArea?.scrollingContainer || {}, L = i.outside && typeof d != "number" ? Wr.documentElement.getBoundingClientRect() : { left: S, right: S + r }, D = i.getLabel(), N = this.renderer || s.renderer, I = !!s.xAxis[0]?.opposite, { left: W, top: j } = T.getChartPosition(), H = v || M, K = c + O, Q = 0, et = a - f, V = function(at, ot, yt, pt = [0, 0], Lt = !0) {
+            let Dt, vt;
+            if (yt.isHeader) vt = I ? 0 : et, Dt = zi(pt[0] - at / 2, L.left, L.right - at - (i.outside ? W : 0));
             else if (M && yt) {
               let Ut = i.getFixedPosition(at, ot, yt);
-              Lt = Ut.x, vt = Ut.y - K;
-            } else vt = pt[1] - K, Lt = zi(Lt = Ot ? pt[0] - at - x : pt[0] + x, Ot ? Lt : L.left, L.right);
-            return { x: Lt, y: vt };
+              Dt = Ut.x, vt = Ut.y - K;
+            } else vt = pt[1] - K, Dt = zi(Dt = Lt ? pt[0] - at - x : pt[0] + x, Lt ? Dt : L.left, L.right);
+            return { x: Dt, y: vt };
           };
           jr(t) && (t = [!1, t]);
           let Z = t.slice(0, e.length + 1).reduce(function(at, ot, yt) {
             if (ot !== !1 && ot !== "") {
-              let pt = e[yt - 1] || { isHeader: !0, plotX: e[0].plotX, plotY: a, series: {} }, Ot = pt.isHeader, Lt = Ot ? i : pt.series, vt = Lt.tt = (function(Je, ye, ui) {
+              let pt = e[yt - 1] || { isHeader: !0, plotX: e[0].plotX, plotY: a, series: {} }, Lt = pt.isHeader, Dt = Lt ? i : pt.series, vt = Dt.tt = (function(Je, ye, ui) {
                 let Ui = Je, { isHeader: ps, series: io } = ye, Qe = io.tooltipOptions || y;
                 if (!Ui) {
                   let Us = { padding: Qe.padding, r: Qe.borderRadius };
                   m || (Us.fill = Qe.backgroundColor, Us["stroke-width"] = Qe.borderWidth ?? (M && !ps ? 0 : 1)), Ui = N.label("", 0, 0, Qe[ps ? "headerShape" : "shape"] || (M && !ps ? "rect" : "callout"), void 0, void 0, Qe.useHTML).addClass(i.getClassName(ye, !0, ps)).attr(Us).add(D);
                 }
                 return Ui.isActive = !0, Ui.attr({ text: ui }), m || Ui.css(Qe.style).attr({ stroke: Qe.borderColor || ye.color || io.color || "#333333" }), Ui;
-              })(Lt.tt, pt, ot.toString()), Ut = vt.getBBox(), be = Ut.width + vt.strokeWidth();
-              Ot && (Q = Ut.height, et += Q, I && (K -= Q));
+              })(Dt.tt, pt, ot.toString()), Ut = vt.getBBox(), be = Ut.width + vt.strokeWidth();
+              Lt && (Q = Ut.height, et += Q, I && (K -= Q));
               let { anchorX: Ae, anchorY: ji } = (function(Je) {
                 let ye, ui, { isHeader: Ui, plotX: ps = 0, plotY: io = 0, series: Qe } = Je;
                 if (Ui) ye = Math.max(l + ps, l), ui = c + a / 2;
@@ -2409,7 +2409,7 @@ function Np() {
               })(pt);
               if (typeof ji == "number") {
                 let Je = Ut.height + 1, ye = (v || V).call(i, be, Je, pt, [Ae, ji]);
-                at.push({ align: H ? 0 : void 0, anchorX: Ae, anchorY: ji, boxWidth: be, point: pt, rank: n(ye.rank, +!!Ot), size: Je, target: ye.y, tt: vt, x: ye.x });
+                at.push({ align: H ? 0 : void 0, anchorX: Ae, anchorY: ji, boxWidth: be, point: pt, rank: n(ye.rank, +!!Lt), size: Je, target: ye.y, tt: vt, x: ye.x });
               } else vt.isActive = !1;
             }
             return at;
@@ -2426,17 +2426,17 @@ function Np() {
             let { x: ot, boxWidth: yt, isHeader: pt } = at;
             !pt && (i.outside && W + ot < tt.left && (tt.left = W + ot), !pt && i.outside && tt.left + yt > tt.right && (tt.right = W + ot));
           }), Z.forEach(function(at) {
-            let { x: ot, anchorX: yt, anchorY: pt, pos: Ot, point: { isHeader: Lt } } = at, vt = { visibility: Ot === void 0 ? "hidden" : "inherit", x: ot, y: (Ot || 0) + K + (M && w.y || 0), anchorX: yt, anchorY: pt };
+            let { x: ot, anchorX: yt, anchorY: pt, pos: Lt, point: { isHeader: Dt } } = at, vt = { visibility: Lt === void 0 ? "hidden" : "inherit", x: ot, y: (Lt || 0) + K + (M && w.y || 0), anchorX: yt, anchorY: pt };
             if (i.outside && ot < yt) {
               let Ut = W - tt.left;
-              Ut > 0 && (Lt || (vt.x = ot + Ut, vt.anchorX = yt + Ut), Lt && (vt.x = (tt.right - tt.left) / 2, vt.anchorX = yt + Ut));
+              Ut > 0 && (Dt || (vt.x = ot + Ut, vt.anchorX = yt + Ut), Dt && (vt.x = (tt.right - tt.left) / 2, vt.anchorX = yt + Ut));
             }
             at.tt.attr(vt);
           });
-          let { container: Et, outside: gt, renderer: xe } = i;
-          if (gt && Et && xe) {
+          let { container: Ot, outside: gt, renderer: xe } = i;
+          if (gt && Ot && xe) {
             let { width: at, height: ot, x: yt, y: pt } = D.getBBox();
-            xe.setSize(at + yt, ot + pt, !1), Et.style.left = tt.left + "px", Et.style.top = j + "px";
+            xe.setSize(at + yt, ot + pt, !1), Ot.style.left = tt.left + "px", Ot.style.top = j + "px";
           }
           Xr && D.attr({ opacity: D.opacity === 1 ? 0.999 : 1 });
         }
@@ -2491,8 +2491,8 @@ function Np() {
           });
         };
       })(C || (C = {}));
-      let k = C, { animObject: A } = Zt, { defaultOptions: E } = fe, { format: P } = he, { addEvent: B, crisp: z, erase: R, extend: F, fireEvent: G, getNestedProperty: q, isArray: xt, isFunction: dt, isNumber: ht, isObject: ut, merge: st, pick: rt, syncTimeout: wt, removeEvent: Mt, uniqueKey: te } = J;
-      class Wt {
+      let k = C, { animObject: A } = Zt, { defaultOptions: E } = fe, { format: P } = he, { addEvent: B, crisp: z, erase: R, extend: F, fireEvent: G, getNestedProperty: q, isArray: xt, isFunction: dt, isNumber: ht, isObject: ut, merge: st, pick: rt, syncTimeout: wt, removeEvent: Mt, uniqueKey: ee } = J;
+      class Xt {
         animateBeforeDestroy() {
           let t = this, e = { x: t.startXPos, opacity: 0 }, i = t.getGraphicalProps();
           i.singular.forEach(function(s) {
@@ -2505,7 +2505,7 @@ function Np() {
         }
         applyOptions(t, e) {
           let i = this.series, s = i.options.pointValKey || i.pointValKey;
-          return F(this, t = Wt.prototype.optionsToObject.call(this, t)), this.options = this.options ? F(this.options, t) : t, t.group && delete this.group, t.dataLabels && delete this.dataLabels, s && (this.y = Wt.prototype.getNestedProperty.call(this, s)), this.selected && (this.state = "select"), "name" in this && e === void 0 && i.xAxis && i.xAxis.hasNames && (this.x = i.xAxis.nameToX(this)), this.x === void 0 && i ? this.x = e ?? i.autoIncrement() : ht(t.x) && i.options.relativeXValue ? this.x = i.autoIncrement(t.x) : typeof this.x == "string" && (e ?? (e = i.chart.time.parse(this.x)), ht(e) && (this.x = e)), this.isNull = this.isValid && !this.isValid(), this.formatPrefix = this.isNull ? "null" : "point", this;
+          return F(this, t = Xt.prototype.optionsToObject.call(this, t)), this.options = this.options ? F(this.options, t) : t, t.group && delete this.group, t.dataLabels && delete this.dataLabels, s && (this.y = Xt.prototype.getNestedProperty.call(this, s)), this.selected && (this.state = "select"), "name" in this && e === void 0 && i.xAxis && i.xAxis.hasNames && (this.x = i.xAxis.nameToX(this)), this.x === void 0 && i ? this.x = e ?? i.autoIncrement() : ht(t.x) && i.options.relativeXValue ? this.x = i.autoIncrement(t.x) : typeof this.x == "string" && (e ?? (e = i.chart.time.parse(this.x)), ht(e) && (this.x = e)), this.isNull = this.isValid && !this.isValid(), this.formatPrefix = this.isNull ? "null" : "point", this;
         }
         destroy() {
           if (!this.destroyed) {
@@ -2555,7 +2555,7 @@ function Np() {
           return (this.graphic && (this.graphic.symbolName || this.graphic.element.nodeName)) !== this.shapeType;
         }
         constructor(t, e, i) {
-          this.formatPrefix = "point", this.visible = !0, this.point = this, this.series = t, this.applyOptions(e, i), this.id ?? (this.id = te()), this.resolveColor(), this.dataLabelOnNull ?? (this.dataLabelOnNull = t.options.nullInteraction), t.chart.pointCount++, G(this, "afterInit");
+          this.formatPrefix = "point", this.visible = !0, this.point = this, this.series = t, this.applyOptions(e, i), this.id ?? (this.id = ee()), this.resolveColor(), this.dataLabelOnNull ?? (this.dataLabelOnNull = t.options.nullInteraction), t.chart.pointCount++, G(this, "afterInit");
         }
         isValid() {
           return (ht(this.x) || this.x instanceof Date) && ht(this.y);
@@ -2563,7 +2563,7 @@ function Np() {
         optionsToObject(t) {
           let e = this.series, i = e.options.keys, s = i || e.pointArrayMap || ["y"], r = s.length, o = {}, a, l = 0, c = 0;
           if (ht(t) || t === null) o[s[0]] = t;
-          else if (xt(t)) for (!i && t.length > r && ((a = typeof t[0]) == "string" ? e.xAxis?.dateTime ? o.x = e.chart.time.parse(t[0]) : o.name = t[0] : a === "number" && (o.x = t[0]), l++); c < r; ) i && t[l] === void 0 || (s[c].indexOf(".") > 0 ? Wt.prototype.setNestedProperty(o, t[l], s[c]) : o[s[c]] = t[l]), l++, c++;
+          else if (xt(t)) for (!i && t.length > r && ((a = typeof t[0]) == "string" ? e.xAxis?.dateTime ? o.x = e.chart.time.parse(t[0]) : o.name = t[0] : a === "number" && (o.x = t[0]), l++); c < r; ) i && t[l] === void 0 || (s[c].indexOf(".") > 0 ? Xt.prototype.setNestedProperty(o, t[l], s[c]) : o[s[c]] = t[l]), l++, c++;
           else typeof t == "object" && (o = t, t.dataLabels && (e.hasDataLabels = () => !0), t.marker && (e._hasPointMarkers = !0));
           return o;
         }
@@ -2644,15 +2644,15 @@ function Np() {
             y && this.graphic.animate(y, rt(d.options.chart.animation, l.animation, o.animation)), v && v.hide();
           } else t && l && (T = f.symbol || i.symbol, v && v.currentSymbol !== T && (v = v.destroy()), y && (v ? v[e ? "animate" : "attr"]({ x: y.x, y: y.y }) : T && (i.stateMarkerGraphic = v = d.renderer.symbol(T, y.x, y.y, y.width, y.height, st(o, l)).add(i.markerGroup), v.currentSymbol = T)), !d.styledMode && v && this.state !== "inactive" && v.attr(i.pointAttribs(this, t))), v && (v[t && this.isInside ? "show" : "hide"](), v.element.point = this, v.addClass(this.getClassName(), !0));
           let S = r.halo, O = this.graphic || v, L = O?.visibility || "inherit";
-          S?.size && O && L !== "hidden" && !this.isCluster ? (x || (i.halo = x = d.renderer.path().add(O.parentGroup)), x.show()[e ? "animate" : "attr"]({ d: this.haloPath(S.size) }), x.attr({ class: "highcharts-halo highcharts-color-" + rt(this.colorIndex, i.colorIndex) + (this.className ? " " + this.className : ""), visibility: L, zIndex: -1 }), x.point = this, d.styledMode || x.attr(F({ fill: this.color || i.color, "fill-opacity": S.opacity }, Bt.filterUserAttributes(S.attributes || {})))) : x?.point?.haloPath && !x.point.destroyed && x.animate({ d: x.point.haloPath(0) }, null, x.hide), G(this, "afterSetState", { state: t });
+          S?.size && O && L !== "hidden" && !this.isCluster ? (x || (i.halo = x = d.renderer.path().add(O.parentGroup)), x.show()[e ? "animate" : "attr"]({ d: this.haloPath(S.size) }), x.attr({ class: "highcharts-halo highcharts-color-" + rt(this.colorIndex, i.colorIndex) + (this.className ? " " + this.className : ""), visibility: L, zIndex: -1 }), x.point = this, d.styledMode || x.attr(F({ fill: this.color || i.color, "fill-opacity": S.opacity }, Rt.filterUserAttributes(S.attributes || {})))) : x?.point?.haloPath && !x.point.destroyed && x.animate({ d: x.point.haloPath(0) }, null, x.hide), G(this, "afterSetState", { state: t });
         }
         haloPath(t) {
           let e = this.pos();
           return e ? this.series.chart.renderer.symbols.circle(z(e[0], 1) - t, e[1] - t, 2 * t, 2 * t) : [];
         }
       }
-      let qt = Wt, { parse: Ke } = St, { charts: Xs, composed: rc, isTouchDevice: oc } = X, { addEvent: He, attr: ac, css: el, extend: il, find: Fl, fireEvent: Fi, isNumber: xa, isObject: ba, objectEach: nc, offset: lc, pick: di, pushUnique: hc, splat: Hl } = J;
-      class ie {
+      let qt = Xt, { parse: Ke } = Pt, { charts: Xs, composed: rc, isTouchDevice: oc } = X, { addEvent: He, attr: ac, css: el, extend: il, find: Fl, fireEvent: Fi, isNumber: xa, isObject: ba, objectEach: nc, offset: lc, pick: di, pushUnique: hc, splat: Hl } = J;
+      class se {
         applyInactiveState(t = []) {
           let e = [];
           for (let i of (t.forEach((s) => {
@@ -2665,7 +2665,7 @@ function Np() {
         }
         destroy() {
           let t = this;
-          this.eventsToUnbind.forEach((e) => e()), this.eventsToUnbind = [], !X.chartCount && (ie.unbindDocumentMouseUp.forEach((e) => e.unbind()), ie.unbindDocumentMouseUp.length = 0, ie.unbindDocumentTouchEnd && (ie.unbindDocumentTouchEnd = ie.unbindDocumentTouchEnd())), clearInterval(t.tooltipTimeout), nc(t, function(e, i) {
+          this.eventsToUnbind.forEach((e) => e()), this.eventsToUnbind = [], !X.chartCount && (se.unbindDocumentMouseUp.forEach((e) => e.unbind()), se.unbindDocumentMouseUp.length = 0, se.unbindDocumentTouchEnd && (se.unbindDocumentTouchEnd = se.unbindDocumentTouchEnd())), clearInterval(t.tooltipTimeout), nc(t, function(e, i) {
             t[i] = void 0;
           });
         }
@@ -2786,7 +2786,7 @@ function Np() {
           t = this.normalize(t), X.isFirefox && t.button !== 0 && this.onContainerMouseMove(t), (t.button === void 0 || e) && (this.zoomOption(t), e && t.preventDefault?.(), this.dragStart(t));
         }
         onContainerMouseLeave(t) {
-          let { pointer: e } = Xs[di(ie.hoverChartIndex, -1)] || {};
+          let { pointer: e } = Xs[di(se.hoverChartIndex, -1)] || {};
           t = this.normalize(t), this.onContainerMouseMove(t), e && !this.inClass(t.relatedTarget, "highcharts-tooltip") && (e.reset(), e.chartPosition = void 0);
         }
         onContainerMouseEnter() {
@@ -2810,7 +2810,7 @@ function Np() {
           !s || e.isInsidePlot(r.chartX - e.plotLeft, r.chartY - e.plotTop, { visiblePlotOnly: !0 }) || i?.shouldStickOnContact(r) || r.target !== e.container.ownerDocument && this.inClass(r.target, "highcharts-tracker") || this.reset();
         }
         onDocumentMouseUp(t) {
-          t?.touches && this.hasPinchMoved && t?.preventDefault?.(), Xs[di(ie.hoverChartIndex, -1)]?.pointer?.drop(t);
+          t?.touches && this.hasPinchMoved && t?.preventDefault?.(), Xs[di(se.hoverChartIndex, -1)]?.pointer?.drop(t);
         }
         pinch(t) {
           let e = this, { chart: i, hasZoom: s, lastTouches: r } = e, o = [].map.call(t.touches || [], (d) => e.normalize(d)), a = o.length, l = a === 1 && (e.inClass(t.target, "highcharts-tracker") && i.runTrackerClick || e.runChartClick), c = i.tooltip, f = a === 1 && di(c?.options.followTouchMove, !0);
@@ -2853,19 +2853,19 @@ function Np() {
             let M = o.getAnchor([{}], t);
             s.isInsidePlot(M[0], M[1], { visiblePlotOnly: !0 }) && o.updatePosition({ plotX: M[0], plotY: M[1] });
           }
-          this.unDocMouseMove || (this.unDocMouseMove = He(s.container.ownerDocument, "mousemove", (M) => Xs[ie.hoverChartIndex ?? -1]?.pointer?.onDocumentMouseMove(M)), this.eventsToUnbind.push(this.unDocMouseMove)), s.axes.forEach(function(M) {
+          this.unDocMouseMove || (this.unDocMouseMove = He(s.container.ownerDocument, "mousemove", (M) => Xs[se.hoverChartIndex ?? -1]?.pointer?.onDocumentMouseMove(M)), this.eventsToUnbind.push(this.unDocMouseMove)), s.axes.forEach(function(M) {
             let w, v = M.crosshair?.snap ?? !0;
             v && ((w = s.hoverPoint) && w.series[M.coll] === M || (w = Fl(m, (T) => T.series?.[M.coll] === M))), w || !v ? M.drawCrosshair(t, w) : M.hideCrosshair();
           });
         }
         setDOMEvents() {
           let t = this.chart.container, e = t.ownerDocument;
-          t.onmousedown = this.onContainerMouseDown.bind(this), t.onmousemove = this.onContainerMouseMove.bind(this), t.onclick = this.onContainerClick.bind(this), this.eventsToUnbind.push(He(t, "mouseenter", this.onContainerMouseEnter.bind(this)), He(t, "mouseleave", this.onContainerMouseLeave.bind(this))), ie.unbindDocumentMouseUp.some((s) => s.doc === e) || ie.unbindDocumentMouseUp.push({ doc: e, unbind: He(e, "mouseup", this.onDocumentMouseUp.bind(this)) });
+          t.onmousedown = this.onContainerMouseDown.bind(this), t.onmousemove = this.onContainerMouseMove.bind(this), t.onclick = this.onContainerClick.bind(this), this.eventsToUnbind.push(He(t, "mouseenter", this.onContainerMouseEnter.bind(this)), He(t, "mouseleave", this.onContainerMouseLeave.bind(this))), se.unbindDocumentMouseUp.some((s) => s.doc === e) || se.unbindDocumentMouseUp.push({ doc: e, unbind: He(e, "mouseup", this.onDocumentMouseUp.bind(this)) });
           let i = this.chart.renderTo.parentElement;
           for (; i && i.tagName !== "BODY"; ) this.eventsToUnbind.push(He(i, "scroll", () => {
             delete this.chartPosition;
           })), i = i.parentElement;
-          this.eventsToUnbind.push(He(t, "touchstart", this.onContainerTouchStart.bind(this), { passive: !1 }), He(t, "touchmove", this.onContainerTouchMove.bind(this), { passive: !1 })), ie.unbindDocumentTouchEnd || (ie.unbindDocumentTouchEnd = He(e, "touchend", this.onDocumentTouchEnd.bind(this), { passive: !1 })), this.setPointerCapture(), He(this.chart, "redraw", this.setPointerCapture.bind(this));
+          this.eventsToUnbind.push(He(t, "touchstart", this.onContainerTouchStart.bind(this), { passive: !1 }), He(t, "touchmove", this.onContainerTouchMove.bind(this), { passive: !1 })), se.unbindDocumentTouchEnd || (se.unbindDocumentTouchEnd = He(e, "touchend", this.onDocumentTouchEnd.bind(this), { passive: !1 })), this.setPointerCapture(), He(this.chart, "redraw", this.setPointerCapture.bind(this));
         }
         setPointerCapture() {
           if (!oc) return;
@@ -2877,12 +2877,12 @@ function Np() {
           })), e.styledMode || el(i, { "touch-action": "none" }), i.className += " highcharts-no-touch-action", this.hasPointerCapture = !0) : this.hasPointerCapture && !s && (t.forEach((r) => r()), t.length = 0, e.styledMode || el(i, { "touch-action": di(e.options.chart.style?.["touch-action"], "manipulation") }), i.className = i.className.replace(" highcharts-no-touch-action", ""), this.hasPointerCapture = !1);
         }
         setHoverChartIndex(t) {
-          let e = this.chart, i = X.charts[di(ie.hoverChartIndex, -1)];
+          let e = this.chart, i = X.charts[di(se.hoverChartIndex, -1)];
           if (i && i !== e) {
             let s = { relatedTarget: e.container };
             t && !t?.relatedTarget && Object.assign({}, t, s), i.pointer?.onContainerMouseLeave(t || s);
           }
-          i?.mouseIsDown || (ie.hoverChartIndex = e.index);
+          i?.mouseIsDown || (se.hoverChartIndex = e.index);
         }
         touch(t, e) {
           let i, { chart: s, pinchDown: r = [] } = this;
@@ -2896,14 +2896,14 @@ function Np() {
           /touch/.test(t.type) && (s = di(e.zooming.pinchType, s)), this.zoomX = r = /x/.test(s), this.zoomY = o = /y/.test(s), this.zoomHor = r && !i || o && i, this.zoomVert = o && !i || r && i, this.hasZoom = r || o;
         }
       }
-      ie.unbindDocumentMouseUp = [], (function(h) {
+      se.unbindDocumentMouseUp = [], (function(h) {
         h.compose = function(t) {
           hc(rc, "Core.Pointer") && He(t, "beforeRender", function() {
             this.pointer = new h(this, this.options);
           });
         };
-      })(ie || (ie = {}));
-      let Wl = ie;
+      })(se || (se = {}));
+      let Wl = se;
       (function(h) {
         h.setLength = function(t, e, i) {
           return Array.isArray(t) ? (t.length = e, t) : t[i ? "subarray" : "slice"](0, e);
@@ -2996,7 +2996,7 @@ function Np() {
           return h.seriesTypes[e];
         };
       })(Te || (Te = {}));
-      let Kt = Te, { animObject: Ul, setAnimation: mc } = Zt, { defaultOptions: va } = fe, { registerEventOptions: xc } = Di, { svg: bc, win: yc } = X, { seriesTypes: Gs } = Kt, { format: vc } = he, { arrayMax: rl, arrayMin: Vl, clamp: ql, correctFloat: Kl, crisp: kc, defined: ee, destroyObjectProperties: wc, diffObjects: Mc, erase: $l, error: ka, extend: Ys, find: Cc, fireEvent: Yt, getClosestDistance: Ac, getNestedProperty: Zl, insertItem: _l, isArray: Jl, isNumber: se, isString: Tc, merge: qr, objectEach: ol, pick: jt, removeEvent: Sc, syncTimeout: Ql } = J;
+      let Kt = Te, { animObject: Ul, setAnimation: mc } = Zt, { defaultOptions: va } = fe, { registerEventOptions: xc } = Di, { svg: bc, win: yc } = X, { seriesTypes: Gs } = Kt, { format: vc } = he, { arrayMax: rl, arrayMin: Vl, clamp: ql, correctFloat: Kl, crisp: kc, defined: ie, destroyObjectProperties: wc, diffObjects: Mc, erase: $l, error: ka, extend: Ys, find: Cc, fireEvent: Yt, getClosestDistance: Ac, getNestedProperty: Zl, insertItem: _l, isArray: Jl, isNumber: re, isString: Tc, merge: qr, objectEach: ol, pick: jt, removeEvent: Sc, syncTimeout: Ql } = J;
       class $e {
         constructor() {
           this.zoneAxis = "y";
@@ -3031,15 +3031,15 @@ function Np() {
         }
         autoIncrement(t) {
           let e, i = this.options, { pointIntervalUnit: s, relativeXValue: r } = this.options, o = this.chart.time, a = this.xIncrement ?? o.parse(i.pointStart) ?? 0;
-          if (this.pointInterval = e = jt(this.pointInterval, i.pointInterval, 1), r && se(t) && (e *= t), s) {
+          if (this.pointInterval = e = jt(this.pointInterval, i.pointInterval, 1), r && re(t) && (e *= t), s) {
             let l = o.toParts(a);
             s === "day" ? l[2] += e : s === "month" ? l[1] += e : s === "year" && (l[0] += e), e = o.makeTime.apply(o, l) - a;
           }
-          return r && se(t) ? a + e : (this.xIncrement = a + e, a);
+          return r && re(t) ? a + e : (this.xIncrement = a + e, a);
         }
         setDataSortingOptions() {
           let t = this.options;
-          Ys(this, { requireSorting: !1, sorted: !1, enabledDataSorting: !0, allowDG: !1 }), ee(t.pointRange) || (t.pointRange = 1);
+          Ys(this, { requireSorting: !1, sorted: !1, enabledDataSorting: !0, allowDG: !1 }), ie(t.pointRange) || (t.pointRange = 1);
         }
         setOptions(t) {
           let e, i = this.chart, s = i.options.plotOptions, r = i.userOptions || {}, o = qr(t), a = i.styledMode, l = { plotOptions: s, userOptions: o };
@@ -3049,14 +3049,14 @@ function Np() {
           let y = qr(c, s.series, x, o);
           this.tooltipOptions = qr(va.tooltip, va.plotOptions.series?.tooltip, m?.tooltip, i.userOptions.tooltip, f.series?.tooltip, x.tooltip, o.tooltip), this.stickyTracking = jt(o.stickyTracking, x.stickyTracking, d.stickyTracking, !!this.tooltipOptions.shared && !this.noSharedTooltip || y.stickyTracking), c.marker === null && delete y.marker, this.zoneAxis = y.zoneAxis || "y";
           let M = this.zones = (y.zones || []).map((w) => ({ ...w }));
-          return (y.negativeColor || y.negativeFillColor) && !y.zones && (e = { value: y[this.zoneAxis + "Threshold"] || y.threshold || 0, className: "highcharts-negative" }, a || (e.color = y.negativeColor, e.fillColor = y.negativeFillColor), M.push(e)), M.length && ee(M[M.length - 1].value) && M.push(a ? {} : { color: this.color, fillColor: this.fillColor }), Yt(this, "afterSetOptions", { options: y }), y;
+          return (y.negativeColor || y.negativeFillColor) && !y.zones && (e = { value: y[this.zoneAxis + "Threshold"] || y.threshold || 0, className: "highcharts-negative" }, a || (e.color = y.negativeColor, e.fillColor = y.negativeFillColor), M.push(e)), M.length && ie(M[M.length - 1].value) && M.push(a ? {} : { color: this.color, fillColor: this.fillColor }), Yt(this, "afterSetOptions", { options: y }), y;
         }
         getName() {
           return this.options.name ?? vc(this.chart.options.lang.seriesName, this, this.chart);
         }
         getCyclic(t, e, i) {
           let s, r, o = this.chart, a = `${t}Index`, l = `${t}Counter`, c = i?.length || o.options.chart.colorCount;
-          !e && (ee(r = jt(t === "color" ? this.options.colorIndex : void 0, this[a])) ? s = r : (o.series.length || (o[l] = 0), s = o[l] % c, o[l] += 1), i && (e = i[s])), s !== void 0 && (this[a] = s), this[t] = e;
+          !e && (ie(r = jt(t === "color" ? this.options.colorIndex : void 0, this[a])) ? s = r : (o.series.length || (o[l] = 0), s = o[l] % c, o[l] += 1), i && (e = i[s])), s !== void 0 && (this[a] = s), this[t] = e;
         }
         getColor() {
           this.chart.styledMode ? this.getCyclic("color") : this.options.colorByPoint ? this.color = "#cccccc" : this.getCyclic("color", this.options.color || va.plotOptions[this.type].color, this.chart.options.colors);
@@ -3080,13 +3080,13 @@ function Np() {
             let d = (m) => !m.touched && m.index === t.index;
             if (c?.matchByName ? d = (m) => !m.touched && m.name === t.name : this.options.relativeXValue && (d = (m) => !m.touched && m.options.x === t.x), !(i = Cc(l, d))) return;
           }
-          return i && (r = i?.index) !== void 0 && (s = !0), r === void 0 && se(a) && (r = this.getColumn("x").indexOf(a, e)), r !== -1 && r !== void 0 && this.cropped && (r = r >= f ? r - f : r), !s && se(r) && l[r]?.touched && (r = void 0), r;
+          return i && (r = i?.index) !== void 0 && (s = !0), r === void 0 && re(a) && (r = this.getColumn("x").indexOf(a, e)), r !== -1 && r !== void 0 && this.cropped && (r = r >= f ? r - f : r), !s && re(r) && l[r]?.touched && (r = void 0), r;
         }
         updateData(t, e) {
           let { options: i, requireSorting: s } = this, r = i.dataSorting, o = this.points, a = [], l = t.length === o.length, c, f, d, m, x = !0;
           if (this.xIncrement = null, t.forEach((M, w) => {
-            let v, T = ee(M) && this.pointClass.prototype.optionsToObject.call({ series: this }, M) || {}, { id: S, x: O } = T;
-            S || se(O) ? ((v = this.findPointIndex(T, m)) === -1 || v === void 0 ? a.push(M) : o[v] && M !== i.data?.[v] ? (o[v].update(M, !1, void 0, !1), o[v].touched = !0, s && (m = v + 1)) : o[v] && (o[v].touched = !0), (!l || w !== v || r?.enabled || this.hasDerivedData) && (c = !0)) : a.push(M);
+            let v, T = ie(M) && this.pointClass.prototype.optionsToObject.call({ series: this }, M) || {}, { id: S, x: O } = T;
+            S || re(O) ? ((v = this.findPointIndex(T, m)) === -1 || v === void 0 ? a.push(M) : o[v] && M !== i.data?.[v] ? (o[v].update(M, !1, void 0, !1), o[v].touched = !0, s && (m = v + 1)) : o[v] && (o[v].touched = !0), (!l || w !== v || r?.enabled || this.hasDerivedData) && (c = !0)) : a.push(M);
           }, this), c) for (f = o.length; f--; ) (d = o[f]) && !d.touched && d.remove?.(!1, e);
           else l && !r?.enabled ? (t.forEach((M, w) => {
             M === o[w].y || o[w].destroyed || o[w].update(M, !1, void 0, !1);
@@ -3111,8 +3111,8 @@ function Np() {
             this.xIncrement = null, this.colorCounter = 0;
             let N = d && !a.relativeXValue && D > d;
             if (N) {
-              let I = this.getFirstValidPoint(t), W = this.getFirstValidPoint(t, D - 1, -1), j = (H) => !!(Jl(H) && (w || se(H[0])));
-              if (se(I) && se(W)) {
+              let I = this.getFirstValidPoint(t), W = this.getFirstValidPoint(t, D - 1, -1), j = (H) => !!(Jl(H) && (w || re(H[0])));
+              if (re(I) && re(W)) {
                 let H = [], K = [];
                 for (let Q of t) H.push(this.autoIncrement()), K.push(Q);
                 m.setColumns({ x: H, [y]: K });
@@ -3147,7 +3147,7 @@ function Np() {
         }
         sortData(t) {
           let e = this, i = e.options.dataSorting.sortKey || "y", s = function(r, o) {
-            return ee(o) && r.pointClass.prototype.optionsToObject.call({ series: r }, o) || {};
+            return ie(o) && r.pointClass.prototype.optionsToObject.call({ series: r }, o) || {};
           };
           return t.forEach(function(r, o) {
             t[o] = s(e, r), t[o].index = o;
@@ -3206,7 +3206,7 @@ function Np() {
           let { xAxis: i, yAxis: s } = this, r = e || this.getExtremesFromAll || this.options.getExtremesFromAll, o = r && this.cropped ? this.dataTable : this.dataTable.modified, a = o.rowCount, l = t || this.stackedYData, c = l ? [l] : (this.keysAffectYAxis || this.pointArrayMap || ["y"])?.map((L) => o.getColumn(L, !0) || []) || [], f = this.getColumn("x", !0), d = [], m = this.requireSorting && !this.is("column") ? 1 : 0, x = !!s && s.positiveValuesOnly, y = r || this.cropped || !i, M, w, v, T = 0, S = 0;
           for (i && (T = (M = i.getExtremes()).min, S = M.max), v = 0; v < a; v++) if (w = f[v], y || (f[v + m] || w) >= T && (f[v - m] || w) <= S) for (let L of c) {
             let D = L[v];
-            se(D) && (D > 0 || !x) && d.push(D);
+            re(D) && (D > 0 || !x) && d.push(D);
           }
           let O = { activeYData: d, dataMin: Vl(d), dataMax: rl(d) };
           return Yt(this, "afterGetExtremes", { dataExtremes: O }), O;
@@ -3218,7 +3218,7 @@ function Np() {
         getFirstValidPoint(t, e = 0, i = 1) {
           let s = t.length, r = e;
           for (; r >= 0 && r < s; ) {
-            if (ee(t[r])) return t[r];
+            if (ie(t[r])) return t[r];
             r += i;
           }
         }
@@ -3230,7 +3230,7 @@ function Np() {
           }
           for (x = 0; x < a; x++) {
             let S, O = o[x], L = O.x, D, N, I = O.y, W = O.low, j = e && r.stacking?.stacks[(this.negStacks && I < (d ? 0 : f) ? "-" : "") + this.stackKey];
-            O.plotX = se(y = i.translate(L, !1, !1, !1, !0, l)) ? Kl(T(y)) : void 0, e && this.visible && j && j[L] && (w = this.getStackIndicator(w, L, this.index), !O.isNull && w.key && (N = (D = j[L]).points[w.key]), D && Jl(N) && (W = N[0], I = N[1], W === d && w.key === j[L].base && (W = jt(se(f) ? f : r.min)), r.positiveValuesOnly && ee(W) && W <= 0 && (W = void 0), O.total = O.stackTotal = jt(D.total), O.percentage = ee(O.y) && D.total ? O.y / D.total * 100 : void 0, O.stackY = I, this.irregularWidths || D.setOffset(this.pointXOffset || 0, this.barW || 0, void 0, void 0, void 0, this.xAxis))), O.yBottom = ee(W) ? T(r.translate(W, !1, !0, !1, !0)) : void 0, this.dataModify && (I = this.dataModify.modifyValue(I, x)), se(I) && O.plotX !== void 0 ? S = se(S = r.translate(I, !1, !0, !1, !0)) ? T(S) : void 0 : !se(I) && m && (S = m), O.plotY = S, O.isInside = this.isPointInside(O), O.clientX = c ? Kl(i.translate(L, !1, !1, !1, !0, l)) : y, O.negative = (O.y || 0) < (f || 0), O.isNull || O.visible === !1 || (M !== void 0 && (v = Math.min(v, Math.abs(y - M))), M = y), O.zone = this.zones.length ? O.getZone() : void 0, !O.graphic && this.group && s && (O.isNew = !0);
+            O.plotX = re(y = i.translate(L, !1, !1, !1, !0, l)) ? Kl(T(y)) : void 0, e && this.visible && j && j[L] && (w = this.getStackIndicator(w, L, this.index), !O.isNull && w.key && (N = (D = j[L]).points[w.key]), D && Jl(N) && (W = N[0], I = N[1], W === d && w.key === j[L].base && (W = jt(re(f) ? f : r.min)), r.positiveValuesOnly && ie(W) && W <= 0 && (W = void 0), O.total = O.stackTotal = jt(D.total), O.percentage = ie(O.y) && D.total ? O.y / D.total * 100 : void 0, O.stackY = I, this.irregularWidths || D.setOffset(this.pointXOffset || 0, this.barW || 0, void 0, void 0, void 0, this.xAxis))), O.yBottom = ie(W) ? T(r.translate(W, !1, !0, !1, !0)) : void 0, this.dataModify && (I = this.dataModify.modifyValue(I, x)), re(I) && O.plotX !== void 0 ? S = re(S = r.translate(I, !1, !0, !1, !0)) ? T(S) : void 0 : !re(I) && m && (S = m), O.plotY = S, O.isInside = this.isPointInside(O), O.clientX = c ? Kl(i.translate(L, !1, !1, !1, !0, l)) : y, O.negative = (O.y || 0) < (f || 0), O.isNull || O.visible === !1 || (M !== void 0 && (v = Math.min(v, Math.abs(y - M))), M = y), O.zone = this.zones.length ? O.getZone() : void 0, !O.graphic && this.group && s && (O.isNew = !0);
           }
           this.closestPointRangePx = v, Yt(this, "afterTranslate");
         }
@@ -3238,7 +3238,7 @@ function Np() {
           let s = this.chart;
           return (t || this.points || []).filter(function(r) {
             let { plotX: o, plotY: a } = r;
-            return (!!i || !r.isNull && !!se(a)) && (!e || !!s.isInsidePlot(o, a, { inverted: s.inverted })) && r.visible !== !1;
+            return (!!i || !r.isNull && !!re(a)) && (!e || !!s.isInsidePlot(o, a, { inverted: s.inverted })) && r.visible !== !1;
           });
         }
         getSharedClipKey() {
@@ -3276,7 +3276,7 @@ function Np() {
           if (x.enabled !== !1 || this._hasPointMarkers) for (e = 0; e < t.length; e++) {
             r = (s = (i = t[e]).graphic) ? "animate" : "attr", o = i.marker || {}, a = !!i.marker;
             let T = i.isNull;
-            if ((v && !ee(o.enabled) || o.enabled) && (!T || y) && i.visible !== !1) {
+            if ((v && !ie(o.enabled) || o.enabled) && (!T || y) && i.visible !== !1) {
               let S = jt(o.symbol, this.symbol, "rect");
               l = this.markerAttribs(i, i.selected && "select"), this.enabledDataSorting && (i.startXPos = w.reversed ? -(l.width || 0) : w.width);
               let O = i.isInside !== !1;
@@ -3292,7 +3292,7 @@ function Np() {
           let i = this.options, s = i.marker, r = t.marker || {}, o = r.symbol || s.symbol, a = {}, l, c, f = jt(r.radius, s?.radius);
           e && (l = s.states[e], c = r.states && r.states[e], f = jt(c?.radius, l?.radius, f && f + (l?.radiusPlus || 0))), t.hasImage = o && o.indexOf("url") === 0, t.hasImage && (f = 0);
           let d = t.pos();
-          return se(f) && d && (i.crisp && (d[0] = kc(d[0], t.hasImage ? 0 : o === "rect" ? s?.lineWidth || 0 : 1)), a.x = d[0] - f, a.y = d[1] - f), f && (a.width = a.height = 2 * f), a;
+          return re(f) && d && (i.crisp && (d[0] = kc(d[0], t.hasImage ? 0 : o === "rect" ? s?.lineWidth || 0 : 1)), a.x = d[0] - f, a.y = d[1] - f), f && (a.width = a.height = 2 * f), a;
         }
         pointAttribs(t, e) {
           let i = this.options, s = i.marker, r = t?.options, o = r?.marker || {}, a = r?.color, l = t?.color, c = t?.zone?.color, f, d, m = this.color, x, y, M = jt(o.lineWidth, s.lineWidth), w = t?.isNull && i.nullInteraction ? 0 : 1;
@@ -3316,7 +3316,7 @@ function Np() {
             let { translated: O = 0, lineClip: L } = v, D = S - O;
             L?.push(["L", T, Math.abs(D) < M ? S - M * (D <= 0 ? -1 : 1) : O]);
           };
-          if (s.length && (i || t) && d && se(d.min)) {
+          if (s.length && (i || t) && d && re(d.min)) {
             let v = d.getExtremes().max + y, T = (L) => {
               L.forEach((D, N) => {
                 (D[0] === "M" || D[0] === "L") && (L[N] = [D[0], m ? x - D[1] : D[1], m ? D[2] : x - D[2]]);
@@ -3341,7 +3341,7 @@ function Np() {
         }
         plotGroup(t, e, i, s, r) {
           let o = this[t], a = !o, l = { visibility: i, zIndex: s || 0.1 };
-          return ee(this.opacity) && !this.chart.styledMode && this.state !== "inactive" && (l.opacity = this.opacity), o || (this[t] = o = this.chart.renderer.g().add(r)), o.addClass("highcharts-" + e + " highcharts-series-" + this.index + " highcharts-" + this.type + "-series " + (ee(this.colorIndex) ? "highcharts-color-" + this.colorIndex + " " : "") + (this.options.className || "") + (o.hasClass("highcharts-tracker") ? " highcharts-tracker" : ""), !0), o.attr(l)[a ? "attr" : "animate"](this.getPlotBox(e)), o;
+          return ie(this.opacity) && !this.chart.styledMode && this.state !== "inactive" && (l.opacity = this.opacity), o || (this[t] = o = this.chart.renderer.g().add(r)), o.addClass("highcharts-" + e + " highcharts-series-" + this.index + " highcharts-" + this.type + "-series " + (ie(this.colorIndex) ? "highcharts-color-" + this.colorIndex + " " : "") + (this.options.className || "") + (o.hasClass("highcharts-tracker") ? " highcharts-tracker" : ""), !0), o.attr(l)[a ? "attr" : "animate"](this.getPlotBox(e)), o;
         }
         getPlotBox(t) {
           let e = this.xAxis, i = this.yAxis, s = this.chart, r = s.inverted && !s.polar && e && this.invertible && t === "series";
@@ -3392,8 +3392,8 @@ function Np() {
           if (this.kdTree || this.buildingKdTree || this.buildKDTree(i), this.kdTree) return (function y(M, w, v, T) {
             let S = w.point, O = o.kdAxisArray[v % T], L = S, D = !1;
             (function(j, H) {
-              let K = j[a], Q = H[a], et = ee(K) && ee(Q) ? K - Q : null, V = j[l], Z = H[l], tt = ee(V) && ee(Z) ? V - Z : 0, Et = d && H.marker?.radius || 0;
-              H.dist = Math.sqrt((et && et * et || 0) + tt * tt) - Et, H.distX = ee(et) ? Math.abs(et) - Et : Number.MAX_VALUE;
+              let K = j[a], Q = H[a], et = ie(K) && ie(Q) ? K - Q : null, V = j[l], Z = H[l], tt = ie(V) && ie(Z) ? V - Z : 0, Ot = d && H.marker?.radius || 0;
+              H.dist = Math.sqrt((et && et * et || 0) + tt * tt) - Ot, H.distX = ie(et) ? Math.abs(et) - Ot : Number.MAX_VALUE;
             })(M, S);
             let N = (M[O] || 0) - (S[O] || 0) + (d && S.marker?.radius || 0), I = N < 0 ? "left" : "right", W = N < 0 ? "right" : "left";
             return w[I] && ([L, D] = m(S, y(M, w[I], v + 1, T), c)), w[W] && x(Math.sqrt(N * N), L[c], D) && (L = m(L, y(M, w[W], v + 1, T), c)[0]), L;
@@ -3401,7 +3401,7 @@ function Np() {
         }
         pointPlacementToXValue() {
           let { options: t, xAxis: e } = this, i = t.pointPlacement;
-          return i === "between" && (i = e.reversed ? -0.5 : 0.5), se(i) ? i * (t.pointRange || e.pointRange) : 0;
+          return i === "between" && (i = e.reversed ? -0.5 : 0.5), re(i) ? i * (t.pointRange || e.pointRange) : 0;
         }
         isPointInside(t) {
           let { chart: e, xAxis: i, yAxis: s } = this, { plotX: r = -1, plotY: o = -1 } = t;
@@ -3424,13 +3424,13 @@ function Np() {
           this.pointClass.prototype.applyOptions.apply(w, [t]);
           let v = w.x;
           if (a = M.length, this.requireSorting && v < M[a - 1]) for (o = !0; a && M[a - 1] > v; ) a--;
-          d.setRow(w, a, !0, { addColumns: !1 }), x && w.name && (x[v] = w.name), y?.splice(a, 0, t), (o || this.processedData) && (this.data.splice(a, 0, null), this.processData()), l.legendType === "point" && this.generatePoints(), i && (f[0] && f[0].remove ? f[0].remove(!1) : ([f, y].filter(ee).forEach((T) => {
+          d.setRow(w, a, !0, { addColumns: !1 }), x && w.name && (x[v] = w.name), y?.splice(a, 0, t), (o || this.processedData) && (this.data.splice(a, 0, null), this.processData()), l.legendType === "point" && this.generatePoints(), i && (f[0] && f[0].remove ? f[0].remove(!1) : ([f, y].filter(ie).forEach((T) => {
             T.shift();
           }), d.deleteRows(0))), r !== !1 && Yt(this, "addPoint", { point: w }), this.isDirty = !0, this.isDirtyData = !0, e && c.redraw(s);
         }
         removePoint(t, e, i) {
           let s = this, { chart: r, data: o, points: a, dataTable: l } = s, c = o[t], f = function() {
-            [a?.length === o.length ? a : void 0, o, s.options.data].filter(ee).forEach((d) => {
+            [a?.length === o.length ? a : void 0, o, s.options.data].filter(ie).forEach((d) => {
               d.splice(t, 1);
             }), l.deleteRows(t), c?.destroy(), s.isDirty = !0, s.isDirtyData = !0, e && r.redraw();
           };
@@ -3470,7 +3470,7 @@ function Np() {
         }
         hasOptionChanged(t) {
           let e = this.chart, i = this.options[t], s = e.options.plotOptions, r = this.userOptions[t], o = jt(s?.[this.type]?.[t], s?.series?.[t]);
-          return r && !ee(o) ? i !== r : i !== jt(o, i);
+          return r && !ie(o) ? i !== r : i !== jt(o, i);
         }
         onMouseOver() {
           let t = this.chart, e = t.hoverSeries;
@@ -3488,7 +3488,7 @@ function Np() {
             d && (i.state && d.removeClass("highcharts-series-" + i.state), t && d.addClass("highcharts-series-" + t));
           }), i.state = t, !i.chart.styledMode)) {
             if (a[t] && a[t].enabled === !1) return;
-            if (t && (c = a[t].lineWidth || c + (a[t].lineWidthPlus || 0), f = jt(a[t].opacity, f)), r && !r.dashstyle && se(c)) for (let d of [r, ...this.zones.map((m) => m.graph)]) d?.animate({ "stroke-width": c }, l);
+            if (t && (c = a[t].lineWidth || c + (a[t].lineWidthPlus || 0), f = jt(a[t].opacity, f)), r && !r.dashstyle && re(c)) for (let d of [r, ...this.zones.map((m) => m.graph)]) d?.animate({ "stroke-width": c }, l);
             o || [i.group, i.markerGroup, i.dataLabelsGroup, i.labelBySeries].forEach(function(d) {
               d && d.animate({ opacity: f }, l);
             });
@@ -3857,7 +3857,7 @@ function Np() {
         }
         getContainer() {
           let t, e = this.options, i = e.chart, s = "data-highcharts-chart", r = _c(), o = this.renderTo, a = $c(nh(o, s));
-          js(a) && hs[a] && hs[a].hasRendered && hs[a].destroy(), nh(o, s, this.index), o.innerHTML = Bt.emptyHTML, i.skipClone || o.offsetWidth || this.temporaryDisplay(), this.getChartSize();
+          js(a) && hs[a] && hs[a].hasRendered && hs[a].destroy(), nh(o, s, this.index), o.innerHTML = Rt.emptyHTML, i.skipClone || o.offsetWidth || this.temporaryDisplay(), this.getChartSize();
           let l = this.chartHeight, c = this.chartWidth;
           _e(o, { overflow: "hidden" }), this.styledMode || (t = Wi({ position: "relative", overflow: "hidden", width: c + "px", height: l + "px", textAlign: "left", lineHeight: "normal", zIndex: 0, "-webkit-tap-highlight-color": "rgba(0,0,0,0)", userSelect: "none", "touch-action": "manipulation", outline: "none", padding: "0px" }, i.style || {}));
           let f = ul("div", { id: r }, t, o);
@@ -3996,7 +3996,7 @@ function Np() {
           for (this.scroller?.destroy?.(), t = s.length; t--; ) s[t] = s[t].destroy();
           ["title", "subtitle", "chartBackground", "plotBackground", "plotBGImage", "plotBorder", "seriesGroup", "clipRect", "credits", "pointer", "rangeSelector", "legend", "resetZoomButton", "tooltip", "renderer"].forEach((a) => {
             e[a] = e[a]?.destroy?.();
-          }), r && (r.innerHTML = Bt.emptyHTML, ch(r), o && jc(r)), xl(e, function(a, l) {
+          }), r && (r.innerHTML = Rt.emptyHTML, ch(r), o && jc(r)), xl(e, function(a, l) {
             delete e[l];
           });
         }
@@ -4037,7 +4037,7 @@ function Np() {
           let e = this, i = e.options, s = i.loading, r = function() {
             o && _e(o, { left: e.plotLeft + "px", top: e.plotTop + "px", width: e.plotWidth + "px", height: e.plotHeight + "px" });
           }, o = e.loadingDiv, a = e.loadingSpan;
-          o || (e.loadingDiv = o = ul("div", { className: "highcharts-loading highcharts-loading-hidden" }, null, e.container)), a || (e.loadingSpan = a = ul("span", { className: "highcharts-loading-inner" }, null, o), pl(e, "redraw", r)), o.className = "highcharts-loading", Bt.setElementHTML(a, me(t, i.lang.loading, "")), !e.styledMode && (_e(o, Wi(s.style, { zIndex: 10 })), _e(a, s.labelStyle), e.loadingShown || (_e(o, { opacity: 0, display: "" }), ll(o, { opacity: s.style.opacity || 0.5 }, { duration: s.showDuration || 0 }))), e.loadingShown = !0, r();
+          o || (e.loadingDiv = o = ul("div", { className: "highcharts-loading highcharts-loading-hidden" }, null, e.container)), a || (e.loadingSpan = a = ul("span", { className: "highcharts-loading-inner" }, null, o), pl(e, "redraw", r)), o.className = "highcharts-loading", Rt.setElementHTML(a, me(t, i.lang.loading, "")), !e.styledMode && (_e(o, Wi(s.style, { zIndex: 10 })), _e(a, s.labelStyle), e.loadingShown || (_e(o, { opacity: 0, display: "" }), ll(o, { opacity: s.style.opacity || 0.5 }, { duration: s.showDuration || 0 }))), e.loadingShown = !0, r();
         }
         hideLoading() {
           let t = this.options, e = this.loadingDiv;
@@ -4109,8 +4109,8 @@ function Np() {
               }
               y.allExtremes = tt;
             }
-            let { dataMin: Et, dataMax: gt, min: xe, max: at } = Wi(y.getExtremes(), tt || {}), ot = f.parse(T.min), yt = f.parse(T.max), pt = Et ?? ot, Ot = gt ?? yt, Lt = Z - V, vt = y.categories ? 0 : Math.min(Lt, Ot - pt), Ut = pt - vt * (Hi(ot) ? 0 : T.minPadding), be = Ot + vt * (Hi(yt) ? 0 : T.maxPadding), Ae = y.allowZoomOutside || I === 1 || l !== "zoom" && I > 1, ji = Math.min(ot ?? Ut, Ut, Ae ? xe : Ut), Je = Math.max(yt ?? be, be, Ae ? at : be);
-            (!y.isOrdinal || I !== 1 || r) && (V < ji && (V = ji, I >= 1 && (Z = V + Lt)), Z > Je && (Z = Je, I >= 1 && (V = Z - Lt)), (r || y.series.length && (V !== xe || Z !== at) && V >= ji && Z <= Je) && (o ? o[y.coll].push({ axis: y, min: V, max: Z }) : (y.isPanning = l !== "zoom", y.isPanning && (x = !0), y.setExtremes(r ? void 0 : V, r ? void 0 : Z, !1, !1, { move: j, trigger: l, scale: I }), !r && (V > ji || Z < Je) && l !== "mousewheel" && (m = !0)), d = !0), this.hasCartesianSeries || r || l === "mousewheel" || (m = !0), i && (this[M ? "mouseDownX" : "mouseDownY"] = i[M ? "chartX" : "chartY"]));
+            let { dataMin: Ot, dataMax: gt, min: xe, max: at } = Wi(y.getExtremes(), tt || {}), ot = f.parse(T.min), yt = f.parse(T.max), pt = Ot ?? ot, Lt = gt ?? yt, Dt = Z - V, vt = y.categories ? 0 : Math.min(Dt, Lt - pt), Ut = pt - vt * (Hi(ot) ? 0 : T.minPadding), be = Lt + vt * (Hi(yt) ? 0 : T.maxPadding), Ae = y.allowZoomOutside || I === 1 || l !== "zoom" && I > 1, ji = Math.min(ot ?? Ut, Ut, Ae ? xe : Ut), Je = Math.max(yt ?? be, be, Ae ? at : be);
+            (!y.isOrdinal || I !== 1 || r) && (V < ji && (V = ji, I >= 1 && (Z = V + Dt)), Z > Je && (Z = Je, I >= 1 && (V = Z - Dt)), (r || y.series.length && (V !== xe || Z !== at) && V >= ji && Z <= Je) && (o ? o[y.coll].push({ axis: y, min: V, max: Z }) : (y.isPanning = l !== "zoom", y.isPanning && (x = !0), y.setExtremes(r ? void 0 : V, r ? void 0 : Z, !1, !1, { move: j, trigger: l, scale: I }), !r && (V > ji || Z < Je) && l !== "mousewheel" && (m = !0)), d = !0), this.hasCartesianSeries || r || l === "mousewheel" || (m = !0), i && (this[M ? "mouseDownX" : "mouseDownY"] = i[M ? "chartX" : "chartY"]));
           }
           return d && (o ? bt(this, "selection", o, () => {
             delete t.selection, t.trigger = "zoom", this.transform(t);
@@ -4391,7 +4391,7 @@ function Np() {
       class El extends kh {
       }
       El.defaultOptions = Sd(kh.defaultOptions, Ad.defaultOptions), Td(El.prototype, { getGraphPath: Sl.getGraphPath, getStackPoints: Sl.getStackPoints, drawGraph: Sl.drawGraph }), Kt.registerSeriesType("areaspline", El);
-      let { animObject: Ed } = Zt, { parse: Pd } = St, { noop: Od } = X, { clamp: Ea, crisp: Pa, defined: wh, extend: Mh, fireEvent: Ch, isArray: Ah, isNumber: Oa, merge: Pl, pick: Jr, objectEach: Ld } = J;
+      let { animObject: Ed } = Zt, { parse: Pd } = Pt, { noop: Od } = X, { clamp: Ea, crisp: Pa, defined: wh, extend: Mh, fireEvent: Ch, isArray: Ah, isNumber: Oa, merge: Pl, pick: Jr, objectEach: Ld } = J;
       class La extends Ce {
         animate(t) {
           let e, i, s = this, r = this.yAxis, o = r.pos, a = r.reversed, l = s.options, { clipOffset: c, inverted: f } = this.chart, d = {}, m = f ? "translateX" : "translateY";
@@ -4521,16 +4521,16 @@ function Np() {
           Ol(this, "drawDataLabels"), m.hasDataLabels?.() && (d = this.initDataLabels(D), f.forEach((N) => {
             let I = N.dataLabels || [], W = N.color || m.color;
             Eh(a(S, N.dlOptions || N.options?.dataLabels)).forEach((H, K) => {
-              let Q = H.enabled && (N.visible || N.dataLabelOnHidden) && (!N.isNull || N.dataLabelOnNull) && (function(Ot, Lt) {
-                let vt = Lt.filter;
+              let Q = H.enabled && (N.visible || N.dataLabelOnHidden) && (!N.isNull || N.dataLabelOnNull) && (function(Lt, Dt) {
+                let vt = Dt.filter;
                 if (vt) {
-                  let Ut = vt.operator, be = Ot[vt.property], Ae = vt.value;
+                  let Ut = vt.operator, be = Lt[vt.property], Ae = vt.value;
                   return Ut === ">" && be > Ae || Ut === "<" && be < Ae || Ut === ">=" && be >= Ae || Ut === "<=" && be <= Ae || Ut === "==" && be == Ae || Ut === "===" && be === Ae || Ut === "!=" && be != Ae || Ut === "!==" && be !== Ae || !1;
                 }
                 return !0;
-              })(N, H), { backgroundColor: et, borderColor: V, distance: Z, style: tt = {} } = H, Et, gt, xe, at = {}, ot = I[K], yt = !ot, pt;
-              Q && (gt = ds(Et = eo(H[N.formatPrefix + "Format"], H.format)) ? Id(Et, N, x) : (H[N.formatPrefix + "Formatter"] || H.formatter).call(N, H), xe = H.rotation, !x.styledMode && (tt.color = eo(H.color, tt.color, Qr(m.color) ? m.color : void 0, "#000000"), tt.color === "contrast" ? (et !== "none" && (pt = et), N.contrastColor = M.getContrast(pt !== "auto" && Qr(pt) && pt || (Qr(W) ? W : "")), tt.color = pt || !ds(Z) && H.inside || 0 > Nd(Z || 0) || y.stacking ? N.contrastColor : T) : delete N.contrastColor, y.cursor && (tt.cursor = y.cursor)), at = { r: H.borderRadius || 0, rotation: xe, padding: H.padding, zIndex: 1 }, x.styledMode || (at.fill = et === "auto" ? N.color : et, at.stroke = V === "auto" ? N.color : V, at["stroke-width"] = H.borderWidth), Bd(at, (Ot, Lt) => {
-                Ot === void 0 && delete at[Lt];
+              })(N, H), { backgroundColor: et, borderColor: V, distance: Z, style: tt = {} } = H, Ot, gt, xe, at = {}, ot = I[K], yt = !ot, pt;
+              Q && (gt = ds(Ot = eo(H[N.formatPrefix + "Format"], H.format)) ? Id(Ot, N, x) : (H[N.formatPrefix + "Formatter"] || H.formatter).call(N, H), xe = H.rotation, !x.styledMode && (tt.color = eo(H.color, tt.color, Qr(m.color) ? m.color : void 0, "#000000"), tt.color === "contrast" ? (et !== "none" && (pt = et), N.contrastColor = M.getContrast(pt !== "auto" && Qr(pt) && pt || (Qr(W) ? W : "")), tt.color = pt || !ds(Z) && H.inside || 0 > Nd(Z || 0) || y.stacking ? N.contrastColor : T) : delete N.contrastColor, y.cursor && (tt.cursor = y.cursor)), at = { r: H.borderRadius || 0, rotation: xe, padding: H.padding, zIndex: 1 }, x.styledMode || (at.fill = et === "auto" ? N.color : et, at.stroke = V === "auto" ? N.color : V, at["stroke-width"] = H.borderWidth), Bd(at, (Lt, Dt) => {
+                Lt === void 0 && delete at[Dt];
               })), !ot || Q && ds(gt) && !!(ot.div || ot.text?.foreignObject) == !!H.useHTML && (ot.rotation && H.rotation || ot.rotation === H.rotation) || (ot = void 0, yt = !0), Q && ds(gt) && gt !== "" && (ot ? at.text = gt : (ot = M.label(gt, 0, 0, H.shape, void 0, void 0, H.useHTML, void 0, "data-label")).addClass(" highcharts-data-label-color-" + N.colorIndex + " " + (H.className || "") + (H.useHTML ? " highcharts-tracker" : "")), ot && (ot.options = H, ot.attr(at), x.styledMode ? tt.width && ot.css({ width: tt.width, textOverflow: tt.textOverflow, whiteSpace: tt.whiteSpace }) : ot.css(tt).shadow(H.shadow), Ol(ot, "beforeAddingDataLabel", { labelOptions: H, point: N }), ot.added || ot.add(d), m.alignDataLabel(N, ot, H, void 0, yt), ot.isActive = !0, I[K] && I[K] !== ot && I[K].destroy(), I[K] = ot));
             });
             let j = I.length;
@@ -4585,8 +4585,8 @@ function Np() {
         h.compose = function(e) {
           Ia.compose(Ph), Fd(Rd, "ColumnDataLabel") && (e.prototype.alignDataLabel = t);
         };
-      })(Rt || (Rt = {}));
-      let Hd = Rt, { extend: Wd, merge: Xd } = J;
+      })(zt || (zt = {}));
+      let Hd = zt, { extend: Wd, merge: Xd } = J;
       class Ll extends Da {
       }
       Ll.defaultOptions = Xd(Da.defaultOptions, {}), Wd(Ll.prototype, { inverted: !0 }), Kt.registerSeriesType("bar", Ll);
@@ -4779,9 +4779,9 @@ function Np() {
               });
             }), ap(j, et = K + Q - H, et / 5)), N.forEach((V) => {
               (V.dataLabels || []).forEach((Z) => {
-                let tt = Z.options || {}, Et = V.distributeBox, gt = Z.dataLabelPosition, xe = gt?.natural.y || 0, at = tt.connectorPadding || 0, ot = Z.lineHeight || 21, yt = (ot - Z.getBBox().height) / 2, pt = 0, Ot = xe, Lt = "inherit";
+                let tt = Z.options || {}, Ot = V.distributeBox, gt = Z.dataLabelPosition, xe = gt?.natural.y || 0, at = tt.connectorPadding || 0, ot = Z.lineHeight || 21, yt = (ot - Z.getBBox().height) / 2, pt = 0, Lt = xe, Dt = "inherit";
                 if (gt) {
-                  if (j && Hh(Et) && gt.distance > 0 && (Et.pos === void 0 ? Lt = "hidden" : (L = Et.size, Ot = T.radialDistributionY(V, Z))), tt.justify) pt = T.justify(V, Z, y, x);
+                  if (j && Hh(Ot) && gt.distance > 0 && (Ot.pos === void 0 ? Dt = "hidden" : (L = Ot.size, Lt = T.radialDistributionY(V, Z))), tt.justify) pt = T.justify(V, Z, y, x);
                   else switch (tt.alignTo) {
                     case "connectors":
                       pt = T.alignToConnectors(N, I, c, d);
@@ -4790,11 +4790,11 @@ function Np() {
                       pt = T.alignToPlotEdges(Z, I, c, d);
                       break;
                     default:
-                      pt = T.radialDistributionX(o, V, Ot - yt, xe, Z);
+                      pt = T.radialDistributionX(o, V, Lt - yt, xe, Z);
                   }
-                  if (gt.attribs = { visibility: Lt, align: gt.alignment }, gt.posAttribs = { x: pt + (tt.x || 0) + ({ left: at, right: -at }[gt.alignment] || 0), y: Ot + (tt.y || 0) - ot / 2 }, gt.computed.x = pt, gt.computed.y = Ot - yt, hp(tt.crop, !0)) {
+                  if (gt.attribs = { visibility: Dt, align: gt.alignment }, gt.posAttribs = { x: pt + (tt.x || 0) + ({ left: at, right: -at }[gt.alignment] || 0), y: Lt + (tt.y || 0) - ot / 2 }, gt.computed.x = pt, gt.computed.y = Lt - yt, hp(tt.crop, !0)) {
                     let vt;
-                    pt - (O = Z.getBBox().width) < at && I === 1 ? (vt = Math.round(O - pt + at), v[3] = Math.max(vt, v[3])) : pt + O > c - at && I === 0 && (vt = Math.round(pt + O - c + at), v[1] = Math.max(vt, v[1])), Ot - L / 2 < 0 ? v[0] = Math.max(Math.round(-Ot + L / 2), v[0]) : Ot + L / 2 > f && (v[2] = Math.max(Math.round(Ot + L / 2 - f), v[2])), gt.sideOverflow = vt;
+                    pt - (O = Z.getBBox().width) < at && I === 1 ? (vt = Math.round(O - pt + at), v[3] = Math.max(vt, v[3])) : pt + O > c - at && I === 0 && (vt = Math.round(pt + O - c + at), v[1] = Math.max(vt, v[1])), Lt - L / 2 < 0 ? v[0] = Math.max(Math.round(-Lt + L / 2), v[0]) : Lt + L / 2 > f && (v[2] = Math.max(Math.round(Lt + L / 2 - f), v[2])), gt.sideOverflow = vt;
                   }
                 }
               });
@@ -4913,8 +4913,8 @@ function Np() {
         for (; w--; ) (o || w !== 0 && w !== 3) && (a || w !== 1 && w !== 2) && (function(v, T, S) {
           let O, L, D, N = v[T], I = v[T + 1];
           if (I[0] === "Z" && (I = v[0]), (N[0] === "M" || N[0] === "L") && I[0] === "A" ? (O = N, L = I, D = !0) : N[0] === "A" && (I[0] === "M" || I[0] === "L") && (O = I, L = N), O && L && L.params) {
-            let W = L[1], j = L[5], H = L.params, { start: K, end: Q, cx: et, cy: V } = H, Z = j ? W - S : W + S, tt = Z ? Math.asin(S / Z) : 0, Et = j ? tt : -tt, gt = Math.cos(tt) * Z;
-            D ? (H.start = K + Et, O[1] = et + gt * Math.cos(K), O[2] = V + gt * Math.sin(K), v.splice(T + 1, 0, ["A", S, S, 0, 0, 1, et + W * Math.cos(H.start), V + W * Math.sin(H.start)])) : (H.end = Q - Et, L[6] = et + W * Math.cos(H.end), L[7] = V + W * Math.sin(H.end), v.splice(T + 1, 0, ["A", S, S, 0, 0, 1, et + gt * Math.cos(Q), V + gt * Math.sin(Q)])), L[4] = Math.abs(H.end - H.start) < Math.PI ? 0 : 1;
+            let W = L[1], j = L[5], H = L.params, { start: K, end: Q, cx: et, cy: V } = H, Z = j ? W - S : W + S, tt = Z ? Math.asin(S / Z) : 0, Ot = j ? tt : -tt, gt = Math.cos(tt) * Z;
+            D ? (H.start = K + Ot, O[1] = et + gt * Math.cos(K), O[2] = V + gt * Math.sin(K), v.splice(T + 1, 0, ["A", S, S, 0, 0, 1, et + W * Math.cos(H.start), V + W * Math.sin(H.start)])) : (H.end = Q - Ot, L[6] = et + W * Math.cos(H.end), L[7] = V + W * Math.sin(H.end), v.splice(T + 1, 0, ["A", S, S, 0, 0, 1, et + gt * Math.cos(Q), V + gt * Math.sin(Q)])), L[4] = Math.abs(H.end - H.start) < Math.PI ? 0 : 1;
           }
         })(r, w, w > 1 ? M : y);
         return r;
@@ -4992,7 +4992,7 @@ function Np() {
         };
       })(Ci || (Ci = {}));
       let Lp = Ci;
-      X.AST = Bt, X.Axis = Ri, X.Chart = Xi, X.Color = St, X.DataLabel = Ia, X.DataTableCore = ya, X.Fx = ae, X.HTMLElement = we, X.Legend = sh, X.LegendSymbol = Yl, X.OverlappingDataLabels = X.OverlappingDataLabels || jh, X.PlotLineOrBand = wi, X.Point = qt, X.Pointer = Wl, X.RendererRegistry = $i, X.Series = Ce, X.SeriesRegistry = Kt, X.StackItem = fh, X.SVGElement = Pe, X.SVGRenderer = Ps, X.Templating = he, X.Tick = Bi, X.Time = $s, X.Tooltip = k, X.animate = Zt.animate, X.animObject = Zt.animObject, X.chart = Xi.chart, X.color = St.parse, X.dateFormat = he.dateFormat, X.defaultOptions = fe.defaultOptions, X.distribute = ws.distribute, X.format = he.format, X.getDeferredAnimation = Zt.getDeferredAnimation, X.getOptions = fe.getOptions, X.numberFormat = he.numberFormat, X.seriesType = Kt.seriesType, X.setAnimation = Zt.setAnimation, X.setOptions = fe.setOptions, X.stop = Zt.stop, X.time = fe.defaultTime, X.timers = ae.timers, { compose: function(h, t, e) {
+      X.AST = Rt, X.Axis = Ri, X.Chart = Xi, X.Color = Pt, X.DataLabel = Ia, X.DataTableCore = ya, X.Fx = ae, X.HTMLElement = we, X.Legend = sh, X.LegendSymbol = Yl, X.OverlappingDataLabels = X.OverlappingDataLabels || jh, X.PlotLineOrBand = wi, X.Point = qt, X.Pointer = Wl, X.RendererRegistry = $i, X.Series = Ce, X.SeriesRegistry = Kt, X.StackItem = fh, X.SVGElement = Pe, X.SVGRenderer = Ps, X.Templating = he, X.Tick = Bi, X.Time = $s, X.Tooltip = k, X.animate = Zt.animate, X.animObject = Zt.animObject, X.chart = Xi.chart, X.color = Pt.parse, X.dateFormat = he.dateFormat, X.defaultOptions = fe.defaultOptions, X.distribute = ws.distribute, X.format = he.format, X.getDeferredAnimation = Zt.getDeferredAnimation, X.getOptions = fe.getOptions, X.numberFormat = he.numberFormat, X.seriesType = Kt.seriesType, X.setAnimation = Zt.setAnimation, X.setOptions = fe.setOptions, X.stop = Zt.stop, X.time = fe.defaultTime, X.timers = ae.timers, { compose: function(h, t, e) {
         let i = h.types.pie;
         if (!t.symbolCustomAttribs.includes("borderRadius")) {
           let s = e.prototype.symbols;
@@ -5008,7 +5008,7 @@ var Rp = Np();
 const so = /* @__PURE__ */ Ip(Rp);
 var Fa = { exports: {} }, zp = Fa.exports, Jh;
 function Fp() {
-  return Jh || (Jh = 1, (function(ve, Xt) {
+  return Jh || (Jh = 1, (function(ve, It) {
     /**
     * Highcharts JS v12.4.0 (2025-09-04)
     * @module highcharts/themes/adaptive
@@ -5018,27 +5018,27 @@ function Fp() {
     *
     * License: www.highcharts.com/license
     */
-    (function(nt, At) {
-      ve.exports = At(nt._Highcharts);
+    (function(nt, Tt) {
+      ve.exports = Tt(nt._Highcharts);
     })(typeof window > "u" ? zp : window, (nt) => (() => {
-      var At, $t = { 944: (kt) => {
+      var Tt, $t = { 944: (kt) => {
         kt.exports = nt;
-      } }, Pt = {};
-      function Nt(kt) {
-        var Rt = Pt[kt];
-        if (Rt !== void 0) return Rt.exports;
-        var le = Pt[kt] = { exports: {} };
-        return $t[kt](le, le.exports, Nt), le.exports;
+      } }, Ct = {};
+      function St(kt) {
+        var zt = Ct[kt];
+        if (zt !== void 0) return zt.exports;
+        var le = Ct[kt] = { exports: {} };
+        return $t[kt](le, le.exports, St), le.exports;
       }
-      Nt.n = (kt) => {
-        var Rt = kt && kt.__esModule ? () => kt.default : () => kt;
-        return Nt.d(Rt, { a: Rt }), Rt;
-      }, Nt.d = (kt, Rt) => {
-        for (var le in Rt) Nt.o(Rt, le) && !Nt.o(kt, le) && Object.defineProperty(kt, le, { enumerable: !0, get: Rt[le] });
-      }, Nt.o = (kt, Rt) => Object.prototype.hasOwnProperty.call(kt, Rt);
-      var re = {};
-      Nt.d(re, { default: () => Le });
-      var Vt = Nt(944), ne = Nt.n(Vt);
+      St.n = (kt) => {
+        var zt = kt && kt.__esModule ? () => kt.default : () => kt;
+        return St.d(zt, { a: zt }), zt;
+      }, St.d = (kt, zt) => {
+        for (var le in zt) St.o(zt, le) && !St.o(kt, le) && Object.defineProperty(kt, le, { enumerable: !0, get: zt[le] });
+      }, St.o = (kt, zt) => Object.prototype.hasOwnProperty.call(kt, zt);
+      var _t = {};
+      St.d(_t, { default: () => Le });
+      var Vt = St(944), ne = St.n(Vt);
       let { setOptions: gi } = ne(), de = `
         /* Colors for data series and points */
         --highcharts-color-0: #2caffe;
@@ -5163,21 +5163,21 @@ function Fp() {
 `;
       (function(kt) {
         kt.options = { colors: ["var(--highcharts-color-0)", "var(--highcharts-color-1)", "var(--highcharts-color-2)", "var(--highcharts-color-3)", "var(--highcharts-color-4)", "var(--highcharts-color-5)", "var(--highcharts-color-6)", "var(--highcharts-color-7)", "var(--highcharts-color-8)", "var(--highcharts-color-9)"], global: { buttonTheme: { fill: "var(--highcharts-neutral-color-3)", stroke: "var(--highcharts-neutral-color-20)", style: { color: "var(--highcharts-neutral-color-80)" }, states: { hover: { fill: "var(--highcharts-neutral-color-10)" }, select: { fill: "var(--highcharts-highlight-color-10)", style: { color: "var(--highcharts-neutral-color-100)" } }, disabled: { style: { color: "var(--highcharts-neutral-color-20)" } } } } }, chart: { borderColor: "var(--highcharts-highlight-color-80)", backgroundColor: "var(--highcharts-background-color)", plotBorderColor: "var(--highcharts-neutral-color-20)" }, title: { style: { color: "var(--highcharts-neutral-color-80)" } }, subtitle: { style: { color: "var(--highcharts-neutral-color-60)" } }, caption: { style: { color: "var(--highcharts-neutral-color-60)" } }, plotOptions: { line: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, area: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, spline: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, areaspline: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, column: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, bar: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, scatter: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, pie: { borderColor: "var(--highcharts-background-color)" }, hlc: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, ohlc: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, candlestick: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)", lineColor: "var(--highcharts-neutral-color-100)", upColor: "var(--highcharts-background-color)" }, flags: { states: { hover: { lineColor: "var(--highcharts-neutral-color-100)", fillColor: "var(--highcharts-highlight-color-20)" }, select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)", fillColor: "var(--highcharts-background-color)", style: { color: "var(--highcharts-neutral-color-100)" } }, arearange: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, areasplinerange: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, boxplot: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)", fillColor: "var(--highcharts-background-color)" }, bubble: { marker: { states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, columnrange: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, columnpyramid: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, errorbar: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)", fillColor: "var(--highcharts-background-color)", color: "var(--highcharts-neutral-color-100)" }, gauge: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } }, dataLabels: { borderColor: "var(--highcharts-neutral-color-20)" }, dial: { backgroundColor: "var(--highcharts-neutral-color-100)", borderColor: "var(--highcharts-neutral-color-20)" }, pivot: { borderColor: "var(--highcharts-neutral-color-20)", backgroundColor: "var(--highcharts-neutral-color-100)" } }, packedbubble: { marker: { states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, polygon: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, waterfall: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-neutral-color-80)", lineColor: "var(--highcharts-neutral-color-80)" }, scatter3d: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, map: { states: { hover: { borderColor: "var(--highcharts-neutral-color-60)" }, select: { color: "var(--highcharts-neutral-color-20)" } }, nullColor: "var(--highcharts-neutral-color-3)", borderColor: "var(--highcharts-neutral-color-10)" }, mapline: { states: { hover: { borderColor: "var(--highcharts-neutral-color-60)" }, select: { color: "var(--highcharts-neutral-color-20)" } }, nullColor: "var(--highcharts-neutral-color-3)", borderColor: "var(--highcharts-neutral-color-10)" }, mappoint: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } }, dataLabels: { style: { color: "var(--highcharts-neutral-color-100)" } } }, mapbubble: { marker: { states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, heatmap: { marker: { states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } }, nullColor: "var(--highcharts-neutral-color-3)" }, xrange: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, gantt: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, sankey: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, dependencywheel: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, funnel: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, pyramid: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, histogram: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-background-color)" }, bellcurve: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } } }, item: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } }, borderColor: "var(--highcharts-background-color)" }, organization: { states: { select: { color: "var(--highcharts-neutral-color-20)", borderColor: "var(--highcharts-neutral-color-100)" } }, borderColor: "var(--highcharts-neutral-color-60)", link: { color: "var(--highcharts-neutral-color-60)" } }, solidgauge: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } }, dataLabels: { borderColor: "var(--highcharts-neutral-color-20)" }, dial: { backgroundColor: "var(--highcharts-neutral-color-100)", borderColor: "var(--highcharts-neutral-color-20)" }, pivot: { borderColor: "var(--highcharts-neutral-color-20)", backgroundColor: "var(--highcharts-neutral-color-100)" } }, timeline: { marker: { lineColor: "var(--highcharts-background-color)", states: { select: { fillColor: "var(--highcharts-neutral-color-20)", lineColor: "var(--highcharts-neutral-color-100)" } } }, dataLabels: { backgroundColor: "var(--highcharts-background-color)", borderColor: "var(--highcharts-neutral-color-40)", color: "var(--highcharts-neutral-color-80)" } }, treemap: { states: { hover: { borderColor: "var(--highcharts-neutral-color-40)" } }, borderColor: "var(--highcharts-neutral-color-10)" }, sunburst: { states: { hover: { borderColor: "var(--highcharts-neutral-color-40)" } }, borderColor: "var(--highcharts-neutral-color-10)" }, treegraph: { states: { hover: { borderColor: "var(--highcharts-neutral-color-40)" } }, borderColor: "var(--highcharts-neutral-color-10)", link: { color: "var(--highcharts-neutral-color-60)" } } }, legend: { borderColor: "var(--highcharts-neutral-color-40)", navigation: { activeColor: "var(--highcharts-highlight-color-100)", inactiveColor: "var(--highcharts-neutral-color-20)" }, itemStyle: { color: "var(--highcharts-neutral-color-80)" }, itemHoverStyle: { color: "var(--highcharts-neutral-color-100)" }, itemHiddenStyle: { color: "var(--highcharts-neutral-color-60)" }, title: { style: { color: "var(--highcharts-neutral-color-80)" } }, bubbleLegend: { labels: { style: { color: "var(--highcharts-neutral-color-100)" } } } }, loading: { style: { backgroundColor: "var(--highcharts-background-color)" } }, tooltip: { backgroundColor: "var(--highcharts-background-color)", style: { color: "var(--highcharts-neutral-color-80)" } }, credits: { style: { color: "var(--highcharts-neutral-color-40)" } }, xAxis: { labels: { style: { color: "var(--highcharts-neutral-color-80)" } }, title: { style: { color: "var(--highcharts-neutral-color-60)" } }, minorGridLineColor: "var(--highcharts-neutral-color-5)", minorTickColor: "var(--highcharts-neutral-color-40)", lineColor: "var(--highcharts-neutral-color-80)", gridLineColor: "var(--highcharts-neutral-color-10)", tickColor: "var(--highcharts-neutral-color-80)", grid: { borderColor: "var(--highcharts-neutral-color-20)" } }, yAxis: { labels: { style: { color: "var(--highcharts-neutral-color-80)" } }, title: { style: { color: "var(--highcharts-neutral-color-60)" } }, minorGridLineColor: "var(--highcharts-neutral-color-5)", minorTickColor: "var(--highcharts-neutral-color-40)", lineColor: "var(--highcharts-neutral-color-80)", gridLineColor: "var(--highcharts-neutral-color-10)", tickColor: "var(--highcharts-neutral-color-80)", stackLabels: { style: { color: "var(--highcharts-neutral-color-100)" } }, grid: { borderColor: "var(--highcharts-neutral-color-20)" } }, navigator: { handles: { backgroundColor: "var(--highcharts-neutral-color-5)", borderColor: "var(--highcharts-neutral-color-40)" }, outlineColor: "var(--highcharts-neutral-color-40)", xAxis: { gridLineColor: "var(--highcharts-neutral-color-10)", labels: { style: { color: "var(--highcharts-neutral-color-100)" } } } }, rangeSelector: { inputStyle: { color: "var(--highcharts-highlight-color-80)" }, labelStyle: { color: "var(--highcharts-neutral-color-60)" } }, scrollbar: { barBackgroundColor: "var(--highcharts-neutral-color-20)", barBorderColor: "var(--highcharts-neutral-color-20)", buttonArrowColor: "var(--highcharts-neutral-color-80)", buttonBackgroundColor: "var(--highcharts-neutral-color-10)", buttonBorderColor: "var(--highcharts-neutral-color-20)", trackBorderColor: "var(--highcharts-neutral-color-20)" }, pane: { background: { borderColor: "var(--highcharts-neutral-color-20)", backgroundColor: { stops: [[0, "var(--highcharts-background-color)"], [1, "var(--highcharts-neutral-color-10)"]] } } }, zAxis: { labels: { style: { color: "var(--highcharts-neutral-color-80)" } }, title: { style: { color: "var(--highcharts-neutral-color-60)" } }, minorGridLineColor: "var(--highcharts-neutral-color-5)", minorTickColor: "var(--highcharts-neutral-color-40)", lineColor: "var(--highcharts-neutral-color-80)", gridLineColor: "var(--highcharts-neutral-color-10)", tickColor: "var(--highcharts-neutral-color-80)" }, colorAxis: { labels: { style: { color: "var(--highcharts-neutral-color-80)" } }, title: { style: { color: "var(--highcharts-neutral-color-60)" } }, minorGridLineColor: "var(--highcharts-neutral-color-5)", minorTickColor: "var(--highcharts-neutral-color-40)", lineColor: "var(--highcharts-neutral-color-80)", gridLineColor: "var(--highcharts-background-color)", tickColor: "var(--highcharts-neutral-color-80)", marker: { color: "var(--highcharts-neutral-color-40)" }, minColor: "var(--highcharts-highlight-color-10)", maxColor: "var(--highcharts-highlight-color-100)" }, mapNavigation: { buttonOptions: { style: { color: "var(--highcharts-neutral-color-60)" }, theme: { fill: "var(--highcharts-background-color)", stroke: "var(--highcharts-neutral-color-10)" } } }, accessibility: { keyboardNavigation: { focusBorder: { style: { color: "var(--highcharts-highlight-color-80)" } } } }, drilldown: { activeAxisLabelStyle: { color: "var(--highcharts-highlight-color-100)" }, activeDataLabelStyle: { color: "var(--highcharts-highlight-color-100)" } }, annotations: { labelOptions: { borderColor: "var(--highcharts-neutral-color-100)", backgroundColor: "color-mix(in srgb, var(--highcharts-neutral-color-100) 75%, transparent)" }, controlPointOptions: { style: { fill: "var(--highcharts-background-color)", stroke: "var(--highcharts-neutral-color-100)" } }, types: { elliottWave: { labelOptions: { style: { color: "var(--highcharts-neutral-color-60)" } } }, fibonacci: { typeOptions: { lineColor: "var(--highcharts-neutral-color-40)" }, labelOptions: { style: { color: "var(--highcharts-neutral-color-60)" } } }, fibonacciTimeZones: { typeOptions: { line: { stroke: "var(--highcharts-neutral-color-80)" } } }, verticalLine: { labelOptions: { style: { color: "var(--highcharts-neutral-color-60)" } } }, measure: { typeOptions: { label: { style: { color: "var(--highcharts-neutral-color-60)" } } } } }, shapeOptions: { fill: "color-mix(in srgb, var(--highcharts-neutral-color-100) 75%, transparent)", stroke: "color-mix(in srgb, var(--highcharts-neutral-color-100) 75%, transparent)" } }, navigation: { buttonOptions: { symbolFill: "var(--highcharts-neutral-color-60)", symbolStroke: "var(--highcharts-neutral-color-60)", theme: { fill: "var(--highcharts-background-color)" } }, menuStyle: { background: "var(--highcharts-background-color)" }, menuItemStyle: { color: "var(--highcharts-neutral-color-80)" }, menuItemHoverStyle: { background: "var(--highcharts-neutral-color-5)" } } }, kt.apply = function() {
-          let Rt = document.createElement("style");
-          Rt.nonce = "highcharts", Rt.innerText = We, document.getElementsByTagName("head")[0].appendChild(Rt), gi(kt.options);
+          let zt = document.createElement("style");
+          zt.nonce = "highcharts", zt.innerText = We, document.getElementsByTagName("head")[0].appendChild(zt), gi(kt.options);
         };
-      })(At || (At = {}));
-      let Te = At;
+      })(Tt || (Tt = {}));
+      let Te = Tt;
       ne().theme = Te.options, Te.apply();
       let Le = ne();
-      return re.default;
+      return _t.default;
     })());
   })(Fa)), Fa.exports;
 }
 Fp();
 var Ha = { exports: {} }, Hp = Ha.exports, Qh;
 function Wp() {
-  return Qh || (Qh = 1, (function(ve, Xt) {
+  return Qh || (Qh = 1, (function(ve, It) {
     /**
     * Highcharts JS v12.4.0 (2025-09-04)
     * @module highcharts/modules/accessibility
@@ -5190,24 +5190,24 @@ function Wp() {
     *
     * License: www.highcharts.com/license
     */
-    (function(nt, At) {
-      ve.exports = At(nt._Highcharts, nt._Highcharts.Templating, nt._Highcharts.AST, nt._Highcharts.Legend, nt._Highcharts.Axis, nt._Highcharts.Color, nt._Highcharts.SeriesRegistry, nt._Highcharts.RendererRegistry, nt._Highcharts.SVGRenderer, nt._Highcharts.Point, nt._Highcharts.Series);
-    })(typeof window > "u" ? Hp : window, (nt, At, $t, Pt, Nt, re, Vt, ne, gi, de, ti) => (() => {
+    (function(nt, Tt) {
+      ve.exports = Tt(nt._Highcharts, nt._Highcharts.Templating, nt._Highcharts.AST, nt._Highcharts.Legend, nt._Highcharts.Axis, nt._Highcharts.Color, nt._Highcharts.SeriesRegistry, nt._Highcharts.RendererRegistry, nt._Highcharts.SVGRenderer, nt._Highcharts.Point, nt._Highcharts.Series);
+    })(typeof window > "u" ? Hp : window, (nt, Tt, $t, Ct, St, _t, Vt, ne, gi, de, ti) => (() => {
       let We;
-      var Te, Le, kt, Rt, le = { 260: (u) => {
+      var Te, Le, kt, zt, le = { 260: (u) => {
         u.exports = de;
       }, 512: (u) => {
         u.exports = Vt;
       }, 532: (u) => {
-        u.exports = Nt;
+        u.exports = St;
       }, 540: (u) => {
         u.exports = gi;
       }, 608: (u) => {
         u.exports = ne;
       }, 620: (u) => {
-        u.exports = re;
+        u.exports = _t;
       }, 632: (u) => {
-        u.exports = Pt;
+        u.exports = Ct;
       }, 660: (u) => {
         u.exports = $t;
       }, 820: (u) => {
@@ -5215,7 +5215,7 @@ function Wp() {
       }, 944: (u) => {
         u.exports = nt;
       }, 984: (u) => {
-        u.exports = At;
+        u.exports = Tt;
       } }, ei = {};
       function ft(u) {
         var n = ei[u];
@@ -5250,7 +5250,7 @@ function Wp() {
         }
         return { type: u };
       }
-      let zt = { addClass: function(u, n) {
+      let Ft = { addClass: function(u, n) {
         u.classList ? u.classList.add(n) : 0 > u.className.indexOf(n) && (u.className += " " + n);
       }, cloneMouseEvent: ii, cloneTouchEvent: function(u) {
         let n = (g) => {
@@ -5317,9 +5317,9 @@ function Wp() {
             z.type === "statement" && (z.value = (function(R, F) {
               let G, q, xt = R.indexOf("#each("), dt = R.indexOf("#plural("), ht = R.indexOf("["), ut = R.indexOf("]");
               if (xt > -1) {
-                let rt = R.slice(xt).indexOf(")") + xt, wt = R.substring(0, xt), Mt = R.substring(rt + 1), te = R.substring(xt + 6, rt).split(","), Wt = Number(te[1]), qt;
-                if (q = "", G = U(te[0], F)) {
-                  qt = (Wt = isNaN(Wt) ? G.length : Wt) < 0 ? G.length + Wt : Math.min(Wt, G.length);
+                let rt = R.slice(xt).indexOf(")") + xt, wt = R.substring(0, xt), Mt = R.substring(rt + 1), ee = R.substring(xt + 6, rt).split(","), Xt = Number(ee[1]), qt;
+                if (q = "", G = U(ee[0], F)) {
+                  qt = (Xt = isNaN(Xt) ? G.length : Xt) < 0 ? G.length + Xt : Math.min(Xt, G.length);
                   for (let Ke = 0; Ke < qt; ++Ke) q += wt + G[Ke] + Mt;
                 }
                 return q.length ? q : "";
@@ -5360,7 +5360,7 @@ function Wp() {
           b.langFormat || (b.langFormat = p);
         }, u.i18nFormat = n;
       })(Te || (Te = {}));
-      let lt = Te, { doc: Tt } = _(), { stripHTMLTagsFromString: mt } = zt, { defined: Dt, find: Gt, fireEvent: ue } = _();
+      let lt = Te, { doc: Et } = _(), { stripHTMLTagsFromString: mt } = Ft, { defined: Bt, find: Gt, fireEvent: ue } = _();
       function Ee(u) {
         if (u.points && u.points.length) {
           let n = Gt(u.points, (p) => !!p.graphic);
@@ -5371,9 +5371,9 @@ function Wp() {
         let n = Ee(u);
         return n && n.parentNode || u.graph && u.graph.element || u.group && u.group.element;
       }
-      let It = { fireEventOnWrappedOrUnwrappedElement: function u(n, p) {
+      let Nt = { fireEventOnWrappedOrUnwrappedElement: function u(n, p) {
         let g = p.type, b = n.hcEvents;
-        Tt?.createEvent && (n.dispatchEvent || n.fireEvent) ? n.dispatchEvent ? n.dispatchEvent(p) : n.fireEvent(g, p) : b && b[g] ? ue(n, g, p) : n.element && u(n.element, p);
+        Et?.createEvent && (n.dispatchEvent || n.fireEvent) ? n.dispatchEvent ? n.dispatchEvent(p) : n.fireEvent(g, p) : b && b[g] ? ue(n, g, p) : n.element && u(n.element, p);
       }, getChartTitle: function(u) {
         return mt(u.options.title.text || u.langFormat("accessibility.defaultChartTitle", { chart: u }), u.renderer.forExport);
       }, getAxisDescription: function(u) {
@@ -5406,7 +5406,7 @@ function Wp() {
           return p.name === n;
         }) : u.series;
       }, getSeriesA11yElement: xi, unhideChartElementFromAT: function u(n, p) {
-        p.setAttribute("aria-hidden", !1), p !== n.renderTo && p.parentNode && p.parentNode !== Tt.body && (Array.prototype.forEach.call(p.parentNode.childNodes, function(g) {
+        p.setAttribute("aria-hidden", !1), p !== n.renderTo && p.parentNode && p.parentNode !== Et.body && (Array.prototype.forEach.call(p.parentNode.childNodes, function(g) {
           g.hasAttribute("aria-hidden") || g.setAttribute("aria-hidden", !0);
         }), u(n, p.parentNode));
       }, hideSeriesFromAT: function(u) {
@@ -5414,15 +5414,15 @@ function Wp() {
         n && n.setAttribute("aria-hidden", !0);
       }, scrollAxisToPoint: function(u) {
         let n = u.series.xAxis, p = u.series.yAxis, g = n && n.scrollbar ? n : p, b = g && g.scrollbar;
-        if (b && Dt(b.to) && Dt(b.from)) {
+        if (b && Bt(b.to) && Bt(b.from)) {
           let C = b.to - b.from, k = (function(A, E) {
-            if (!Dt(A.dataMin) || !Dt(A.dataMax)) return 0;
+            if (!Bt(A.dataMin) || !Bt(A.dataMax)) return 0;
             let P = A.toPixels(A.dataMin), B = A.toPixels(A.dataMax), z = A.coll === "xAxis" ? "x" : "y";
             return (A.toPixels(E[z] || 0) - P) / (B - P);
           })(g, u);
           b.updatePosition(k - C / 2, k + C / 2), ue(b, "changed", { from: b.from, to: b.to, trigger: "scrollbar", DOMEvent: null });
         }
-      } }, { doc: ge } = _(), { removeElement: Vs } = zt, us = class {
+      } }, { doc: ge } = _(), { removeElement: Vs } = Ft, us = class {
         constructor() {
           this.elements = [];
         }
@@ -5453,7 +5453,7 @@ function Wp() {
         removeAddedEvents() {
           this.eventRemovers.map((u) => u.remover).forEach((u) => u()), this.eventRemovers = [];
         }
-      }, { fireEventOnWrappedOrUnwrappedElement: Ga } = It, { getFakeMouseEvent: gs } = zt, Ie = class {
+      }, { fireEventOnWrappedOrUnwrappedElement: Ga } = Nt, { getFakeMouseEvent: gs } = Ft, Ie = class {
         destroy() {
         }
         getKeyboardNavigation() {
@@ -5490,7 +5490,7 @@ function Wp() {
           });
           return g ? p = g[1].call(this, n, u) : n === 9 && (p = this.response[u.shiftKey ? "prev" : "next"]), p;
         }
-      }, { unhideChartElementFromAT: ao, getChartTitle: Ti } = It, { doc: Vi } = _(), { stripHTMLTagsFromString: no } = zt, Ya = class extends Ie {
+      }, { unhideChartElementFromAT: ao, getChartTitle: Ti } = Nt, { doc: Vi } = _(), { stripHTMLTagsFromString: no } = Ft, Ya = class extends Ie {
         onChartUpdate() {
           this.handleSVGTitleElement(), this.setSVGContainerLabel(), this.setGraphicContainerAttrs(), this.setRenderToAttrs(), this.makeCreditsAccessible();
         }
@@ -5549,18 +5549,18 @@ function Wp() {
           E.x += this.translateX ? this.translateX : 0, E.y += this.translateY ? this.translateY : 0;
           let q = E.x - P, xt = E.y - P, dt = E.width + 2 * P, ht = E.height + 2 * P, ut = !!this.text;
           if (this.element.nodeName === "text" || ut) {
-            let st, rt, wt = !!this.rotation, Mt = ut ? { x: +!!wt, y: 0 } : (st = 0, rt = 0, this.attr("text-anchor") === "middle" ? st = rt = 0.5 : this.rotation ? st = 0.25 : rt = 0.75, { x: st, y: rt }), te = +this.attr("x"), Wt = +this.attr("y");
-            if (isNaN(te) || (q = te - E.width * Mt.x - P), isNaN(Wt) || (xt = Wt - (this.attr("text-anchor") === "start" ? G : E.height) * Mt.y - P), ut && wt) {
+            let st, rt, wt = !!this.rotation, Mt = ut ? { x: +!!wt, y: 0 } : (st = 0, rt = 0, this.attr("text-anchor") === "middle" ? st = rt = 0.5 : this.rotation ? st = 0.25 : rt = 0.75, { x: st, y: rt }), ee = +this.attr("x"), Xt = +this.attr("y");
+            if (isNaN(ee) || (q = ee - E.width * Mt.x - P), isNaN(Xt) || (xt = Xt - (this.attr("text-anchor") === "start" ? G : E.height) * Mt.y - P), ut && wt) {
               let qt = dt;
-              dt = ht, ht = qt, isNaN(te) || (q = te - E.height * Mt.x - P), isNaN(Wt) || (xt = Wt - E.width * Mt.y - P);
+              dt = ht, ht = qt, isNaN(ee) || (q = ee - E.height * Mt.x - P), isNaN(Xt) || (xt = Xt - E.width * Mt.y - P);
             }
           }
           this.focusBorder = this.renderer.rect(q, xt, dt, ht, parseInt((A && A.r || 0).toString(), 10) / F).addClass("highcharts-focus-border").attr({ zIndex: 99 }).add(B), this.renderer.styledMode || this.focusBorder.attr({ stroke: A && A.stroke, "stroke-width": (A && A.strokeWidth || 0) / F }), (function(st, ...rt) {
             st.focusBorderUpdateHooks || (st.focusBorderUpdateHooks = {}, n.forEach((wt) => {
-              let Mt = wt + "Setter", te = st[Mt] || st._defaultSetter;
-              st.focusBorderUpdateHooks[Mt] = te, st[Mt] = function() {
-                let Wt = te.apply(st, arguments);
-                return st.addFocusBorder.apply(st, rt), Wt;
+              let Mt = wt + "Setter", ee = st[Mt] || st._defaultSetter;
+              st.focusBorderUpdateHooks[Mt] = ee, st[Mt] = function() {
+                let Xt = ee.apply(st, arguments);
+                return st.addFocusBorder.apply(st, rt), Xt;
               };
             }));
           })(this, k, A), (function(st) {
@@ -5585,7 +5585,7 @@ function Wp() {
       })(Le || (Le = {}));
       let qs = Le;
       var Ua = ft(660), Ks = ft.n(Ua);
-      let { doc: Va } = _(), { addClass: qa, visuallyHideElement: lo } = zt, { attr: ho } = _(), Ft = class {
+      let { doc: Va } = _(), { addClass: qa, visuallyHideElement: lo } = Ft, { attr: ho } = _(), Ht = class {
         constructor(u, n) {
           this.chart = u, this.domElementProvider = new us(), this.announceRegion = this.addAnnounceRegion(n);
         }
@@ -5605,7 +5605,7 @@ function Wp() {
           let u = this.chart, n = Va.createElement("div");
           return ho(n, { "aria-hidden": !1, class: "highcharts-announcer-container" }), n.style.position = "relative", u.renderTo.insertBefore(n, u.renderTo.firstChild), u.announcerContainer = n, n;
         }
-      }, { escapeStringForHTML: $s, stripHTMLTagsFromString: Ka } = zt;
+      }, { escapeStringForHTML: $s, stripHTMLTagsFromString: Ka } = Ft;
       function co(u) {
         return (u.annotations || []).reduce((n, p) => (p.options && p.options.visible !== !1 && (n = n.concat(p.labels)), n), []);
       }
@@ -5633,7 +5633,7 @@ function Wp() {
       }, getPointAnnotationTexts: function(u) {
         let n = co(u.series.chart).filter((p) => p.points.indexOf(u) > -1);
         return n.length ? n.map((p) => `${po(p)}`) : [];
-      } }, { getAnnotationsInfoHTML: $a } = fe, { getAxisDescription: qi, getAxisRangeDescription: Za, getChartTitle: fs, unhideChartElementFromAT: oe } = It, { format: uo } = Se(), { doc: go } = _(), { addClass: ms, getElement: St, getHeadingTagNameForElement: fo, stripHTMLTagsFromString: mo, visuallyHideElement: _s } = zt, { attr: xo, pick: ae, replaceNested: _a } = _();
+      } }, { getAnnotationsInfoHTML: $a } = fe, { getAxisDescription: qi, getAxisRangeDescription: Za, getChartTitle: fs, unhideChartElementFromAT: oe } = Nt, { format: uo } = Se(), { doc: go } = _(), { addClass: ms, getElement: Pt, getHeadingTagNameForElement: fo, stripHTMLTagsFromString: mo, visuallyHideElement: _s } = Ft, { attr: xo, pick: ae, replaceNested: _a } = _();
       function bo(u) {
         return _a(u, [/<([\w\-.:!]+)\b[^<>]*>\s*<\/\1>/g, ""]);
       }
@@ -5653,7 +5653,7 @@ function Wp() {
             n.viewDataTableButton && n.viewDataTableButton.setAttribute("aria-expanded", "false");
           }), u.exporting && this.addEvent(u, "afterPrint", function() {
             n.updateAllScreenReaderSections();
-          }), this.announcer = new Ft(u, "assertive");
+          }), this.announcer = new Ht(u, "assertive");
         }
         initRegionsDefinitions() {
           let u = this, n = this.chart.options.accessibility;
@@ -5745,7 +5745,7 @@ function Wp() {
           return mo(u && u.text || "", this.chart.renderer.forExport);
         }
         getEndOfChartMarkerText() {
-          let u = St(`highcharts-end-of-chart-marker-${this.chart.index}`);
+          let u = Pt(`highcharts-end-of-chart-marker-${this.chart.index}`);
           if (u) return u.outerHTML;
           let n = this.chart, p = n.langFormat("accessibility.screenReaderSection.endOfChartMarker", { chart: n });
           return '<div id="highcharts-end-of-chart-marker-' + n.index + '">' + p + "</div>";
@@ -5763,7 +5763,7 @@ function Wp() {
           n && n.focus && n.focus();
         }
         initSonifyButton(u) {
-          let n = this.sonifyButton = St(u), p = this.chart, g = (b) => {
+          let n = this.sonifyButton = Pt(u), p = this.chart, g = (b) => {
             n && (n.setAttribute("aria-hidden", "true"), n.setAttribute("aria-label", "")), b.preventDefault(), b.stopPropagation();
             let C = p.langFormat("accessibility.sonification.playAsSoundClickAnnouncement", { chart: p });
             this.announcer.announce(C), setTimeout(() => {
@@ -5775,8 +5775,8 @@ function Wp() {
           });
         }
         initDataTableButton(u) {
-          let n = this.viewDataTableButton = St(u), p = this.chart, g = u.replace("hc-linkto-", "");
-          n && (xo(n, { tabindex: -1, "aria-expanded": !!St(g) }), n.onclick = p.options.accessibility.screenReaderSection.onViewDataTableClick || function() {
+          let n = this.viewDataTableButton = Pt(u), p = this.chart, g = u.replace("hc-linkto-", "");
+          n && (xo(n, { tabindex: -1, "aria-expanded": !!Pt(g) }), n.onclick = p.options.accessibility.screenReaderSection.onViewDataTableClick || function() {
             p.exporting?.viewData();
           });
         }
@@ -5798,7 +5798,7 @@ function Wp() {
         destroy() {
           this.announcer && this.announcer.destroy();
         }
-      }, { attr: Qa } = _(), { getChartTitle: Js, unhideChartElementFromAT: yo } = It, { getFakeMouseEvent: xs } = zt;
+      }, { attr: Qa } = _(), { getChartTitle: Js, unhideChartElementFromAT: yo } = Nt, { getFakeMouseEvent: xs } = Ft;
       function bs(u) {
         return u.exporting?.svgElements?.[0];
       }
@@ -5914,7 +5914,7 @@ function Wp() {
           k.hideExportMenu || (k.hideExportMenu = p, k.highlightExportItem = g, k.highlightLastExportItem = b, k.showExportMenu = n);
         };
       })(Ki || (Ki = {}));
-      let ys = Ki, { doc: Zt, win: Qs } = _(), { addEvent: tn, defined: en, fireEvent: sn } = _(), { getElement: rn, simulatedEventTarget: vo } = zt;
+      let ys = Ki, { doc: Zt, win: Qs } = _(), { addEvent: tn, defined: en, fireEvent: sn } = _(), { getElement: rn, simulatedEventTarget: vo } = Ft;
       class tr {
         constructor(n, p) {
           this.currentModuleIx = NaN, this.modules = [], this.init(n, p);
@@ -6036,7 +6036,7 @@ function Wp() {
       })(tr || (tr = {}));
       let er = tr;
       var ko = ft(632), ir = ft.n(ko);
-      let { animObject: sr } = _(), { doc: vs } = _(), { addEvent: on, fireEvent: Bt, isNumber: wo, pick: Mo, syncTimeout: an } = _(), { getChartTitle: nn } = It, { stripHTMLTagsFromString: Co, addClass: ln, removeClass: Ao } = zt;
+      let { animObject: sr } = _(), { doc: vs } = _(), { addEvent: on, fireEvent: Rt, isNumber: wo, pick: Mo, syncTimeout: an } = _(), { getChartTitle: nn } = Nt, { stripHTMLTagsFromString: Co, addClass: ln, removeClass: Ao } = Ft;
       function rr(u) {
         let n = u.legend && u.legend.allItems, p = u.options.legend.accessibility || {}, g = u.colorAxis && u.colorAxis.some((b) => !b.dataClasses || !b.dataClasses.length);
         return !!(n && n.length && !g && p.enabled !== !1);
@@ -6045,7 +6045,7 @@ function Wp() {
         let p = n.legendItem || {};
         for (let g of (n.setState(u ? "hover" : "", !0), ["group", "label", "symbol"])) {
           let b = p[g], C = b && b.element || b;
-          C && Bt(C, u ? "mouseover" : "mouseout");
+          C && Rt(C, u ? "mouseover" : "mouseout");
         }
       }
       class ar extends Ie {
@@ -6258,12 +6258,12 @@ function Wp() {
       let { defined: _i } = _(), { defaultOptions: bn } = _(), { composed: yn } = _(), { getRendererType: vn } = Ue(), { setFixedRange: No } = { setFixedRange: function(u) {
         let n = this.xAxis[0];
         _i(n.dataMax) && _i(n.dataMin) && u ? this.fixedRange = Math.min(u, n.dataMax - n.dataMin) : this.fixedRange = u;
-      } }, { addEvent: _t, extend: Pe, pushUnique: Ro } = _();
+      } }, { addEvent: Jt, extend: Pe, pushUnique: Ro } = _();
       function kn() {
         this.chart.navigator && !this.options.isInternal && this.chart.navigator.setBaseSeries(null, !1);
       }
       let zo = { compose: function(u, n, p) {
-        pr.compose(n), Ro(yn, "Navigator") && (u.prototype.setFixedRange = No, Pe(vn().prototype.symbols, fr), Pe(bn, { navigator: gr }), _t(p, "afterUpdate", kn));
+        pr.compose(n), Ro(yn, "Navigator") && (u.prototype.setFixedRange = No, Pe(vn().prototype.symbols, fr), Pe(bn, { navigator: gr }), Jt(p, "afterUpdate", kn));
       } }, { composed: Ji } = _(), { addEvent: Cs, correctFloat: Qi, defined: si, pick: ri, pushUnique: Fo } = _();
       (function(u) {
         let n;
@@ -6404,7 +6404,7 @@ function Wp() {
       }
       ai.defaultOptions = yi;
       var An = ft(540), Tn = ft.n(An);
-      let { defaultOptions: yr } = _(), { isTouchDevice: Yo } = _(), { prototype: { symbols: vi } } = Tn(), { addEvent: Qt, clamp: vr, correctFloat: As, defined: Oi, destroyObjectProperties: Sn, erase: ni, extend: kr, find: Ts, fireEvent: Li, isArray: jo, isNumber: Oe, merge: Ve, pick: Jt, removeEvent: Ss, splat: li } = _();
+      let { defaultOptions: yr } = _(), { isTouchDevice: Yo } = _(), { prototype: { symbols: vi } } = Tn(), { addEvent: te, clamp: vr, correctFloat: As, defined: Oi, destroyObjectProperties: Sn, erase: ni, extend: kr, find: Ts, fireEvent: Li, isArray: jo, isNumber: Oe, merge: Ve, pick: Qt, removeEvent: Ss, splat: li } = _();
       function Es(u, ...n) {
         let p = [].filter.call(n, Oe);
         if (p.length) return Math[u].apply(0, p);
@@ -6455,7 +6455,7 @@ function Wp() {
           if (this.navigatorEnabled && (this.isDirty = !0, n.adaptToUpdatedData === !1 && this.baseSeries.forEach((C) => {
             Ss(C, "updatedData", this.updatedDataHandler);
           }, this), n.adaptToUpdatedData && this.baseSeries.forEach((C) => {
-            C.eventsToUnbind.push(Qt(C, "updatedData", this.updatedDataHandler));
+            C.eventsToUnbind.push(te(C, "updatedData", this.updatedDataHandler));
           }, this), (n.series || n.baseSeries) && this.setBaseSeries(void 0, !1), n.height || n.xAxis || n.yAxis)) {
             this.height = n.height ?? this.height;
             let C = this.getXAxisOffsets();
@@ -6466,15 +6466,15 @@ function Wp() {
         render(n, p, g, b) {
           let C = this.chart, k = this.xAxis, A = k.pointRange || 0, E = k.navigatorAxis.fake ? C.xAxis[0] : k, P = this.navigatorEnabled, B = this.rendered, z = C.inverted, R = C.xAxis[0].minRange, F = C.xAxis[0].options.maxRange, G = this.scrollButtonSize, q, xt, dt, ht = this.scrollbarHeight, ut, st;
           if (this.hasDragged && !Oi(g)) return;
-          if (this.isDirty && this.renderElements(), n = As(n - A / 2), p = As(p + A / 2), !Oe(n) || !Oe(p)) if (B) g = 0, b = Jt(k.width, E.width);
+          if (this.isDirty && this.renderElements(), n = As(n - A / 2), p = As(p + A / 2), !Oe(n) || !Oe(p)) if (B) g = 0, b = Qt(k.width, E.width);
           else return;
-          this.left = Jt(k.left, C.plotLeft + G + (z ? C.plotWidth : 0));
-          let rt = this.size = ut = Jt(k.len, (z ? C.plotHeight : C.plotWidth) - 2 * G);
-          q = z ? ht : ut + 2 * G, g = Jt(g, k.toPixels(n, !0)), b = Jt(b, k.toPixels(p, !0)), Oe(g) && Math.abs(g) !== 1 / 0 || (g = 0, b = q);
-          let wt = k.toValue(g, !0), Mt = k.toValue(b, !0), te = Math.abs(As(Mt - wt));
-          te < R ? this.grabbedLeft ? g = k.toPixels(Mt - R - A, !0) : this.grabbedRight && (b = k.toPixels(wt + R + A, !0)) : Oi(F) && As(te - A) > F && (this.grabbedLeft ? g = k.toPixels(Mt - F - A, !0) : this.grabbedRight && (b = k.toPixels(wt + F + A, !0))), this.zoomedMax = vr(Math.max(g, b), 0, rt), this.zoomedMin = vr(this.fixedWidth ? this.zoomedMax - this.fixedWidth : Math.min(g, b), 0, rt), this.range = this.zoomedMax - this.zoomedMin, rt = Math.round(this.zoomedMax);
-          let Wt = Math.round(this.zoomedMin);
-          P && (this.navigatorGroup.attr({ visibility: "inherit" }), st = B && !this.hasDragged ? "animate" : "attr", this.drawMasks(Wt, rt, z, st), this.drawOutline(Wt, rt, z, st), this.navigatorOptions.handles.enabled && (this.drawHandle(Wt, 0, z, st), this.drawHandle(rt, 1, z, st))), this.scrollbar && (z ? (dt = this.top - G, xt = this.left - ht + (P || !E.opposite ? 0 : (E.titleOffset || 0) + E.axisTitleMargin), ht = ut + 2 * G) : (dt = this.top + (P ? this.height : -ht), xt = this.left - G), this.scrollbar.position(xt, dt, q, ht), this.scrollbar.setRange(this.zoomedMin / (ut || 1), this.zoomedMax / (ut || 1))), this.rendered = !0, this.isDirty = !1, Li(this, "afterRender");
+          this.left = Qt(k.left, C.plotLeft + G + (z ? C.plotWidth : 0));
+          let rt = this.size = ut = Qt(k.len, (z ? C.plotHeight : C.plotWidth) - 2 * G);
+          q = z ? ht : ut + 2 * G, g = Qt(g, k.toPixels(n, !0)), b = Qt(b, k.toPixels(p, !0)), Oe(g) && Math.abs(g) !== 1 / 0 || (g = 0, b = q);
+          let wt = k.toValue(g, !0), Mt = k.toValue(b, !0), ee = Math.abs(As(Mt - wt));
+          ee < R ? this.grabbedLeft ? g = k.toPixels(Mt - R - A, !0) : this.grabbedRight && (b = k.toPixels(wt + R + A, !0)) : Oi(F) && As(ee - A) > F && (this.grabbedLeft ? g = k.toPixels(Mt - F - A, !0) : this.grabbedRight && (b = k.toPixels(wt + F + A, !0))), this.zoomedMax = vr(Math.max(g, b), 0, rt), this.zoomedMin = vr(this.fixedWidth ? this.zoomedMax - this.fixedWidth : Math.min(g, b), 0, rt), this.range = this.zoomedMax - this.zoomedMin, rt = Math.round(this.zoomedMax);
+          let Xt = Math.round(this.zoomedMin);
+          P && (this.navigatorGroup.attr({ visibility: "inherit" }), st = B && !this.hasDragged ? "animate" : "attr", this.drawMasks(Xt, rt, z, st), this.drawOutline(Xt, rt, z, st), this.navigatorOptions.handles.enabled && (this.drawHandle(Xt, 0, z, st), this.drawHandle(rt, 1, z, st))), this.scrollbar && (z ? (dt = this.top - G, xt = this.left - ht + (P || !E.opposite ? 0 : (E.titleOffset || 0) + E.axisTitleMargin), ht = ut + 2 * G) : (dt = this.top + (P ? this.height : -ht), xt = this.left - G), this.scrollbar.position(xt, dt, q, ht), this.scrollbar.setRange(this.zoomedMin / (ut || 1), this.zoomedMax / (ut || 1))), this.rendered = !0, this.isDirty = !1, Li(this, "afterRender");
         }
         addMouseEvents() {
           let n = this, p = n.chart, g = p.container, b = [], C, k;
@@ -6482,7 +6482,7 @@ function Wp() {
             n.onMouseMove(A);
           }, n.mouseUpHandler = k = function(A) {
             n.onMouseUp(A);
-          }, (b = n.getPartsEvents("mousedown")).push(Qt(p.renderTo, "mousemove", C), Qt(g.ownerDocument, "mouseup", k), Qt(p.renderTo, "touchmove", C), Qt(g.ownerDocument, "touchend", k)), b.concat(n.getPartsEvents("touchstart")), n.eventsToUnbind = b, n.series && n.series[0] && b.push(Qt(n.series[0].xAxis, "foundExtremes", function() {
+          }, (b = n.getPartsEvents("mousedown")).push(te(p.renderTo, "mousemove", C), te(g.ownerDocument, "mouseup", k), te(p.renderTo, "touchmove", C), te(g.ownerDocument, "touchend", k)), b.concat(n.getPartsEvents("touchstart")), n.eventsToUnbind = b, n.series && n.series[0] && b.push(te(n.series[0].xAxis, "foundExtremes", function() {
             p.navigator.modifyNavigatorAxisExtremes();
           }));
         }
@@ -6490,7 +6490,7 @@ function Wp() {
           let p = this, g = [];
           return ["shades", "handles"].forEach(function(b) {
             p[b].forEach(function(C, k) {
-              g.push(Qt(C.element, n, function(A) {
+              g.push(te(C.element, n, function(A) {
                 p[b + "Mousedown"](A, k);
               }));
             });
@@ -6508,7 +6508,7 @@ function Wp() {
         }
         onMouseMove(n) {
           let p = this, g = p.chart, b = p.navigatorSize, C = p.range, k = p.dragOffset, A = g.inverted, E = p.left, P;
-          (!n.touches || n.touches[0].pageX !== 0) && (P = (n = g.pointer?.normalize(n) || n).chartX, A && (E = p.top, P = n.chartY), p.grabbedLeft ? (p.hasDragged = !0, p.render(0, 0, P - E, p.otherHandlePos)) : p.grabbedRight ? (p.hasDragged = !0, p.render(0, 0, p.otherHandlePos, P - E)) : p.grabbedCenter && (p.hasDragged = !0, P < k ? P = k : P > b + k - C && (P = b + k - C), p.render(0, 0, P - k, P - k + C)), p.hasDragged && p.scrollbar && Jt(p.scrollbar.options.liveRedraw, !Yo && !this.chart.boosted) && (n.DOMType = n.type, setTimeout(function() {
+          (!n.touches || n.touches[0].pageX !== 0) && (P = (n = g.pointer?.normalize(n) || n).chartX, A && (E = p.top, P = n.chartY), p.grabbedLeft ? (p.hasDragged = !0, p.render(0, 0, P - E, p.otherHandlePos)) : p.grabbedRight ? (p.hasDragged = !0, p.render(0, 0, p.otherHandlePos, P - E)) : p.grabbedCenter && (p.hasDragged = !0, P < k ? P = k : P > b + k - C && (P = b + k - C), p.render(0, 0, P - k, P - k + C)), p.hasDragged && p.scrollbar && Qt(p.scrollbar.options.liveRedraw, !Yo && !this.chart.boosted) && (n.DOMType = n.type, setTimeout(function() {
             p.onMouseUp(n);
           }, 0)));
         }
@@ -6536,7 +6536,7 @@ function Wp() {
           let B = this, z = B.baseSeries, R = n.xAxis.length, F = n.yAxis.length, G = z && z[0] && z[0].xAxis || n.xAxis[0] || { options: {} };
           if (n.isDirtyBox = !0, B.navigatorEnabled) {
             let q = this.getXAxisOffsets();
-            B.xAxis = new (nr())(n, Ve({ breaks: G.options.breaks, ordinal: G.options.ordinal, overscroll: G.options.overscroll }, g.xAxis, { type: "datetime", yAxis: g.yAxis?.id, index: R, isInternal: !0, offset: 0, keepOrdinalPadding: !0, startOnTick: !1, endOnTick: !1, minPadding: G.options.ordinal ? 0 : G.options.minPadding, maxPadding: G.options.ordinal ? 0 : G.options.maxPadding, zoomEnabled: !1 }, n.inverted ? { offsets: q, width: A } : { offsets: q, height: A }), "xAxis"), B.yAxis = new (nr())(n, Ve(g.yAxis, { alignTicks: !1, offset: 0, index: F, isInternal: !0, reversed: Jt(g.yAxis && g.yAxis.reversed, n.yAxis[0] && n.yAxis[0].reversed, !1), zoomEnabled: !1 }, n.inverted ? { width: A } : { height: A }), "yAxis"), z || g.series.data ? B.updateNavigatorSeries(!1) : n.series.length === 0 && (B.unbindRedraw = Qt(n, "beforeRedraw", function() {
+            B.xAxis = new (nr())(n, Ve({ breaks: G.options.breaks, ordinal: G.options.ordinal, overscroll: G.options.overscroll }, g.xAxis, { type: "datetime", yAxis: g.yAxis?.id, index: R, isInternal: !0, offset: 0, keepOrdinalPadding: !0, startOnTick: !1, endOnTick: !1, minPadding: G.options.ordinal ? 0 : G.options.minPadding, maxPadding: G.options.ordinal ? 0 : G.options.maxPadding, zoomEnabled: !1 }, n.inverted ? { offsets: q, width: A } : { offsets: q, height: A }), "xAxis"), B.yAxis = new (nr())(n, Ve(g.yAxis, { alignTicks: !1, offset: 0, index: F, isInternal: !0, reversed: Qt(g.yAxis && g.yAxis.reversed, n.yAxis[0] && n.yAxis[0].reversed, !1), zoomEnabled: !1 }, n.inverted ? { width: A } : { height: A }), "yAxis"), z || g.series.data ? B.updateNavigatorSeries(!1) : n.series.length === 0 && (B.unbindRedraw = te(n, "beforeRedraw", function() {
               n.series.length > 0 && !B.series && (B.setBaseSeries(), B.unbindRedraw());
             })), B.reversedExtremes = n.inverted && !B.xAxis.reversed || !n.inverted && B.xAxis.reversed, B.renderElements(), B.addMouseEvents();
           } else B.xAxis = { chart: n, navigatorAxis: { fake: !0 }, translate: function(q, xt) {
@@ -6549,7 +6549,7 @@ function Wp() {
           } }, B.xAxis.navigatorAxis.axis = B.xAxis, B.xAxis.navigatorAxis.toFixedRange = pr.prototype.toFixedRange.bind(B.xAxis.navigatorAxis);
           if (n.options.scrollbar?.enabled) {
             let q = Ve(n.options.scrollbar, { vertical: n.inverted });
-            Oe(q.margin) || (q.margin = n.inverted ? -3 : 3), n.scrollbar = B.scrollbar = new ai(n.renderer, q, n), Qt(B.scrollbar, "changed", function(xt) {
+            Oe(q.margin) || (q.margin = n.inverted ? -3 : 3), n.scrollbar = B.scrollbar = new ai(n.renderer, q, n), te(B.scrollbar, "changed", function(xt) {
               let dt = B.size, ht = dt * this.to, ut = dt * this.from;
               B.hasDragged = B.scrollbar.hasDragged, B.render(0, 0, ut, ht), this.shouldUpdateExtremes(xt.DOMType) && setTimeout(function() {
                 B.onMouseUp(xt);
@@ -6560,11 +6560,11 @@ function Wp() {
         }
         setOpposite() {
           let n = this.navigatorOptions, p = this.navigatorEnabled, g = this.chart;
-          this.opposite = Jt(n.opposite, !!(!p && g.inverted));
+          this.opposite = Qt(n.opposite, !!(!p && g.inverted));
         }
         getUnionExtremes(n) {
           let p, g = this.chart.xAxis[0], b = this.chart.time, C = this.xAxis, k = C.options, A = g.options;
-          return n && g.dataMin === null || (p = { dataMin: Jt(b.parse(k?.min), Es("min", b.parse(A.min), g.dataMin, C.dataMin, C.min)), dataMax: Jt(b.parse(k?.max), Es("max", b.parse(A.max), g.dataMax, C.dataMax, C.max)) }), p;
+          return n && g.dataMin === null || (p = { dataMin: Qt(b.parse(k?.min), Es("min", b.parse(A.min), g.dataMin, C.dataMin, C.min)), dataMax: Qt(b.parse(k?.max), Es("max", b.parse(A.max), g.dataMax, C.dataMax, C.max)) }), p;
         }
         setBaseSeries(n, p) {
           let g = this.chart, b = this.baseSeries = [];
@@ -6580,7 +6580,7 @@ function Wp() {
           C && C.length && C.forEach((R) => {
             let F = R.navigatorSeries, G = kr({ color: R.color, visible: R.visible }, jo(B) ? yr.navigator.series : B);
             if (F && g.navigatorOptions.adaptToUpdatedData === !1) return;
-            k.name = "Navigator " + C.length, z = (E = R.options || {}).navigatorOptions || {}, G.dataLabels = li(G.dataLabels), (P = Ve(E, k, G, z)).pointRange = Jt(G.pointRange, z.pointRange, yr.plotOptions[P.type || "line"].pointRange);
+            k.name = "Navigator " + C.length, z = (E = R.options || {}).navigatorOptions || {}, G.dataLabels = li(G.dataLabels), (P = Ve(E, k, G, z)).pointRange = Qt(G.pointRange, z.pointRange, yr.plotOptions[P.type || "line"].pointRange);
             let q = z.data || G.data;
             g.hasNavigatorData = g.hasNavigatorData || !!q, P.data = q || E.data?.slice(0), F && F.options ? F.update(P, p) : (R.navigatorSeries = b.initSeries(P), b.setSortedData(), R.navigatorSeries.baseSeries = R, A.push(R.navigatorSeries));
           }), (B.data && !(C && C.length) || jo(B)) && (g.hasNavigatorData = !1, (B = li(B)).forEach((R, F) => {
@@ -6589,12 +6589,12 @@ function Wp() {
         }
         addBaseSeriesEvents() {
           let n = this, p = n.baseSeries || [];
-          p[0] && p[0].xAxis && p[0].eventsToUnbind.push(Qt(p[0].xAxis, "foundExtremes", this.modifyBaseAxisExtremes)), p.forEach((g) => {
-            g.eventsToUnbind.push(Qt(g, "show", function() {
+          p[0] && p[0].xAxis && p[0].eventsToUnbind.push(te(p[0].xAxis, "foundExtremes", this.modifyBaseAxisExtremes)), p.forEach((g) => {
+            g.eventsToUnbind.push(te(g, "show", function() {
               this.navigatorSeries && this.navigatorSeries.setVisible(!0, !1);
-            })), g.eventsToUnbind.push(Qt(g, "hide", function() {
+            })), g.eventsToUnbind.push(te(g, "hide", function() {
               this.navigatorSeries && this.navigatorSeries.setVisible(!1, !1);
-            })), this.navigatorOptions.adaptToUpdatedData !== !1 && g.xAxis && g.eventsToUnbind.push(Qt(g, "updatedData", this.updatedDataHandler)), g.eventsToUnbind.push(Qt(g, "remove", function() {
+            })), this.navigatorOptions.adaptToUpdatedData !== !1 && g.xAxis && g.eventsToUnbind.push(te(g, "updatedData", this.updatedDataHandler)), g.eventsToUnbind.push(te(g, "remove", function() {
               p && ni(p, g), this.navigatorSeries && n.series && (ni(n.series, this.navigatorSeries), Oi(this.navigatorSeries.options) && this.navigatorSeries.remove(!1), delete this.navigatorSeries);
             }));
           });
@@ -6612,25 +6612,25 @@ function Wp() {
           }
         }
         modifyBaseAxisExtremes() {
-          let n, p, g = this.chart.navigator, b = this.getExtremes(), C = b.min, k = b.max, A = b.dataMin, E = b.dataMax, P = k - C, B = g.stickToMin, z = g.stickToMax, R = Jt(this.ordinal?.convertOverscroll(this.options.overscroll), 0), F = g.series && g.series[0], G = !!this.setExtremes;
+          let n, p, g = this.chart.navigator, b = this.getExtremes(), C = b.min, k = b.max, A = b.dataMin, E = b.dataMax, P = k - C, B = g.stickToMin, z = g.stickToMax, R = Qt(this.ordinal?.convertOverscroll(this.options.overscroll), 0), F = g.series && g.series[0], G = !!this.setExtremes;
           !(this.eventArgs && this.eventArgs.trigger === "rangeSelectorButton") && (B && (n = (p = A) + P), z && (n = E + R, B || (p = Math.max(A, n - P, g.getBaseSeriesMin(F && F.xData ? F.xData[0] : -Number.MAX_VALUE)))), G && (B || z) && Oe(p) && (this.min = this.userMin = p, this.max = this.userMax = n)), g.stickToMin = g.stickToMax = null;
         }
         updatedDataHandler() {
           let n = this.chart.navigator, p = this.navigatorSeries, g = n.reversedExtremes ? Math.round(n.zoomedMin) === 0 : Math.round(n.zoomedMax) >= Math.round(n.size);
-          n.stickToMax = Jt(this.chart.options.navigator && this.chart.options.navigator.stickToMax, g), n.stickToMin = n.shouldStickToMin(this, n), p && !n.hasNavigatorData && (p.options.pointStart = this.getColumn("x")[0], p.setData(this.options.data, !1, null, !1));
+          n.stickToMax = Qt(this.chart.options.navigator && this.chart.options.navigator.stickToMax, g), n.stickToMin = n.shouldStickToMin(this, n), p && !n.hasNavigatorData && (p.options.pointStart = this.getColumn("x")[0], p.setData(this.options.data, !1, null, !1));
         }
         shouldStickToMin(n, p) {
           let g = p.getBaseSeriesMin(n.getColumn("x")[0]), b = n.xAxis, C = b.max, k = b.min, A = b.options.range;
           return !!(Oe(C) && Oe(k)) && (A && C - g > 0 ? C - g < A : k <= g);
         }
         addChartEvents() {
-          this.eventsToUnbind || (this.eventsToUnbind = []), this.eventsToUnbind.push(Qt(this.chart, "redraw", function() {
+          this.eventsToUnbind || (this.eventsToUnbind = []), this.eventsToUnbind.push(te(this.chart, "redraw", function() {
             let n = this.navigator, p = n && (n.baseSeries && n.baseSeries[0] && n.baseSeries[0].xAxis || this.xAxis[0]);
             p && n.render(p.min, p.max);
-          }), Qt(this.chart, "getMargins", function() {
+          }), te(this.chart, "getMargins", function() {
             let n = this.navigator, p = n.opposite ? "plotTop" : "marginBottom";
             this.inverted && (p = n.opposite ? "marginRight" : "plotLeft"), this[p] = (this[p] || 0) + (n.navigatorEnabled || !this.inverted ? n.height + (this.scrollbar?.options.margin || 0) + n.scrollbarHeight : 0) + (n.navigatorOptions.margin || 0);
-          }), Qt(Ne, "setRange", function(n) {
+          }), te(Ne, "setRange", function(n) {
             this.chart.xAxis[0].setExtremes(n.min, n.max, n.redraw, n.animation, n.eventArguments);
           }));
         }
@@ -6646,10 +6646,10 @@ function Wp() {
           }), this.navigatorEnabled = !1;
         }
       }
-      let { animObject: is } = _(), { format: wr } = Se(), { clamp: Mr, pick: Cr, syncTimeout: En } = _(), { getFakeMouseEvent: Pn } = zt, { getAxisRangeDescription: On, fireEventOnWrappedOrUnwrappedElement: Ps } = It, Ln = class extends Ie {
+      let { animObject: is } = _(), { format: wr } = Se(), { clamp: Mr, pick: Cr, syncTimeout: En } = _(), { getFakeMouseEvent: Pn } = Ft, { getAxisRangeDescription: On, fireEventOnWrappedOrUnwrappedElement: Ps } = Nt, Ln = class extends Ie {
         init() {
           let u = this.chart, n = this;
-          this.announcer = new Ft(u, "polite"), this.addEvent(Ne, "afterRender", function() {
+          this.announcer = new Ht(u, "polite"), this.addEvent(Ne, "afterRender", function() {
             this.chart === n.chart && this.chart.renderer && En(() => {
               n.proxyProvider.updateGroupProxyElementPositions("navigator"), n.updateHandleValues();
             }, is(Cr(this.chart.renderer.globalAnimation, !0)).duration);
@@ -6716,7 +6716,7 @@ function Wp() {
             }
           }).bind(this, u), 20);
         }
-      }, { getPointAnnotationTexts: Dn } = fe, { getAxisDescription: In, getSeriesFirstPointElement: hi, getSeriesA11yElement: Bn, unhideChartElementFromAT: Uo } = It, { format: Os, numberFormat: Nn } = Se(), { reverseChildNodes: Ls, stripHTMLTagsFromString: Vo } = zt, { find: Rn, isNumber: qo, isString: Ko, pick: we, defined: Re } = _();
+      }, { getPointAnnotationTexts: Dn } = fe, { getAxisDescription: In, getSeriesFirstPointElement: hi, getSeriesA11yElement: Bn, unhideChartElementFromAT: Uo } = Nt, { format: Os, numberFormat: Nn } = Se(), { reverseChildNodes: Ls, stripHTMLTagsFromString: Vo } = Ft, { find: Rn, isNumber: qo, isString: Ko, pick: we, defined: Re } = _();
       function $o(u) {
         let n = u.chart.options.accessibility.series.pointDescriptionEnabledThreshold;
         return !!(n !== !1 && u.points && u.points.length >= +n);
@@ -6733,9 +6733,9 @@ function Wp() {
         let n = u.series, p = n.chart.series.length > 1 || n.options.name, g = (function(A) {
           let E = A.series, P = E.chart, B = E.options.accessibility, z = B && B.point && B.point.valueDescriptionFormat || P.options.accessibility.point.valueDescriptionFormat, R = we(E.xAxis && E.xAxis.options.accessibility && E.xAxis.options.accessibility.enabled, !P.angular && E.type !== "flowmap"), F = R ? (function(G) {
             let q = (function(ut) {
-              let st = ut.series, rt = st.chart, wt = st.options.accessibility && st.options.accessibility.point || {}, Mt = rt.options.accessibility.point || {}, te = st.xAxis && st.xAxis.dateTime;
-              if (te) {
-                let Wt = te.getXDateFormat(ut.x || 0, rt.options.tooltip.dateTimeLabelFormats), qt = wt.dateFormatter && wt.dateFormatter(ut) || Mt.dateFormatter && Mt.dateFormatter(ut) || wt.dateFormat || Mt.dateFormat || Wt;
+              let st = ut.series, rt = st.chart, wt = st.options.accessibility && st.options.accessibility.point || {}, Mt = rt.options.accessibility.point || {}, ee = st.xAxis && st.xAxis.dateTime;
+              if (ee) {
+                let Xt = ee.getXDateFormat(ut.x || 0, rt.options.tooltip.dateTimeLabelFormats), qt = wt.dateFormatter && wt.dateFormatter(ut) || Mt.dateFormatter && Mt.dateFormatter(ut) || wt.dateFormat || Mt.dateFormat || Xt;
                 return rt.time.dateFormat(qt, ut.x || 0, void 0);
               }
             })(G), xt = (G.series.xAxis || {}).categories && Re(G.category) && ("" + G.category).replace("<br/>", " "), dt = Re(G.id) && 0 > ("" + G.id).indexOf("highcharts-"), ht = "x, " + G.x;
@@ -6745,12 +6745,12 @@ function Wp() {
             let q = G.series, xt = q.chart.options.accessibility.point || {}, dt = q.chart.options.accessibility && q.chart.options.accessibility.point || {}, ht = q.tooltipOptions || {}, ut = dt.valuePrefix || xt.valuePrefix || ht.valuePrefix || "", st = dt.valueSuffix || xt.valueSuffix || ht.valueSuffix || "", rt = G.value !== void 0 ? "value" : "y", wt = Zo(G, G[rt]);
             if (G.isNull) return q.chart.langFormat("accessibility.series.nullPointValue", { point: G });
             if (q.pointArrayMap) {
-              let Mt = ut || "", te = st || "", Wt = function(qt) {
+              let Mt = ut || "", ee = st || "", Xt = function(qt) {
                 let Ke = Zo(G, we(G[qt], G.options[qt]));
-                return Ke !== void 0 ? qt + ": " + Mt + Ke + te : Ke;
+                return Ke !== void 0 ? qt + ": " + Mt + Ke + ee : Ke;
               };
               return G.series.pointArrayMap.reduce(function(qt, Ke) {
-                let Xs = Wt(Ke);
+                let Xs = Xt(Ke);
                 return Xs ? qt + (qt.length ? ", " : "") + Xs : qt;
               }, "");
             }
@@ -6815,7 +6815,7 @@ function Wp() {
             E.exposeAsGroupOnly ? g.setAttribute("role", "img") : B === "all" ? g.setAttribute("role", "region") : g.setAttribute("role", "group"), g.setAttribute("tabindex", "-1"), u.chart.styledMode || (g.style.outline = "none"), g.setAttribute("aria-label", Vo(P.series.descriptionFormatter && P.series.descriptionFormatter(u) || Qo(u), u.chart.renderer.forExport));
           } else g.removeAttribute("aria-label");
         }
-      } }, { composed: Ar } = _(), { addEvent: ta, defined: ss, pushUnique: Tr } = _(), { getChartTitle: zn } = It, { defaultPointDescriptionFormatter: ea, defaultSeriesDescriptionFormatter: rs } = Di;
+      } }, { composed: Ar } = _(), { addEvent: ta, defined: ss, pushUnique: Tr } = _(), { getChartTitle: zn } = Nt, { defaultPointDescriptionFormatter: ea, defaultSeriesDescriptionFormatter: rs } = Di;
       function Sr(u) {
         return !!u.options.accessibility.announceNewData.enabled;
       }
@@ -6825,7 +6825,7 @@ function Wp() {
         }
         init() {
           let n = this.chart, p = n.options.accessibility.announceNewData.interruptUser ? "assertive" : "polite";
-          this.lastAnnouncementTime = 0, this.dirty = { allSeries: {} }, this.eventProvider = new J(), this.announcer = new Ft(n, p), this.addEventListeners();
+          this.lastAnnouncementTime = 0, this.dirty = { allSeries: {} }, this.eventProvider = new J(), this.announcer = new Ht(n, p), this.addEventListeners();
         }
         destroy() {
           this.eventProvider.removeAddedEvents(), this.announcer.destroy();
@@ -6888,7 +6888,7 @@ function Wp() {
           Tr(Ar, "A11y.NDA") && (ta(g, "addPoint", n), ta(g, "updatedData", p));
         };
       })(Ii || (Ii = {}));
-      let Er = Ii, { doc: Pr, win: ze } = _(), { attr: Bi, css: ia, merge: sa } = _(), { fireEventOnWrappedOrUnwrappedElement: ra } = It, { cloneMouseEvent: Or, cloneTouchEvent: Fn, getFakeMouseEvent: Hn, removeElement: oa } = zt, Wn = class {
+      let Er = Ii, { doc: Pr, win: ze } = _(), { attr: Bi, css: ia, merge: sa } = _(), { fireEventOnWrappedOrUnwrappedElement: ra } = Nt, { cloneMouseEvent: Or, cloneTouchEvent: Fn, getFakeMouseEvent: Hn, removeElement: oa } = Ft, Wn = class {
         constructor(u, n, p = "button", g, b) {
           this.chart = u, this.target = n, this.eventProvider = new J();
           let C = this.innerElement = Pr.createElement(p), k = this.element = g ? Pr.createElement(g) : C;
@@ -6943,7 +6943,7 @@ function Wp() {
         getTargetAttr(u, n) {
           return u.element ? u.element.getAttribute(n) : u.getAttribute(n);
         }
-      }, { doc: Lr } = _(), { attr: ce, css: Ct } = _(), { unhideChartElementFromAT: aa } = It, { removeChildNodes: Dr } = zt, Ir = class {
+      }, { doc: Lr } = _(), { attr: ce, css: At } = _(), { unhideChartElementFromAT: aa } = Nt, { removeChildNodes: Dr } = Ft, Ir = class {
         constructor(u) {
           this.chart = u, this.domElementProvider = new us(), this.groups = {}, this.groupOrder = [], this.beforeChartProxyPosContainer = this.createProxyPosContainer("before"), this.afterChartProxyPosContainer = this.createProxyPosContainer("after"), this.update();
         }
@@ -6999,7 +6999,7 @@ function Wp() {
         }
         createProxyPosContainer(u) {
           let n = this.domElementProvider.createElement("div");
-          return n.setAttribute("aria-hidden", "false"), n.className = "highcharts-a11y-proxy-container" + (u ? "-" + u : ""), Ct(n, { top: "0", left: "0" }), this.chart.styledMode || (n.style.whiteSpace = "nowrap", n.style.position = "absolute"), n;
+          return n.setAttribute("aria-hidden", "false"), n.className = "highcharts-a11y-proxy-container" + (u ? "-" + u : ""), At(n, { top: "0", left: "0" }), this.chart.styledMode || (n.style.whiteSpace = "nowrap", n.style.position = "absolute"), n;
         }
         getCurrentGroupOrderInDOM() {
           let u = (b) => {
@@ -7030,11 +7030,11 @@ function Wp() {
           let n = u.renderer.box;
           u.container.insertBefore(this.afterChartProxyPosContainer, n.nextSibling), u.container.insertBefore(this.beforeChartProxyPosContainer, n), aa(this.chart, this.afterChartProxyPosContainer), aa(this.chart, this.beforeChartProxyPosContainer);
         }
-      }, { unhideChartElementFromAT: Ni, getAxisRangeDescription: Ht } = It, { addEvent: os, attr: na } = _();
+      }, { unhideChartElementFromAT: Ni, getAxisRangeDescription: Wt } = Nt, { addEvent: os, attr: na } = _();
       class Ds extends Ie {
         init() {
           let n = this.chart;
-          this.announcer = new Ft(n, "polite");
+          this.announcer = new Ht(n, "polite");
         }
         onChartUpdate() {
           let n = this.chart, p = this, g = n.rangeSelector;
@@ -7072,7 +7072,7 @@ function Wp() {
           return g.oldRangeSelectorItemState !== 3 && this.fakeClickEvent(g.rangeSelector.buttons[g.highlightedRangeSelectorItemIx].element), p.success;
         }
         onAfterBtnClick() {
-          let n = this.chart, p = Ht(n.xAxis[0]), g = n.langFormat("accessibility.rangeSelector.clickButtonAnnouncement", { chart: n, axisRangeDescription: p });
+          let n = this.chart, p = Wt(n.xAxis[0]), g = n.langFormat("accessibility.rangeSelector.clickButtonAnnouncement", { chart: n, axisRangeDescription: p });
           g && this.announcer.announce(g);
         }
         onInputKbdMove(n) {
@@ -7209,10 +7209,10 @@ function Wp() {
         u.compose = function(E) {
           Bs(la, "A11y.FM") && (ki(E, "afterSetOptions", C), ki(E, "render", k), ki(E, "afterRender", b), ki(E, "renderCanvas", A));
         };
-      })(Rt || (Rt = {}));
-      let ct = Rt;
+      })(zt || (zt = {}));
+      let ct = zt;
       var Ns = ft(260), Xn = ft.n(Ns), Gn = ft(820), Yn = ft.n(Gn);
-      let { seriesTypes: Br } = Io(), { doc: Ri } = _(), { defined: qe, fireEvent: jn } = _(), { getPointFromXY: Un, getSeriesFromName: Rs, scrollAxisToPoint: Vn } = It;
+      let { seriesTypes: Br } = Io(), { doc: Ri } = _(), { defined: qe, fireEvent: jn } = _(), { getPointFromXY: Un, getSeriesFromName: Rs, scrollAxisToPoint: Vn } = Nt;
       function Nr(u) {
         let n = u.index, p = u.series.points, g = p.length;
         if (p[n] === u) return n;
@@ -7388,7 +7388,7 @@ function Wp() {
           }), z.highlightNextValidPoint = C);
         };
       })(Fs || (Fs = {}));
-      let ca = Fs, { hideSeriesFromAT: qn } = It, { describeSeries: da } = Di, zr = class extends Ie {
+      let ca = Fs, { hideSeriesFromAT: qn } = Nt, { describeSeries: da } = Di, zr = class extends Ie {
         static compose(u, n, p) {
           Er.compose(p), ct.compose(p), ca.compose(u, n, p);
         }
@@ -7419,7 +7419,7 @@ function Wp() {
         destroy() {
           this.newDataAnnouncer.destroy(), this.keyboardNavigation.destroy();
         }
-      }, { unhideChartElementFromAT: Fe } = It, { getFakeMouseEvent: Fr } = zt, { attr: Kn, pick: $n } = _(), pa = class extends Ie {
+      }, { unhideChartElementFromAT: Fe } = Nt, { getFakeMouseEvent: Fr } = Ft, { attr: Kn, pick: $n } = _(), pa = class extends Ie {
         constructor() {
           super(...arguments), this.focusedMapNavButtonIx = -1;
         }
@@ -7560,7 +7560,7 @@ function Wp() {
             });
           });
         })(u), Xr(u, ["accessibility"], ["accessibility"], { pointDateFormat: ["point", "dateFormat"], pointDateFormatter: ["point", "dateFormatter"], pointDescriptionFormatter: ["point", "descriptionFormatter"], pointDescriptionThreshold: ["series", "pointDescriptionEnabledThreshold"], pointNavigationThreshold: ["keyboardNavigation", "seriesNavigation", "pointNavigationEnabledThreshold"], pointValueDecimals: ["point", "valueDecimals"], pointValuePrefix: ["point", "valuePrefix"], pointValueSuffix: ["point", "valueSuffix"], screenReaderSectionFormatter: ["screenReaderSection", "beforeChartFormatter"], describeSingleSeries: ["series", "describeSingleSeries"], seriesDescriptionFormatter: ["series", "descriptionFormatter"], onTableAnchorClick: ["screenReaderSection", "onViewDataTableClick"], axisRangeDateFormat: ["screenReaderSection", "axisRangeDateFormat"] }), Xr(u, ["accessibility", "keyboardNavigation"], ["accessibility", "keyboardNavigation", "seriesNavigation"], { skipNullPoints: ["skipNullPoints"], mode: ["mode"] }), Xr(u, ["lang", "accessibility"], ["lang", "accessibility"], { legendItem: ["legend", "legendItem"], legendLabel: ["legend", "legendLabel"], mapZoomIn: ["zoom", "mapZoomIn"], mapZoomOut: ["zoom", "mapZoomOut"], resetZoomButton: ["zoom", "resetZoomButton"], screenReaderRegionLabel: ["screenReaderSection", "beforeRegionLabel"], rangeSelectorButton: ["rangeSelector", "buttonText"], rangeSelectorMaxInput: ["rangeSelector", "maxInputLabel"], rangeSelectorMinInput: ["rangeSelector", "minInputLabel"], svgContainerEnd: ["screenReaderSection", "endOfChartMarker"], viewAsDataTable: ["table", "viewAsDataTableButtonText"], tableSummary: ["table", "tableSummary"] });
-      }, { defaultOptions: Qn } = _(), { doc: zi } = _(), { addEvent: ci, extend: tl, fireEvent: Gr, merge: Ws } = _(), { removeElement: fa } = zt;
+      }, { defaultOptions: Qn } = _(), { doc: zi } = _(), { addEvent: ci, extend: tl, fireEvent: Gr, merge: Ws } = _(), { removeElement: fa } = Ft;
       class Yr {
         constructor(n) {
           this.init(n);
@@ -7652,7 +7652,7 @@ function Wp() {
         };
       })(Yr || (Yr = {})), Ws(!0, Qn, { accessibility: { enabled: !0, screenReaderSection: { beforeChartFormat: "<{headingTagName}>{chartTitle}</{headingTagName}><div>{typeDescription}</div><div>{chartSubtitle}</div><div>{chartLongdesc}</div><div>{playAsSoundButton}</div><div>{viewTableButton}</div><div>{xAxisDescription}</div><div>{yAxisDescription}</div><div>{annotationsTitle}{annotationsList}</div>", afterChartFormat: "{endOfChartMarker}", axisRangeDateFormat: "%Y-%m-%d %H:%M:%S" }, series: { descriptionFormat: "{seriesDescription}{authorDescription}{axisDescription}", describeSingleSeries: !1, pointDescriptionEnabledThreshold: 200 }, point: { valueDescriptionFormat: "{xDescription}{separator}{value}.", describeNull: !0 }, landmarkVerbosity: "all", linkedDescription: '*[data-highcharts-chart="{index}"] + .highcharts-description', highContrastMode: "auto", keyboardNavigation: { enabled: !0, focusBorder: { enabled: !0, hideBrowserFocusOutline: !0, style: { color: "#334eff", lineWidth: 2, borderRadius: 3 }, margin: 2 }, order: ["series", "zoom", "rangeSelector", "navigator", "legend", "chartMenu"], wrapAround: !0, seriesNavigation: { skipNullPoints: void 0, pointNavigationEnabledThreshold: !1, rememberPointFocus: !1 } }, announceNewData: { enabled: !1, minAnnounceInterval: 5e3, interruptUser: !1 } }, legend: { accessibility: { enabled: !0, keyboardNavigation: { enabled: !0 } } }, exporting: { accessibility: { enabled: !0 } }, navigator: { accessibility: { enabled: !0 } } }, { accessibility: { highContrastTheme: ga }, lang: { accessibility: { defaultChartTitle: "Chart", chartContainerLabel: "{title}. Highcharts interactive chart.", svgContainerLabel: "Interactive chart", drillUpButton: "{buttonText}", credits: "Chart credits: {creditsStr}", thousandsSep: ",", svgContainerTitle: "", graphicContainerLabel: "", screenReaderSection: { beforeRegionLabel: "", afterRegionLabel: "", annotations: { heading: "Chart annotations summary", descriptionSinglePoint: "{annotationText}. Related to {annotationPoint}", descriptionMultiplePoints: "{annotationText}. Related to {annotationPoint}{#each additionalAnnotationPoints}, also related to {this}{/each}", descriptionNoPoints: "{annotationText}" }, endOfChartMarker: "End of interactive chart." }, sonification: { playAsSoundButtonText: "Play as sound, {chartTitle}", playAsSoundClickAnnouncement: "Play" }, legend: { legendLabelNoTitle: "Toggle series visibility, {chartTitle}", legendLabel: "Chart legend: {legendTitle}", legendItem: "Show {itemName}" }, zoom: { mapZoomIn: "Zoom chart", mapZoomOut: "Zoom out chart", resetZoomButton: "Reset zoom" }, rangeSelector: { dropdownLabel: "{rangeTitle}", minInputLabel: "Select start date.", maxInputLabel: "Select end date.", clickButtonAnnouncement: "Viewing {axisRangeDescription}" }, navigator: { handleLabel: "{#eq handleIx 0}Start, percent{else}End, percent{/eq}", groupLabel: "Axis zoom", changeAnnouncement: "{axisRangeDescription}" }, table: { viewAsDataTableButtonText: "View as data table, {chartTitle}", tableSummary: "Table representation of chart." }, announceNewData: { newDataAnnounce: "Updated data for chart {chartTitle}", newSeriesAnnounceSingle: "New data series: {seriesDesc}", newPointAnnounceSingle: "New data point: {pointDesc}", newSeriesAnnounceMultiple: "New data series in chart {chartTitle}: {seriesDesc}", newPointAnnounceMultiple: "New data point in chart {chartTitle}: {pointDesc}" }, seriesTypeDescriptions: { boxplot: "Box plot charts are typically used to display groups of statistical data. Each data point in the chart can have up to 5 values: minimum, lower quartile, median, upper quartile, and maximum.", arearange: "Arearange charts are line charts displaying a range between a lower and higher value for each point.", areasplinerange: "These charts are line charts displaying a range between a lower and higher value for each point.", bubble: "Bubble charts are scatter charts where each data point also has a size value.", columnrange: "Columnrange charts are column charts displaying a range between a lower and higher value for each point.", errorbar: "Errorbar series are used to display the variability of the data.", funnel: "Funnel charts are used to display reduction of data in stages.", pyramid: "Pyramid charts consist of a single pyramid with item heights corresponding to each point value.", waterfall: "A waterfall chart is a column chart where each column contributes towards a total end value." }, chartTypes: { emptyChart: "Empty chart", mapTypeDescription: "Map of {mapTitle} with {numSeries} data series.", unknownMap: "Map of unspecified region with {numSeries} data series.", combinationChart: "Combination chart with {numSeries} data series.", defaultSingle: "Chart with {numPoints} data {#eq numPoints 1}point{else}points{/eq}.", defaultMultiple: "Chart with {numSeries} data series.", splineSingle: "Line chart with {numPoints} data {#eq numPoints 1}point{else}points{/eq}.", splineMultiple: "Line chart with {numSeries} lines.", lineSingle: "Line chart with {numPoints} data {#eq numPoints 1}point{else}points{/eq}.", lineMultiple: "Line chart with {numSeries} lines.", columnSingle: "Bar chart with {numPoints} {#eq numPoints 1}bar{else}bars{/eq}.", columnMultiple: "Bar chart with {numSeries} data series.", barSingle: "Bar chart with {numPoints} {#eq numPoints 1}bar{else}bars{/eq}.", barMultiple: "Bar chart with {numSeries} data series.", pieSingle: "Pie chart with {numPoints} {#eq numPoints 1}slice{else}slices{/eq}.", pieMultiple: "Pie chart with {numSeries} pies.", scatterSingle: "Scatter chart with {numPoints} {#eq numPoints 1}point{else}points{/eq}.", scatterMultiple: "Scatter chart with {numSeries} data series.", boxplotSingle: "Boxplot with {numPoints} {#eq numPoints 1}box{else}boxes{/eq}.", boxplotMultiple: "Boxplot with {numSeries} data series.", bubbleSingle: "Bubble chart with {numPoints} {#eq numPoints 1}bubbles{else}bubble{/eq}.", bubbleMultiple: "Bubble chart with {numSeries} data series." }, axis: { xAxisDescriptionSingular: "The chart has 1 X axis displaying {names[0]}. {ranges[0]}", xAxisDescriptionPlural: "The chart has {numAxes} X axes displaying {#each names}{#unless @first},{/unless}{#if @last} and{/if} {this}{/each}.", yAxisDescriptionSingular: "The chart has 1 Y axis displaying {names[0]}. {ranges[0]}", yAxisDescriptionPlural: "The chart has {numAxes} Y axes displaying {#each names}{#unless @first},{/unless}{#if @last} and{/if} {this}{/each}.", timeRangeDays: "Data range: {range} days.", timeRangeHours: "Data range: {range} hours.", timeRangeMinutes: "Data range: {range} minutes.", timeRangeSeconds: "Data range: {range} seconds.", rangeFromTo: "Data ranges from {rangeFrom} to {rangeTo}.", rangeCategories: "Data range: {numCategories} categories." }, exporting: { chartMenuLabel: "Chart menu", menuButtonLabel: "View chart menu, {chartTitle}" }, series: { summary: { default: "{series.name}, series {seriesNumber} of {chart.series.length} with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.", defaultCombination: "{series.name}, series {seriesNumber} of {chart.series.length} with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.", line: "{series.name}, line {seriesNumber} of {chart.series.length} with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.", lineCombination: "{series.name}, series {seriesNumber} of {chart.series.length}. Line with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.", spline: "{series.name}, line {seriesNumber} of {chart.series.length} with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.", splineCombination: "{series.name}, series {seriesNumber} of {chart.series.length}. Line with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.", column: "{series.name}, bar series {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}bar{else}bars{/eq}.", columnCombination: "{series.name}, series {seriesNumber} of {chart.series.length}. Bar series with {series.points.length} {#eq series.points.length 1}bar{else}bars{/eq}.", bar: "{series.name}, bar series {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}bar{else}bars{/eq}.", barCombination: "{series.name}, series {seriesNumber} of {chart.series.length}. Bar series with {series.points.length} {#eq series.points.length 1}bar{else}bars{/eq}.", pie: "{series.name}, pie {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}slice{else}slices{/eq}.", pieCombination: "{series.name}, series {seriesNumber} of {chart.series.length}. Pie with {series.points.length} {#eq series.points.length 1}slice{else}slices{/eq}.", scatter: "{series.name}, scatter plot {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}point{else}points{/eq}.", scatterCombination: "{series.name}, series {seriesNumber} of {chart.series.length}, scatter plot with {series.points.length} {#eq series.points.length 1}point{else}points{/eq}.", boxplot: "{series.name}, boxplot {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}box{else}boxes{/eq}.", boxplotCombination: "{series.name}, series {seriesNumber} of {chart.series.length}. Boxplot with {series.points.length} {#eq series.points.length 1}box{else}boxes{/eq}.", bubble: "{series.name}, bubble series {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}bubble{else}bubbles{/eq}.", bubbleCombination: "{series.name}, series {seriesNumber} of {chart.series.length}. Bubble series with {series.points.length} {#eq series.points.length 1}bubble{else}bubbles{/eq}.", map: "{series.name}, map {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}area{else}areas{/eq}.", mapCombination: "{series.name}, series {seriesNumber} of {chart.series.length}. Map with {series.points.length} {#eq series.points.length 1}area{else}areas{/eq}.", mapline: "{series.name}, line {seriesNumber} of {chart.series.length} with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.", maplineCombination: "{series.name}, series {seriesNumber} of {chart.series.length}. Line with {series.points.length} data {#eq series.points.length 1}point{else}points{/eq}.", mapbubble: "{series.name}, bubble series {seriesNumber} of {chart.series.length} with {series.points.length} {#eq series.points.length 1}bubble{else}bubbles{/eq}.", mapbubbleCombination: "{series.name}, series {seriesNumber} of {chart.series.length}. Bubble series with {series.points.length} {#eq series.points.length 1}bubble{else}bubbles{/eq}." }, description: "{description}", xAxisDescription: "X axis, {name}", yAxisDescription: "Y axis, {name}", nullPointValue: "No value", pointAnnotationsDescription: "{#each annotations}Annotation: {this}{/each}" } } } });
       let ma = Yr, Me = _();
-      Me.i18nFormat = ma.i18nFormat, Me.A11yChartUtilities = It, Me.A11yHTMLUtilities = zt, Me.AccessibilityComponent = Ie, Me.KeyboardNavigationHandler = ke, Me.SeriesAccessibilityDescriber = Di, ma.compose(Me.Chart, Me.Legend, Me.Point, Me.Series, Me.SVGElement, Me.RangeSelector);
+      Me.i18nFormat = ma.i18nFormat, Me.A11yChartUtilities = Nt, Me.A11yHTMLUtilities = Ft, Me.AccessibilityComponent = Ie, Me.KeyboardNavigationHandler = ke, Me.SeriesAccessibilityDescriber = Di, ma.compose(Me.Chart, Me.Legend, Me.Point, Me.Series, Me.SVGElement, Me.RangeSelector);
       let jr = _();
       return Ci.default;
     })());
@@ -7661,7 +7661,7 @@ function Wp() {
 Wp();
 var Wa = { exports: {} }, Xp = Wa.exports, tc;
 function Gp() {
-  return tc || (tc = 1, (function(ve, Xt) {
+  return tc || (tc = 1, (function(ve, It) {
     /**
     * Highcharts JS v12.4.0 (2025-09-04)
     * @module highcharts/modules/pattern-fill
@@ -7674,42 +7674,42 @@ function Gp() {
     *
     * License: www.highcharts.com/license
     */
-    (function(nt, At) {
-      ve.exports = At(nt._Highcharts);
+    (function(nt, Tt) {
+      ve.exports = Tt(nt._Highcharts);
     })(typeof window > "u" ? Xp : window, (nt) => (() => {
-      var At = { 944: (Y) => {
+      var Tt = { 944: (Y) => {
         Y.exports = nt;
       } }, $t = {};
-      function Pt(Y) {
+      function Ct(Y) {
         var U = $t[Y];
         if (U !== void 0) return U.exports;
         var $ = $t[Y] = { exports: {} };
-        return At[Y]($, $.exports, Pt), $.exports;
+        return Tt[Y]($, $.exports, Ct), $.exports;
       }
-      Pt.n = (Y) => {
+      Ct.n = (Y) => {
         var U = Y && Y.__esModule ? () => Y.default : () => Y;
-        return Pt.d(U, { a: U }), U;
-      }, Pt.d = (Y, U) => {
-        for (var $ in U) Pt.o(U, $) && !Pt.o(Y, $) && Object.defineProperty(Y, $, { enumerable: !0, get: U[$] });
-      }, Pt.o = (Y, U) => Object.prototype.hasOwnProperty.call(Y, U);
-      var Nt = {};
-      Pt.d(Nt, { default: () => Se });
-      var re = Pt(944), Vt = Pt.n(re);
-      let { animObject: ne } = Vt(), { getOptions: gi } = Vt(), { addEvent: de, defined: ti, erase: We, extend: Te, merge: Le, pick: kt, removeEvent: Rt, wrap: le } = Vt(), ei = (function() {
+        return Ct.d(U, { a: U }), U;
+      }, Ct.d = (Y, U) => {
+        for (var $ in U) Ct.o(U, $) && !Ct.o(Y, $) && Object.defineProperty(Y, $, { enumerable: !0, get: U[$] });
+      }, Ct.o = (Y, U) => Object.prototype.hasOwnProperty.call(Y, U);
+      var St = {};
+      Ct.d(St, { default: () => Se });
+      var _t = Ct(944), Vt = Ct.n(_t);
+      let { animObject: ne } = Vt(), { getOptions: gi } = Vt(), { addEvent: de, defined: ti, erase: We, extend: Te, merge: Le, pick: kt, removeEvent: zt, wrap: le } = Vt(), ei = (function() {
         let Y = [], U = gi().colors, $ = 0;
         for (let lt of ["M 0 0 L 5 5 M 4.5 -0.5 L 5.5 0.5 M -0.5 4.5 L 0.5 5.5", "M 0 5 L 5 0 M -0.5 0.5 L 0.5 -0.5 M 4.5 5.5 L 5.5 4.5", "M 2 0 L 2 5 M 4 0 L 4 5", "M 0 2 L 5 2 M 0 4 L 5 4", "M 0 1.5 L 2.5 1.5 L 2.5 0 M 2.5 5 L 2.5 3.5 L 5 3.5"]) Y.push({ path: lt, color: U[$++], width: 5, height: 5, patternTransform: "scale(1.4 1.4)" });
         for (let lt of ($ = 5, ["M 0 0 L 5 10 L 10 0", "M 3 3 L 8 3 L 8 8 L 3 8 Z", "M 5 5 m -4 0 a 4 4 0 1 1 8 0 a 4 4 0 1 1 -8 0", "M 0 0 L 10 10 M 9 -1 L 11 1 M -1 9 L 1 11", "M 0 10 L 10 0 M -1 1 L 1 -1 M 9 11 L 11 9"])) Y.push({ path: lt, color: U[$], width: 10, height: 10 }), $ += 5;
         return Y;
       })();
       function ft(Y, U) {
-        let $ = JSON.stringify(Y), lt = $.length || 0, Tt = 0, mt = 0, Dt;
+        let $ = JSON.stringify(Y), lt = $.length || 0, Et = 0, mt = 0, Bt;
         if (U) {
-          Dt = Math.max(Math.floor(lt / 500), 1);
-          for (let Gt = 0; Gt < lt; Gt += Dt) Tt += $.charCodeAt(Gt);
-          Tt &= Tt;
+          Bt = Math.max(Math.floor(lt / 500), 1);
+          for (let Gt = 0; Gt < lt; Gt += Bt) Et += $.charCodeAt(Gt);
+          Et &= Et;
         }
-        for (; mt < lt; ++mt) Tt = (Tt << 5) - Tt + $.charCodeAt(mt), Tt &= Tt;
-        return Tt.toString(16).replace("-", "1");
+        for (; mt < lt; ++mt) Et = (Et << 5) - Et + $.charCodeAt(mt), Et &= Et;
+        return Et.toString(16).replace("-", "1");
       }
       function Ci() {
         if (this.renderer && (this.renderer.defIds || []).filter((Y) => Y && Y.indexOf && Y.indexOf("highcharts-pattern-") === 0).length) {
@@ -7722,8 +7722,8 @@ function Gp() {
       }
       function fi() {
         let Y = {}, U = this.renderer, $ = (U.defIds || []).filter((lt) => lt.indexOf && lt.indexOf("highcharts-pattern-") === 0);
-        if ($.length) for (let lt of ([].forEach.call(this.renderTo.querySelectorAll('[color^="url("], [fill^="url("], [stroke^="url("]'), (Tt) => {
-          let mt = Tt.getAttribute("fill") || Tt.getAttribute("color") || Tt.getAttribute("stroke");
+        if ($.length) for (let lt of ([].forEach.call(this.renderTo.querySelectorAll('[color^="url("], [fill^="url("], [stroke^="url("]'), (Et) => {
+          let mt = Et.getAttribute("fill") || Et.getAttribute("color") || Et.getAttribute("stroke");
           mt && (Y[mt.replace(U.url, "").replace("url(#", "").replace(")", "")] = !0);
         }), $)) !Y[lt] && (We(U.defIds, lt), U.patternElements[lt] && (U.patternElements[lt].destroy(), delete U.patternElements[lt]));
       }
@@ -7732,14 +7732,14 @@ function Gp() {
         Y && Y.pattern && (typeof Y.pattern.path == "string" && (Y.pattern.path = { d: Y.pattern.path }), this.color = this.options.color = Le(this.series.options.color, Y));
       }
       function X(Y) {
-        let U = Y.args[0], $ = Y.args[1], lt = Y.args[2], Tt = this.chartIndex || 0, mt = U.pattern, Dt = "#333333";
+        let U = Y.args[0], $ = Y.args[1], lt = Y.args[2], Et = this.chartIndex || 0, mt = U.pattern, Bt = "#333333";
         if (U.patternIndex !== void 0 && ei && (mt = ei[U.patternIndex]), !mt) return !0;
         if (mt.image || typeof mt.path == "string" || mt.path && mt.path.d) {
           let Gt = lt.parentNode && lt.parentNode.getAttribute("class");
-          Gt = Gt && Gt.indexOf("highcharts-legend") > -1, (mt._width === "defer" || mt._height === "defer") && mi.call({ graphic: { element: lt } }, mt), (Gt || !mt.id) && ((mt = Le({}, mt)).id = "highcharts-pattern-" + Tt + "-" + ft(mt) + ft(mt, !0)), this.addPattern(mt, !this.forExport && kt(mt.animation, this.globalAnimation, { duration: 100 })), Dt = `url(${this.url}#${mt.id + (this.forExport ? "-export" : "")})`;
-        } else Dt = mt.color || Dt;
-        return lt.setAttribute($, Dt), U.toString = function() {
-          return Dt;
+          Gt = Gt && Gt.indexOf("highcharts-legend") > -1, (mt._width === "defer" || mt._height === "defer") && mi.call({ graphic: { element: lt } }, mt), (Gt || !mt.id) && ((mt = Le({}, mt)).id = "highcharts-pattern-" + Et + "-" + ft(mt) + ft(mt, !0)), this.addPattern(mt, !this.forExport && kt(mt.animation, this.globalAnimation, { duration: 100 })), Bt = `url(${this.url}#${mt.id + (this.forExport ? "-export" : "")})`;
+        } else Bt = mt.color || Bt;
+        return lt.setAttribute($, Bt), U.toString = function() {
+          return Bt;
         }, !1;
       }
       function pe() {
@@ -7764,21 +7764,21 @@ function Gp() {
         Y.width || (Y._x = Y.x || 0, Y._x += U.x - Math.round(U.aspectWidth ? Math.abs(U.aspectWidth - U.width) / 2 : 0)), Y.height || (Y._y = Y.y || 0, Y._y += U.y - Math.round(U.aspectHeight ? Math.abs(U.aspectHeight - U.height) / 2 : 0));
       }
       function De(Y, U) {
-        let $ = kt(U, !0), lt = ne($), Tt = Y.color || "#333333", mt = Y.height || (typeof Y._height == "number" ? Y._height : 0) || 32, Dt = Y.width || (typeof Y._width == "number" ? Y._width : 0) || 32, Gt, ue = Y.id, Ee;
+        let $ = kt(U, !0), lt = ne($), Et = Y.color || "#333333", mt = Y.height || (typeof Y._height == "number" ? Y._height : 0) || 32, Bt = Y.width || (typeof Y._width == "number" ? Y._width : 0) || 32, Gt, ue = Y.id, Ee;
         if (!ue && (this.idCounter = this.idCounter || 0, ue = "highcharts-pattern-" + this.idCounter + "-" + (this.chartIndex || 0), ++this.idCounter), this.forExport && (ue += "-export"), this.defIds = this.defIds || [], this.defIds.indexOf(ue) > -1) return;
         this.defIds.push(ue);
-        let xi = { id: ue, patternUnits: "userSpaceOnUse", patternContentUnits: Y.patternContentUnits || "userSpaceOnUse", width: Dt, height: mt, x: Y._x || Y.x || 0, y: Y._y || Y.y || 0 };
+        let xi = { id: ue, patternUnits: "userSpaceOnUse", patternContentUnits: Y.patternContentUnits || "userSpaceOnUse", width: Bt, height: mt, x: Y._x || Y.x || 0, y: Y._y || Y.y || 0 };
         Y._inverted && (xi.patternTransform = "scale(1, -1)", Y.patternTransform && (Y.patternTransform += " scale(1, -1)")), Y.patternTransform && (xi.patternTransform = Y.patternTransform);
-        let It = this.createElement("pattern").attr(xi).add(this.defs);
-        if (It.id = ue, Y.path) {
+        let Nt = this.createElement("pattern").attr(xi).add(this.defs);
+        if (Nt.id = ue, Y.path) {
           let ge;
-          Ee = Vt().isObject(Y.path) ? Y.path : { d: Y.path }, Y.backgroundColor && (ge = Y.backgroundColor, this.rect(0, 0, Dt, mt).attr({ fill: ge }).add(It)), Gt = { d: Ee.d }, this.styledMode || (Gt.stroke = Ee.stroke || Tt, Gt["stroke-width"] = kt(Ee.strokeWidth, 2), Gt.fill = Ee.fill || "none"), Ee.transform && (Gt.transform = Ee.transform), this.createElement("path").attr(Gt).add(It), It.color = Tt;
-        } else Y.image && ($ ? this.image(Y.image, 0, 0, Dt, mt, function() {
-          this.animate({ opacity: kt(Y.opacity, 1) }, lt), Rt(this.element, "load");
-        }).attr({ opacity: 0 }).add(It) : this.image(Y.image, 0, 0, Dt, mt).add(It));
-        return Y.image && $ || Y.opacity === void 0 || [].forEach.call(It.element.childNodes, (ge) => {
+          Ee = Vt().isObject(Y.path) ? Y.path : { d: Y.path }, Y.backgroundColor && (ge = Y.backgroundColor, this.rect(0, 0, Bt, mt).attr({ fill: ge }).add(Nt)), Gt = { d: Ee.d }, this.styledMode || (Gt.stroke = Ee.stroke || Et, Gt["stroke-width"] = kt(Ee.strokeWidth, 2), Gt.fill = Ee.fill || "none"), Ee.transform && (Gt.transform = Ee.transform), this.createElement("path").attr(Gt).add(Nt), Nt.color = Et;
+        } else Y.image && ($ ? this.image(Y.image, 0, 0, Bt, mt, function() {
+          this.animate({ opacity: kt(Y.opacity, 1) }, lt), zt(this.element, "load");
+        }).attr({ opacity: 0 }).add(Nt) : this.image(Y.image, 0, 0, Bt, mt).add(Nt));
+        return Y.image && $ || Y.opacity === void 0 || [].forEach.call(Nt.element.childNodes, (ge) => {
           ge.setAttribute("opacity", Y.opacity);
-        }), this.patternElements = this.patternElements || {}, this.patternElements[ue] = It, It;
+        }), this.patternElements = this.patternElements || {}, this.patternElements[ue] = Nt, Nt;
       }
       function ii(Y) {
         let U = this.options.color;
@@ -7791,22 +7791,22 @@ function Gp() {
           return !!$.graphic && ($.graphic.element.hasAttribute("fill") || $.graphic.element.hasAttribute("color") || $.graphic.element.hasAttribute("stroke")) && !$.options.color?.pattern?.image && !!$.group?.scaleX && !!$.group?.scaleY;
         }).map(function($) {
           return { id: ($.graphic?.element.getAttribute("fill") || $.graphic?.element.getAttribute("color") || $.graphic?.element.getAttribute("stroke") || "").replace(Y.url, "").replace("url(#", "").replace(")", ""), x: $.group?.scaleX || 1, y: $.group?.scaleY || 1 };
-        }).filter(function($, lt, Tt) {
-          return $.id !== "" && $.id.indexOf("highcharts-pattern-") !== -1 && !Tt.some(function(mt, Dt) {
-            return mt.id === $.id && Dt < lt;
+        }).filter(function($, lt, Et) {
+          return $.id !== "" && $.id.indexOf("highcharts-pattern-") !== -1 && !Et.some(function(mt, Bt) {
+            return mt.id === $.id && Bt < lt;
           });
         }).forEach(function($) {
           let lt = $.id;
           U[lt].scaleX = 1 / $.x, U[lt].scaleY = 1 / $.y, U[lt].updateTransform("patternTransform");
         });
       }
-      let zt = { compose: function(Y, U, $) {
-        let lt = U.prototype.pointClass, Tt = lt.prototype;
-        Tt.calculatePatternDimensions || (de(Y, "endResize", Ci), de(Y, "redraw", fi), Te(Tt, { calculatePatternDimensions: mi }), de(lt, "afterInit", _), de(U, "render", pe), le(U.prototype, "getColor", ii), de(U, "afterRender", Ai), de(U, "mapZoomComplete", Ai), Te($.prototype, { addPattern: De }), de($, "complexColor", X));
+      let Ft = { compose: function(Y, U, $) {
+        let lt = U.prototype.pointClass, Et = lt.prototype;
+        Et.calculatePatternDimensions || (de(Y, "endResize", Ci), de(Y, "redraw", fi), Te(Et, { calculatePatternDimensions: mi }), de(lt, "afterInit", _), de(U, "render", pe), le(U.prototype, "getColor", ii), de(U, "afterRender", Ai), de(U, "mapZoomComplete", Ai), Te($.prototype, { addPattern: De }), de($, "complexColor", X));
       }, patterns: ei }, Xe = Vt();
-      Xe.patterns = zt.patterns, zt.compose(Xe.Chart, Xe.Series, Xe.SVGRenderer);
+      Xe.patterns = Ft.patterns, Ft.compose(Xe.Chart, Xe.Series, Xe.SVGRenderer);
       let Se = Vt();
-      return Nt.default;
+      return St.default;
     })());
   })(Wa)), Wa.exports;
 }
@@ -7817,76 +7817,86 @@ class Yp {
   constructor() {
   }
   // Operations - Render cartesian chart.
-  async renderCartesianChart(Xt, nt, At, $t) {
-    const Pt = [];
+  async renderCartesianChart(It, nt, Tt, $t) {
+    const Ct = [];
     for (const Vt of nt.data.measures)
-      Pt.push({ type: Xt.options.highchartsType, name: Vt.name, data: Vt.data });
-    const Nt = {
-      chart: { type: Xt.options.highchartsType },
+      Ct.push({ type: It.options.highchartsType, name: Vt.name, data: Vt.data });
+    const St = {
+      chart: { type: It.options.highchartsType },
       plotOptions: { series: { borderColor: "#333" } },
-      series: Pt,
+      series: Ct,
       title: { text: nt.title.text },
       xAxis: { categories: nt.data.categoryLabels },
       yAxis: { title: { text: nt.data.name } }
-    }, re = so.chart(At, Nt, $t);
-    return { chart: re, resize: () => re.reflow(), vendorId: ro };
+    }, _t = so.chart(Tt, St, $t);
+    return { chart: _t, resize: () => _t.reflow(), vendorId: ro };
   }
   // Operations - Render.
-  async render(Xt, nt, At) {
+  async render(It, nt, Tt) {
     await Promise.all([this.loadHighchartsMore()]);
-    const $t = so.chart(Xt, nt, At);
+    const $t = so.chart(It, nt, Tt);
     return { chart: $t, resize: () => $t.reflow(), vendorId: ro };
   }
-  // Operations - Render.
-  async renderPeriodFlowBoundaries(Xt, nt, At) {
+  // Operations - Render period flow & boundaries chart.
+  async renderPeriodFlowBoundaries(It, nt, Tt) {
     await Promise.all([this.loadHighchartsMore()]);
-    const $t = so.chart(Xt, nt, At);
-    return { chart: $t, resize: () => $t.reflow(), vendorId: ro };
+    const $t = [];
+    for (const _t of It.data.measures)
+      $t.push({ type: "waterfall", name: _t.name, data: _t.data });
+    const Ct = {
+      chart: { type: "waterfall" },
+      plotOptions: { series: { borderColor: "#333" } },
+      series: $t,
+      title: { text: It.title.text },
+      xAxis: { categories: It.data.categoryLabels },
+      yAxis: { title: { text: It.data.name } }
+    }, St = so.chart(nt, Ct, Tt);
+    return { chart: St, resize: () => St.reflow(), vendorId: ro };
   }
   // Operations - Render polar chart.
-  async renderPolarChart(Xt, nt, At, $t) {
+  async renderPolarChart(It, nt, Tt, $t) {
     await Promise.all([this.loadHighchartsMore()]);
-    const Pt = [];
+    const Ct = [];
     for (const Vt of nt.data.measures)
-      Pt.push({ type: Xt.options.highchartsType, name: Vt.name, data: Vt.data });
-    const Nt = {
+      Ct.push({ type: It.options.highchartsType, name: Vt.name, data: Vt.data });
+    const St = {
       chart: { polar: !0 },
       plotOptions: { series: { borderColor: "#333" } },
-      series: Pt,
+      series: Ct,
       title: { text: nt.title.text },
       xAxis: { categories: nt.data.categoryLabels },
       yAxis: { title: { text: nt.data.name } }
-    }, re = so.chart(At, Nt, $t);
-    return { chart: re, resize: () => re.reflow(), vendorId: ro };
+    }, _t = so.chart(Tt, St, $t);
+    return { chart: _t, resize: () => _t.reflow(), vendorId: ro };
   }
   // Operations - Render range chart.
-  async renderRangeChart(Xt, nt, At, $t) {
+  async renderRangeChart(It, nt, Tt, $t) {
     await Promise.all([this.loadHighchartsMore()]);
-    const Pt = [], Nt = [];
+    const Ct = [], St = [];
     for (let ne = 0; ne < nt.data.measures[0].data.length; ne++)
-      Nt.push([nt.data.measures[0].data[ne][0], nt.data.measures[1].data[ne][0]]);
-    Pt.push({ type: Xt.options.highchartsType, name: "Unknown", data: Nt });
-    const re = {
-      chart: { type: Xt.options.highchartsType, inverted: Xt.options.inverted },
+      St.push([nt.data.measures[0].data[ne][0], nt.data.measures[1].data[ne][0]]);
+    Ct.push({ type: It.options.highchartsType, name: "Unknown", data: St });
+    const _t = {
+      chart: { type: It.options.highchartsType, inverted: It.options.inverted },
       plotOptions: { series: { borderColor: "#333" } },
-      series: Pt,
+      series: Ct,
       title: { text: nt.title.text },
       xAxis: { categories: nt.data.categoryLabels },
       yAxis: { title: { text: nt.data.name } }
-    }, Vt = so.chart(At, re, $t);
+    }, Vt = so.chart(Tt, _t, $t);
     return { chart: Vt, resize: () => Vt.reflow(), vendorId: ro };
   }
   // Utilities - Load dependency wheel and sankey modules.
   async loadDependencyWheelAndSankeyModules() {
-    ec || (await Promise.all([import("./dependency-wheel-DSEXM3h8.js").then((Xt) => Xt.d), import("./sankey-CyRCt8Hw.js").then((Xt) => Xt.s)]), ec = !0);
+    ec || (await Promise.all([import("./dependency-wheel-cVIk2xQ5.js").then((It) => It.d), import("./sankey-HK426QNP.js").then((It) => It.s)]), ec = !0);
   }
   // Utilities - Load Highcharts more.
   async loadHighchartsMore() {
-    ic || (await import("./highcharts-more-DGRrl1r3.js").then((Xt) => Xt.h), ic = !0);
+    ic || (await import("./highcharts-more-DGRrl1r3.js").then((It) => It.h), ic = !0);
   }
   // Utilities - Load streamgraph module.
   async loadStreamgraphModule() {
-    sc || (await import("./streamgraph-B3O7m-_M.js").then((Xt) => Xt.s), sc = !0);
+    sc || (await import("./streamgraph-B3O7m-_M.js").then((It) => It.s), sc = !0);
   }
 }
 export {
