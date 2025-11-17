@@ -1,6 +1,6 @@
 {
     "name": "@datapos/datapos-tool-highcharts",
-    "version": "0.0.44",
+    "version": "0.0.45",
     "description": "A TypeScript wrapper for Highcharts that implements the Data Positioning chart-rendering interface. It optimizes browser memory usage by maintaining a single Highcharts instance shared across all presenters, loading optional modules only as needed.",
     "license": "MIT",
     "private": false,
@@ -25,7 +25,7 @@
         "dist"
     ],
     "dependencies": {
-        "@datapos/datapos-shared": "^0.3.238",
+        "@datapos/datapos-shared": "^0.3.239",
         "highcharts": "^12.4.0"
     },
     "devDependencies": {
