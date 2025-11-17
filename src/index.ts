@@ -16,27 +16,15 @@ import 'highcharts/modules/accessibility';
 import 'highcharts/modules/pattern-fill';
 
 // Dependencies - Framework.
-import type {
-    PresentationCartesianTypeId,
-    PresentationPolarTypeId,
-    PresentationRangeTypeId,
-    PresentationView,
-    PresentationVisualCartesianChartViewType,
-    PresentationVisualContentConfig,
-    PresentationVisualPolarChartViewType,
-    PresentationVisualRangeChartViewType
-} from '@datapos/datapos-shared';
+import type { PresentationCartesianTypeId, PresentationPolarTypeId, PresentationRangeTypeId, PresentationView, PresentationVisualContentConfig } from '@datapos/datapos-shared';
 
 // Types/Interfaces - Highcharts.
-type HighchartsCartesianSeriesType = 'area' | 'areaspline' | 'bar' | 'column' | 'line' | 'pyramid' | 'spline';
-type HighchartsPolarSeriesType = 'area' | 'arearange' | 'areaspline' | 'column' | 'line' | 'spline';
-type HighchartsRangeSeriesType = 'arearange' | 'areasplinerange' | 'columnrange';
 interface HighchartsView extends PresentationView {
     chart: Chart;
 }
 
 // Constants
-const CARTESIAN_SERIES_TYPE_MAP: Record<PresentationCartesianTypeId, HighchartsCartesianSeriesType> = {
+const CARTESIAN_SERIES_TYPE_MAP: Record<PresentationCartesianTypeId, 'area' | 'areaspline' | 'bar' | 'column' | 'line' | 'pyramid' | 'spline'> = {
     areaLine: 'area',
     areaSpline: 'areaspline',
     bar: 'bar',
@@ -45,7 +33,7 @@ const CARTESIAN_SERIES_TYPE_MAP: Record<PresentationCartesianTypeId, HighchartsC
     pyramid: 'pyramid',
     spline: 'spline'
 };
-const POLAR_SERIES_TYPE_MAP: Record<PresentationPolarTypeId, HighchartsPolarSeriesType> = {
+const POLAR_SERIES_TYPE_MAP: Record<PresentationPolarTypeId, 'area' | 'arearange' | 'areaspline' | 'column' | 'line' | 'spline'> = {
     areaLine: 'area',
     areaRange: 'arearange',
     areaSpline: 'areaspline',
@@ -53,7 +41,7 @@ const POLAR_SERIES_TYPE_MAP: Record<PresentationPolarTypeId, HighchartsPolarSeri
     line: 'line',
     spline: 'spline'
 };
-const RANGE_SERIES_TYPE_MAP: Record<PresentationRangeTypeId, HighchartsRangeSeriesType> = {
+const RANGE_SERIES_TYPE_MAP: Record<PresentationRangeTypeId, 'arearange' | 'areasplinerange' | 'columnrange'> = {
     areaLine: 'arearange',
     areaSpline: 'areasplinerange',
     bar: 'columnrange',
@@ -72,17 +60,18 @@ class HighchartsTool {
 
     // Operations - Render cartesian chart.
     async renderCartesianChart(
-        viewType: PresentationVisualCartesianChartViewType,
+        typeId: PresentationCartesianTypeId,
         contentConfig: PresentationVisualContentConfig,
         renderTo: HTMLElement,
         callback?: () => void
     ): Promise<HighchartsView> {
+        const type = CARTESIAN_SERIES_TYPE_MAP[typeId];
         const series: SeriesOptionsType[] = [];
         for (const measure of contentConfig.data.measures) {
-            series.push({ type: CARTESIAN_SERIES_TYPE_MAP[viewType.typeId], name: measure.name, data: measure.values });
+            series.push({ type, name: measure.name, data: measure.values });
         }
         const options: Options = {
-            chart: { type: viewType.typeId },
+            chart: { type },
             plotOptions: { series: { borderColor: '#333' } },
             series,
             title: { text: contentConfig.title.text },
@@ -131,17 +120,13 @@ class HighchartsTool {
     }
 
     // Operations - Render polar chart.
-    async renderPolarChart(
-        viewType: PresentationVisualPolarChartViewType,
-        contentConfig: PresentationVisualContentConfig,
-        renderTo: HTMLElement,
-        callback?: () => void
-    ): Promise<HighchartsView> {
+    async renderPolarChart(typeId: PresentationPolarTypeId, contentConfig: PresentationVisualContentConfig, renderTo: HTMLElement, callback?: () => void): Promise<HighchartsView> {
         await Promise.all([this.loadHighchartsMore()]);
 
+        const type = POLAR_SERIES_TYPE_MAP[typeId];
         const series: SeriesOptionsType[] = [];
         for (const measure of contentConfig.data.measures) {
-            series.push({ type: POLAR_SERIES_TYPE_MAP[viewType.typeId], name: measure.name, data: measure.values });
+            series.push({ type, name: measure.name, data: measure.values });
         }
 
         const options: Options = {
@@ -158,23 +143,19 @@ class HighchartsTool {
     }
 
     // Operations - Render range chart.
-    async renderRangeChart(
-        viewType: PresentationVisualRangeChartViewType,
-        contentConfig: PresentationVisualContentConfig,
-        renderTo: HTMLElement,
-        callback?: () => void
-    ): Promise<HighchartsView> {
+    async renderRangeChart(typeId: PresentationRangeTypeId, contentConfig: PresentationVisualContentConfig, renderTo: HTMLElement, callback?: () => void): Promise<HighchartsView> {
         await Promise.all([this.loadHighchartsMore()]);
 
+        const type = RANGE_SERIES_TYPE_MAP[typeId];
         const series: SeriesOptionsType[] = [];
         const data = [];
         for (let index = 0; index < contentConfig.data.dimension.values.length; index++) {
             data.push([contentConfig.data.measures[0].values[index][0], contentConfig.data.measures[1].values[index][0]]);
         }
-        series.push({ type: RANGE_SERIES_TYPE_MAP[viewType.typeId], name: 'Unknown', data });
+        series.push({ type, name: 'Unknown', data });
 
         const options: Options = {
-            chart: { type: viewType.typeId, inverted: viewType.typeId === 'bar' ? true : false },
+            chart: { type, inverted: typeId === 'bar' ? true : false },
             plotOptions: { series: { borderColor: '#333' } },
             series,
             title: { text: contentConfig.title.text },

@@ -1,6 +1,6 @@
 {
     "name": "@datapos/datapos-tool-highcharts",
-    "version": "0.0.43",
+    "version": "0.0.44",
     "description": "A TypeScript wrapper for Highcharts that implements the Data Positioning chart-rendering interface. It optimizes browser memory usage by maintaining a single Highcharts instance shared across all presenters, loading optional modules only as needed.",
     "license": "MIT",
     "private": false,
@@ -25,14 +25,14 @@
         "dist"
     ],
     "dependencies": {
-        "@datapos/datapos-shared": "^0.3.231",
+        "@datapos/datapos-shared": "^0.3.238",
         "highcharts": "^12.4.0"
     },
     "devDependencies": {
         "@datapos/datapos-development": "^0.3.93",
         "@types/node": "^24.10.1",
-        "@typescript-eslint/eslint-plugin": "^8.46.4",
-        "@typescript-eslint/parser": "^8.46.4",
+        "@typescript-eslint/eslint-plugin": "^8.47.0",
+        "@typescript-eslint/parser": "^8.47.0",
         "eslint": "^9.39.1",
         "eslint-plugin-import": "^2.32.0",
         "jiti": "^2.6.1",
