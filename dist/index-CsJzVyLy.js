@@ -7827,10 +7827,10 @@ const Yp = {
   line: "line",
   spline: "spline"
 }, Up = {
-  areaLine: "area",
-  areaSpline: "areaspline",
-  bar: "column",
-  column: "column"
+  areaLine: "arearange",
+  areaSpline: "areasplinerange",
+  bar: "columnrange",
+  column: "columnrange"
 }, ro = "highcharts";
 let ec = !1, ic = !1, sc = !1;
 class Vp {
@@ -7908,7 +7908,7 @@ class Vp {
   }
   // Utilities - Load dependency wheel and sankey modules.
   async loadDependencyWheelAndSankeyModules() {
-    ec || (await Promise.all([import("./dependency-wheel-BZdmeJDA.js").then((Dt) => Dt.d), import("./sankey-SBV6eM-P.js").then((Dt) => Dt.s)]), ec = !0);
+    ec || (await Promise.all([import("./dependency-wheel-Dp-OmNv_.js").then((Dt) => Dt.d), import("./sankey-Ba4mWjq8.js").then((Dt) => Dt.s)]), ec = !0);
   }
   // Utilities - Load Highcharts more.
   async loadHighchartsMore() {

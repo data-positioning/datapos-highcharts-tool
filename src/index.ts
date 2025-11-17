@@ -30,7 +30,7 @@ import type {
 // Types/Interfaces - Highcharts.
 type HighchartsCartesianSeriesType = 'area' | 'areaspline' | 'bar' | 'column' | 'line' | 'pyramid' | 'spline';
 type HighchartsPolarSeriesType = 'area' | 'arearange' | 'areaspline' | 'column' | 'line' | 'spline';
-type HighchartsRangeSeriesType = 'area' | 'areaspline' | 'column';
+type HighchartsRangeSeriesType = 'arearange' | 'areasplinerange' | 'columnrange';
 interface HighchartsView extends PresentationView {
     chart: Chart;
 }
@@ -54,10 +54,10 @@ const POLAR_SERIES_TYPE_MAP: Record<PresentationPolarTypeId, HighchartsPolarSeri
     spline: 'spline'
 };
 const RANGE_SERIES_TYPE_MAP: Record<PresentationRangeTypeId, HighchartsRangeSeriesType> = {
-    areaLine: 'area',
-    areaSpline: 'areaspline',
-    bar: 'column',
-    column: 'column'
+    areaLine: 'arearange',
+    areaSpline: 'areasplinerange',
+    bar: 'columnrange',
+    column: 'columnrange'
 };
 const HIGHCHARTS_ID = 'highcharts';
 
