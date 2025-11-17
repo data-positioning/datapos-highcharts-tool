@@ -24,13 +24,12 @@ interface HighchartsView extends PresentationView {
 }
 
 // Constants
-const CARTESIAN_SERIES_TYPE_MAP: Record<PresentationCartesianTypeId, 'area' | 'areaspline' | 'bar' | 'column' | 'line' | 'pyramid' | 'spline'> = {
+const CARTESIAN_SERIES_TYPE_MAP: Record<PresentationCartesianTypeId, 'area' | 'areaspline' | 'bar' | 'column' | 'line' | 'spline'> = {
     areaLine: 'area',
     areaSpline: 'areaspline',
     bar: 'bar',
     column: 'column',
     line: 'line',
-    pyramid: 'pyramid',
     spline: 'spline'
 };
 const POLAR_SERIES_TYPE_MAP: Record<PresentationPolarTypeId, 'area' | 'arearange' | 'areaspline' | 'column' | 'line' | 'spline'> = {

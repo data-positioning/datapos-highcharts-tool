@@ -7817,7 +7817,6 @@ const Yp = {
   bar: "bar",
   column: "column",
   line: "line",
-  pyramid: "pyramid",
   spline: "spline"
 }, jp = {
   areaLine: "area",
@@ -7908,7 +7907,7 @@ class Vp {
   }
   // Utilities - Load dependency wheel and sankey modules.
   async loadDependencyWheelAndSankeyModules() {
-    ec || (await Promise.all([import("./dependency-wheel-BF2rjtP0.js").then((Xt) => Xt.d), import("./sankey-Dm0wxJqv.js").then((Xt) => Xt.s)]), ec = !0);
+    ec || (await Promise.all([import("./dependency-wheel-GmdKDK9G.js").then((Xt) => Xt.d), import("./sankey-11kCXJNd.js").then((Xt) => Xt.s)]), ec = !0);
   }
   // Utilities - Load Highcharts more.
   async loadHighchartsMore() {
