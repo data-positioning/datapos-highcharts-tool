@@ -7823,6 +7823,7 @@ const Yp = {
   areaRange: "arearange",
   areaSpline: "areaspline",
   column: "column",
+  columnRange: "columnrange",
   line: "line",
   spline: "spline"
 }, Up = {
@@ -7907,7 +7908,7 @@ class Vp {
   }
   // Utilities - Load dependency wheel and sankey modules.
   async loadDependencyWheelAndSankeyModules() {
-    ec || (await Promise.all([import("./dependency-wheel-GmdKDK9G.js").then((Xt) => Xt.d), import("./sankey-11kCXJNd.js").then((Xt) => Xt.s)]), ec = !0);
+    ec || (await Promise.all([import("./dependency-wheel-B26FkyF5.js").then((Xt) => Xt.d), import("./sankey-BpaFMmwh.js").then((Xt) => Xt.s)]), ec = !0);
   }
   // Utilities - Load Highcharts more.
   async loadHighchartsMore() {

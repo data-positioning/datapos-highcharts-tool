@@ -32,11 +32,12 @@ const CARTESIAN_SERIES_TYPE_MAP: Record<PresentationCartesianTypeId, 'area' | 'a
     line: 'line',
     spline: 'spline'
 };
-const POLAR_SERIES_TYPE_MAP: Record<PresentationPolarTypeId, 'area' | 'arearange' | 'areaspline' | 'column' | 'line' | 'spline'> = {
+const POLAR_SERIES_TYPE_MAP: Record<PresentationPolarTypeId, 'area' | 'arearange' | 'areaspline' | 'column' | 'columnrange' | 'line' | 'spline'> = {
     areaLine: 'area',
     areaRange: 'arearange',
     areaSpline: 'areaspline',
     column: 'column',
+    columnRange: 'columnrange',
     line: 'line',
     spline: 'spline'
 };
