@@ -1,5 +1,6 @@
 # Data Positioning Highcharts Tool
 
+<span><!-- OWASP_BADGE_START -->[![OWASP](https://img.shields.io/badge/OWASP-passed-4CAF50)](https://data-positioning.github.io/datapos-tool-highcharts/dependency-check-reports/dependency-check-report.html)<!-- OWASP_BADGE_END --></span>
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
 A TypeScript wrapper for Highcharts that implements the Data Positioning chart-rendering interface. It improves browser memory efficiency by sharing a single Highcharts instance shared across all presenters and loading optional modules on demand.
@@ -30,6 +31,33 @@ const polarChart: HighchartsView = await highchartsTool.renderPolarChart(/* argu
 const rangeChart: HighchartsView = await highchartsTool.renderRangeChart(/* arguments... */);
 ```
 
+## Reports & Compliance
+
+### Dependency Check Report
+
+The OWASP Dependency Check Report identifies known vulnerabilities in project dependencies. It is generated automatically on each release using the npm package `owasp-dependency-check`. We also rely on GitHub Dependabot to continuously check for vulnerabilities across all dependencies.
+
+[View the OWASP Dependency Check Report](https://data-positioning.github.io/datapos-tool-highcharts/dependency-check-reports/dependency-check-report.html)
+
+### Dependency Licenses
+
+The following table lists top-level production and peer dependencies. All these dependencies (including transitive ones) have been recursively verified to use Apache-2.0, CC0-1.0, or MIT—commercially friendly licenses with minimal restrictions. Developers cloning this repository should independently verify dev and optional dependencies; users of the uploaded library are covered by these checks.
+
+<!-- DEPENDENCY_LICENSES_START -->
+| Name                    |                Type                | Installed | Latest  | Latest Modified          |
+| :---------------------- | :--------------------------------: | :-------: | :-----: | :----------------------- |
+| @datapos/datapos-shared |                MIT                 |  0.3.252  | 0.3.252 | 2025-11-25T16:48:28.532Z |
+| highcharts              | https://www.highcharts.com/license |  12.4.0   | 12.4.0  | 2025-09-08T08:04:35.549Z |
+<!-- DEPENDENCY_LICENSES_END -->
+
+**Installed dependencies are kept up-to-date with latest releases.**
+
+### Bundle Analysis Report
+
+The Bundle Analysis Report provides a detailed breakdown of the bundle's composition and module sizes, helping to identify which modules contribute most to the final build. It is generated automatically on each release using the npm package `rollup-plugin-visualizer`.
+
+[View the Bundle Analysis Report](https://data-positioning.github.io/datapos-tool-highcharts/stats/index.html)
+
 ## Repository Management Commands
 
 The following list details the repository management commands implementation by this project. For more details, please refer to the scripts section of the 'package.json' file in this project.
@@ -47,14 +75,6 @@ The following list details the repository management commands implementation by 
 | sync:withGitHub    | alt+ctrl+shift+s  | Synchronise local repository with the main GitHub repository.                                                                                      |
 | test               | alt+ctrl+shift+t  | ❌ Not implemented.                                                                                                                                |
 | update:dataPosDeps | alt+ctrl+shift+u  | Install the latest version of all Data Positioning dependencies.                                                                                   |
-
-## Bundle Analysis
-
-View the [bundle report](https://data-positioning.github.io/datapos-tool-highcharts/stats/index.html) to analyze the bundle composition and module sizes (generated with rollup-plugin-visualizer).
-
-## Compliance
-
-The following badge reflects FOSSA's assessment of this repository's open-source license compliance.
 
 ## License
 
